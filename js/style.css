@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.show-sidebar {
+.showSidebar {
   transform: translateX(0%);
 }
 .sidebar {
@@ -27,7 +27,7 @@
   .sidebar {
     transform: translateX(-100%);
   }
-  body.show-sidebar .sidebar {
+  body.showSidebar .sidebar {
     transform: translateX(0%);
   }
 }
