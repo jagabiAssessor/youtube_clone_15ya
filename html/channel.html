@@ -6,24 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .channel-title {
+        display: flex;
+        padding: 16px 65px 4px 65px;
+        align-items: flex-start;
+        gap: 699px;
+
+    }
+
+    .channel-profile {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .chennel-subscribes {
+        display: flex;
+        width: 124px;
+        padding: 22px 4px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+</style>
 
 <body>
     <header class="navigations">
         <div class="Yt-btn">
-            <img src="img/Navigations/hamburger.svg" alt="">
-            <a href="https://www.youtube.com/"><img src="img/Navigations/Logo.svg" alt=""></a>
+            <img src="/res/img/Navigations/hamburger.svg" alt="">
+            <a href="https://www.youtube.com/"><img src="/res/img/Logo.svg" alt=""></a>
 
         </div>
         <div class="navigations-searchBox">
+            <img src="" alt="">
+            <img src="/res/img/Navigations/SearchBox-Button.svg" alt="">
         </div>
         <div class="navigations-profile">
-            <img src="img/Navigations/notifications.svg" alt="">
-            <img src="img/Navigations/apps.svg" alt="">
-            <img src="img/Navigations/Create.svg" alt="">
-            <img src="img/Navigations/Profile-pic.svg" alt="">
+            <img src="/res/img/Navigations/notifications.svg" alt="">
+            <img src="/res/img/Navigations/apps.svg" alt="">
+            <img src="/res/img/Navigations/Create.svg" alt="">
+            <img src="/res/img/Navigations/Profile-pic.svg" alt="">
         </div>
     </header>
-    <nav></nav>
+    <nav>
+        <!-- cover-img -->
+        <div class="channel-cover">
+            <img src="/res/img/Channel-Cover.svg" alt="">
+        </div>
+
+        <!-- css 위치 준거 -->
+        <!-- title & subscribes-btn -->
+        <div class="channel-title">
+            <div class="channel-profile">
+                <img src="/res/image/Channel/Channel/Profile.svg" alt="">
+            </div>
+            <div class="chennel-subscribes">
+                <img src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt="">
+            </div>
+        </div>
+
+        <!-- css 위치 안준거 -->
+        <!-- toolbar -->
+        <div class="toolbar">
+            <div class="toolbars">
+                <img src="/res/image/Channel/Toolbars.svg" alt="">
+            </div>
+            <div class="toolbars-search">
+                <img src="/res/image/Channel/Search.svg" alt="">
+            </div>
+        </div>
+    </nav>
 
     <!-- side_bar -->
     <aside class="sidebar">
@@ -47,19 +104,19 @@
                 <ul>Show More</ul>
             </li>
         </div>
-            <li>
-                <!-- subscriptions -->
-                <ul>James Gouse</ul>
-                <ul>alan Cooper</ul>
-                <ul>Alan Cooper</ul>
-                <ul>Marcus Levin</ul>
-                <ul>Alexis Sears</ul>
-                <ul>Jesica Lambert</ul>
-                <!-- more_form -->
-                <ul>Youtube Premium</ul>
-                <ul>Gaming</ul>
-                <ul>ulve</ul>
-                <ul>Live</ul>
-            </li>
+        <li>
+            <!-- subscriptions -->
+            <ul>James Gouse</ul>
+            <ul>alan Cooper</ul>
+            <ul>Alan Cooper</ul>
+            <ul>Marcus Levin</ul>
+            <ul>Alexis Sears</ul>
+            <ul>Jesica Lambert</ul>
+            <!-- more_form -->
+            <ul>Youtube Premium</ul>
+            <ul>Gaming</ul>
+            <ul>ulve</ul>
+            <ul>Live</ul>
+        </li>
         </div>
     </aside>
