@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header i {
+  padding: 0 7px;
+  cursor: pointer;
+}
+
+.showSidebar {
+  transform: translateX(0%);
+}
+.sidebar {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    transform: none;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  body.showSidebar .sidebar {
+    transform: translateX(0%);
+  }
+}

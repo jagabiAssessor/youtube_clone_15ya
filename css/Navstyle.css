@@ -1,0 +1,146 @@
+/* 상단바 */
+
+/* 상단바 전체 */
+.Navigations {
+    width: 1440px;
+    height: 56px;
+    flex-shrink: 0;
+    background: var(--background-color, #212121);
+}
+
+/* 좌측 햄버거 메뉴 */
+.Navigations>.yt-button>.icon {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 죄측 유튜브 로고 */
+.Navigations>.yt-button>.button {
+    display: flex;
+    padding: 18px 14px 18px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 중앙 검색창 */
+/* 검색창 전체 */
+.Navigations>#SearchBox {
+    display: flex;
+    width: 470px;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+/* 검색창 좌측 플레이스홀더 */
+.Navigations>.SearchBox>.Placeholder {
+    display: flex;
+    width: 54px;
+    height: 31px;
+    padding: 6px 2px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* 검색창 플레이스 홀더 폰트 */
+.Search {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* 검색창 부분 */
+.SearchBox {
+    width: 362px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 2px 0px 0px 2px;
+    background: #121212;
+}
+
+/* 검색창 버튼 바깥쪽 */
+.Navigations>.SearchBox-Button {
+    display: flex;
+    width: 64px;
+    padding: 2px 7px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 0px 2px 2px 0px;
+    border: 1px solid var(--border-color, #303030);
+    background: var(--border-color, #303030);
+}
+
+/* 검색창 버튼 아이콘 */
+.Navigations>.SearchBox-Button>.icon {
+    display: flex;
+    width: 50px;
+    height: 36px;
+    padding: 6px 13px;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+}
+
+/* 검색창 옆 녹음 아이콘 */
+.Navigations>.Icon {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 40px;
+    background: var(--black, #000);
+}
+
+/* 우측 프로필 */
+.Navigations>#Profile {
+    display: flex;
+    width: 204px;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* 우측 생성 버튼 */
+.Navigations>.Create {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 우측 앱스 버튼 */
+.Navigations>.Apps {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 우측 알림 버튼 */
+.Navigations>.Notifications {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 우측 프로필 버튼 */
+.Navigations>.Profile {
+    display: flex;
+    padding: 4px 14px;
+    align-items: flex-start;
+    gap: 10px;
+}
