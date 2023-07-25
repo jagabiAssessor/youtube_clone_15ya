@@ -1,0 +1,304 @@
+/* 채널 헤더부분 */
+
+/* 채널 전체 */
+.Channel {
+    display: flex;
+    width: 1200px;
+    height: 340px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: #181818;
+}
+
+/* 상단 채널 커버 */
+.Channel>.Channel-Cover {
+    display: flex;
+    width: 1200px;
+    height: 192px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #F8F8F8;
+}
+
+/* 채널 타이틀 전체 */
+.Channel>.Channel-Title {
+    display: flex;
+    padding: 16px 65px 4px 65px;
+    align-items: flex-start;
+    gap: 699px;
+}
+
+/* 좌측 채널 타이틀 프로필 */
+.Channel>.Channel-Title>.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 좌측 채널 타이틀 프로필사진범위 */
+.Channel>.Channel-Title>.Profile>.Pic {
+    display: flex;
+    padding-right: 0px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 좌측 채널 타이틀 프로필사진 */
+.Channel>.Channel-Title>.Profile>.Pic>.User-Avatar {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    opacity: 0.6499999761581421;
+}
+
+/* 좌측 채널 타이틀 프로필이름 */
+.Channel>.Channel-Title>.Profile>.Name {
+    display: flex;
+    padding: 18px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 우측 채널 타이틀 구독버튼전체 */
+.Channel>.Channel-Title>.Subscribes-Btn {
+    display: flex;
+    width: 124px;
+    padding: 22px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 우측 채널 타이틀 구독버튼 */
+.Channel>.Channel-Title>.Subscribes-Btn>#Subscribes-Btn{
+    display: flex;
+    padding: 10px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 2px;
+    background: #C00;
+}
+
+/* 채널 툴바 전체 */
+.Channel>.Channel-Toolbar {
+    display: flex;
+    padding: 0px 65px;
+    align-items: flex-start;
+}
+
+/* 왼쪽 채널 툴바 여러개 */
+.Channel>.Channel-Toolbar>.Toolbars {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 왼쪽 채널 툴바 각메뉴 전체 */
+.Channel>.Channel-Toolbar>.Toolbars>.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 왼쪽 채널 툴바 각메뉴 버튼 */
+.Channel>.Channel-Toolbar>.Toolbars>.Menu>.Button{
+    display: flex;
+    padding: 16px 32px 15px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 오른쪽 채널 툴바 검색 버튼 */
+.Channel>.Channel-Toolbar>.Search {
+    display: flex;
+    padding-left: 0px;
+    align-items: flex-start;
+    gap: 202px;
+}
+/* 오른쪽 채널 툴바 검색 아이콘 */
+.Channel>.Channel-Toolbar>.Search>.Icon {
+    display: flex;
+    padding: 12px 8px;
+    align-items: flex-start;
+}
+
+/* 오른쪽 채널 툴바 화살표 버튼 */
+.Channel>.Channel-Toolbar>.Search>.Btn {
+    display: flex;
+    padding: 0px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+/* 비디오 부분 */
+
+/* 중단 비디오 전체 */
+.Smal-Video {
+    display: inline-flex;
+    padding: 24px 287px 24px 65px;
+    align-items: flex-start;
+}
+
+/* 비디오 플레이어 부분 */
+.Smal-Video>.Player {
+    display: flex;
+    padding-right: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 비디오 유튜브 화면*/
+.Smal-Video>.Player>.Youtubeplayer {
+    width: 424px;
+    height: 238px;
+}
+
+/* 우측 비디오 설명 */
+.Smal-Video>.VideoDesc {
+    display: flex;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 우측 비디오 설명 타이틀전체 */
+.Smal-Video>.VideoDesc>.Video-Title {
+    display: flex;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 우측 비디오 설명 세부 타이틀 */
+.Smal-Video>.VideoDesc>.Video-Title>.Title {
+    display: flex;
+    padding-bottom: 0px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 우측 비디오 설명 시간 */
+.Smal-Video>.VideoDesc>.Video-Title>.Time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 우측 비디오 설명 세부 설명 */
+.Smal-Video>.VideoDesc>.Descripctions {
+    display: flex;
+    width: 400px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 플레이리스트 부분 */
+
+/* 하단 플레이리스트 전체 */
+.Play-Lists {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 플레이 리스트 1줄 */
+.Play-Lists>.Play-List {
+    display: flex;
+    padding: 0px 65px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 플레이 리스트 하단 콘텐츠 */
+.Play-Lists>.Play-List>.Content {
+    display: flex;
+    width: 1070px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 플레이리스트 상단*/
+.Play-Lists>.Play-List>.Content>.PlayList {
+    display: flex;
+    padding-top: 8px;
+    align-items: flex-start;
+}
+
+/* 플레이리스트 상단 제목 */
+.Play-Lists>.Play-List>.Content>.PlayList>.Title {
+    display: flex;
+    padding: 9px 8px 8px 0px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 플레이 리스트 상단 플레이버튼 */
+.Play-Lists>.Play-List>.Content>.PlayList>.Play-Btn {
+    display: flex;
+    padding: 6px 16px;
+    align-items: flex-start;
+}
+
+/* 플레이 리스트 하단 콘텐츠 비디오 카드 */
+.Play-Lists>.Play-List>.Content>.Video-card {
+    display: flex;
+    padding: 24px 0px;
+    align-items: flex-start;
+}
+
+/* 플레이 리스트 하단 콘텐츠 비디오 카드 콘텐츠 1개 */
+.Play-Lists>.Play-List>.Content>.Video-card>.Xsmall-Video {
+    display: flex;
+    width: 214px;
+    padding-right: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 하단 콘텐츠 썸네일 이미지 */
+.Play-Lists>.Play-List>.Content>.Video-card>.Xsmall-Video>.Thumbnail-Images{
+    width: 210px;
+    height: 118px;
+    background: #FFF;
+}
+
+/* 하단 콘텐츠 썸네일 설명 */
+.Play-Lists>.Play-List>.Content>.Video-card>.Xsmall-Video>.Video-Desc {
+    display: flex;
+    width: 186px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 하단 콘텐츠 썸네일 제목 */
+.Play-Lists>.Play-List>.Content>.Video-card>.Xsmall-Video>.Video-Desc>.Title{
+    display: flex;
+    padding: 8px 0px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* 하단 콘텐츠 썸네일 조회수 */
+.Play-Lists>.Play-List>.Content>.Video-card>.Xsmall-Video>.Video-Desc>.Views{
+    display: flex;
+    width: 186px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
