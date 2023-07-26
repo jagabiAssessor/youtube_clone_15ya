@@ -20,25 +20,25 @@
 
 /* Comments 댓글 쓰기 부분 아래 댓글들  */
 /* Comments 전체 */
-.Commetns{
+.Comments{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.Commetns>.Comment{
+.Comments>.Comment{
     display: flex;
     width: 640px;
     padding-bottom: 0px;
     align-items: flex-start;
 }
-.Comments>.Comment>.profile-pic{
+.Comments>.Comment>.Profile-Pic{
     display: flex;
     padding-right: 0px;
     align-items: flex-start;
     gap: 10px;
 }
-.Comments>.Comment>.profile-pic>.user-avatar{
+.Comments>.Comment>.Profile-pic>.User-Avatar{
     display: flex;
     width: 40px;
     height: 40px;
@@ -102,13 +102,13 @@
     justify-content: center;
     align-items: flex-start;
 }
-.Comment>.Comment>.profile-pic{
+.Comment>.Comment>.Profile-Pic{
     display: flex;
     padding-right: 0px;
     align-items: flex-start;
     gap: 10px;
 }
-.Comment>.Comment>.profile-pic>.User-Avatar{
+.Comment>.Comment>.Profile-Pic>.User-Avatar{
     display: flex;
     width: 40px;
     height: 40px;
@@ -123,12 +123,12 @@
     align-items: flex-start;
     gap: 4px;
 }
-.Comment>.Comment>.Comment-Are>.Border{
+.Comment>.Comment>.Comment-Area>.Border{
     height: 1px;
     align-self: stretch;
     background: var(--border-color, #303030);
 }
-.Comment>.Comment>.Comment-Are>.add_a_public_comment{
+.Comment>.Comment>.Comment-Area>.Add_A_Public_Comment{
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 14px;
@@ -171,7 +171,7 @@
     flex-shrink: 0;
 }
 
-.VideoPlayer>.Youtube_player{
+.VideoPlayer>.Youtube_Player{
     width: 640px;
     height: 360px;
     flex-shrink: 0;
