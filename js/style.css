@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .header i {
   padding: 0 7px;
   cursor: pointer;
@@ -11,23 +12,29 @@
 .showSidebar {
   transform: translateX(0%);
 }
+
 .sidebar {
   position: fixed;
   background-color: rgb(255, 255, 255);
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%);
 }
 
-@media (min-width: 769px) {
-  .sidebar {
-    transform: none;
-  }
-}
+/* 화면 크기가 작을 때 */
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
   }
   body.showSidebar .sidebar {
     transform: translateX(0%);
+  }
+}
+
+/* 화면 크기가 클 때 */
+@media (min-width: 769px) {
+  .sidebar {
+    display: block;
+  }
+  body.hideSidebar .sidebar {
+    display: none;
   }
 }
