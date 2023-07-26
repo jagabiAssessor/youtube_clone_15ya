@@ -3,6 +3,7 @@
 
 /* 상단바 전체 */
 .Navigations {
+    position: fixed;
     display: flex;
     width: 1440px;
     height: 56px;
