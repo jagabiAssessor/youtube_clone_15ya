@@ -1,7 +1,10 @@
+*{margin:0;padding:0;box-sizing:border-box;font:inherit;color:inherit;flex-shrink:0;list-style-type: none;}
 /* 상단바 */
 
 /* 상단바 전체 */
 .Navigations {
+    position: fixed;
+    display: flex;
     width: 1440px;
     height: 56px;
     flex-shrink: 0;
@@ -9,17 +12,17 @@
 }
 
 /* 좌측 햄버거 메뉴 */
-.Navigations>.yt-button>.icon {
+.Navigations>.Yt-Button {
     display: flex;
+}
+.Navigations>.Yt-Button>.icon {
     padding: 8px;
     align-items: flex-start;
     gap: 10px;
 }
 
 /* 죄측 유튜브 로고 */
-.Navigations>.yt-button>.button {
-    display: flex;
-    padding: 18px 14px 18px 16px;
+.Navigations>.Yt-Button>.Button {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -49,7 +52,7 @@
 }
 
 /* 검색창 플레이스 홀더 폰트 */
-.Search {
+.SearchBox::placeholder {
     color: var(--gray-color, #AAA);
     font-family: Roboto;
     font-size: 16px;
@@ -99,7 +102,7 @@
     align-items: flex-start;
     gap: 10px;
     border-radius: 40px;
-    background: var(--black, #000);
+    /* background: var(--black, #000); */
 }
 
 /* 우측 프로필 */
