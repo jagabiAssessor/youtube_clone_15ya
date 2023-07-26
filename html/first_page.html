@@ -4,80 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Navstyle.css">
+    <link rel="stylesheet" href="/css/Sidebar.css">
     <title>Youtube</title>
 </head>
 
 <body>
-    <!-- top -->
-    <header class="navigations">
-        <!-- logo & menu -->
-        <div class="Yt-btn">
-            <img src="/res/img/Navigations/hamburger.svg" alt="">
-            <a href="https://www.youtube.com/"><img src="/res/img/Navigations/Logo.svg" alt=""></a>
+    <!-- Top -->
+    <header class="Navigations">
+        <!-- logo & Menu -->
+        <div class="Yt-Button">
+            <img src="/res/img/Navigations/hamburger.svg" class="icon">
+            <a href="https://www.youtube.com/" class="Button" ><img src="/res/img/Navigations/Logo.svg" ></a>
         </div>
-
         <!-- main_search_box -->
-        <div class="navigations-searchBox">
+        <div class="Search">
+            <input class="SearchBox" type="text" placeholder="Search">
+            <img src="/res/img/Navigations/SearchBox-Button.svg" class="SearchBox-Button">
         </div>
 
+        <!-- Icon -->
+        <div class="Icon">
+            <img src="/res/img/Navigations/Icon.svg">
+        </div>
         <!-- main_profile -->
-        <div class="navigations-profile">
-            <img src="/res/img/Navigations/notifications.svg" alt="">
-            <img src="/res/img/Navigations/apps.svg" alt="">
-            <img src="/res/img/Navigations/Create.svg" alt="">
-            <img src="/res/img/Navigations/Profile-pic.svg" alt="">
+        <div id="Profile">
+            <img src="/res/img/Navigations/Create.svg" class="Create">
+            <img src="/res/img/Navigations/apps.svg" class="Apps">
+            <img src="/res/img/Navigations/notifications.svg" class="Notifications">
+            <img src="/res/img/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
 
-    <!-- toolbars-->
-    <nav>
-        <li>
-        </li>
-    </nav>
 
     <!-- side_bar -->
-    <aside class="sidebar">
+    <aside class="Sidebar">
 
-        <!-- top -->
-        <div class="sidebar-menu">
-            <li>
-                <ul>Home</ul>
-                <ul>Explore</ul>
-                <ul>Subscriptions</ul>
-            </li>
+        <div class="Menu">
+            <!-- Top -->    
+            <div class="Top">
+                <ul>
+                    <li><img src="/res/image/Sidebar/home-fill.svg" class="Home">Home</li>
+                    <li><img src="/res/image/Sidebar/explore-fill.svg" class="Explore">Explore</li>
+                    <li><img src="/res/image/Sidebar/subscriptions-fill.svg" class="Subscription">Subscriptions</li>
+                </ul>
+            </div>
+
+            <div class="Top2">
+                <ul>
+                    <li class="Library"><img src="/res/image/Sidebar/library-fill.svg">Library</li>
+                    <li class="History"><img src="/res/image/Sidebar/history-fill.svg">History</li>
+                    <li class="YourVideo"><img src="/res/image/Sidebar/yourVideos.svg">Your Videos</li>
+                    <li class="Liked_Videos"><img src="/res/image/Sidebar/liked-fill.svg">Liked Videos</li>
+                    <li class="Show_More"><img src="/res/image/Sidebar/arrowBottom.svg">Show More</li>
+                </ul>
+            </div>
+
+            <div class="Sub">
+                <div>SUBSCRIPTIONS</div>
+                <ul>
+                    <li>James Gouse</li>
+                    <li>alan Cooper</li>
+                    <li>Marcus Levin</li>
+                    <li>Alexis Sears</li>
+                    <li>Jesica Lambert</li>
+                    <li>Anna White</li>
+                    <li>Skylar Dias</li>
+                    <li>Show 13 More</li>
+                </ul>
+            </div>
+
         </div>
+      <!-- Top2 -->
 
-        <!-- top2 -->
-        <div class="sidebar-menu">
-            <li>
-                <ul>ulbrary</ul>
-                <ul>History</ul>
-                <ul>Your Videos</ul>
-                <ul>ulked Videos</ul>
-                <ul>Show More</ul>
-            </li>
-        </div>
-
+  
+ 
         <!-- subscriptions -->
-        <div class="sidebar-menu">
-            <li>
-                <ul>James Gouse</ul>
-                <ul>alan Cooper</ul>
-                <ul>Marcus Levin</ul>
-                <ul>Alexis Sears</ul>
-                <ul>Jesica Lambert</ul>
-                <ul>Anna White</ul>
-                <ul>Skylar Dias</ul>
-                <ul>Show 13 More</ul>
-            </li>
-        </div>
+
 
         <!-- more_form -->
-        <div class="sidebar-menu">
+        <div class="Menu">
             <li>
-                <ul>Youtube Premium</ul>
-                <ul>Gaming</ul>
-                <ul>ulve</ul>
+                <li>Youtube Premium</li>
+                <li>Gaming</li>
+                <li>live</li>
             </li>
         </div>
     </aside>
