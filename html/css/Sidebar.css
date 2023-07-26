@@ -1,0 +1,173 @@
+/* 사이드바 */
+*{margin:0;padding:0;box-sizing:border-box;font:inherit;color:inherit;flex-shrink:0;list-style-type: none;}
+
+ /* 사이드바 전체 */
+ .Sidebar_Mini, .Sidebar_Large{
+    position:fixed;
+    top: 56px;
+    height: 100%;
+    padding-right: 0px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: #212121;
+    color: white;
+ }
+
+ .Sidebar_Mini {
+    width: 120px;
+ }
+ .Sidebar_Large{
+    width: 240px;
+ }
+
+.Top li, .Top2 li .Sub li{
+    display: block;
+    padding: 8px 24px;
+}
+ /* Sidebar Top 상단 */
+ .Sidebar>.Top{
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+ }
+ /*  Sidebar Top Home 버튼 */
+ .Sidebar>.Menu>.Top>.Home{
+    width: 192px;
+    align-items: flex-start;
+    gap: 24px;
+}
+/* Sidebar Top Explore 버튼 */
+ .Sidebar>.Menu>.Top>.Explore{
+    padding: 8px 8px 8px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+/* Sidebar Top Subscription 버튼 */
+.Sidebar>.Menu>.Top>.Subscription{
+    padding: 8px 8px 8px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+/* Sidebar Top2 두번째 */
+.Sidebar>.Menu>.Top2{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 224px;
+    height: 1px;
+    background: var(--border-color, #303030);
+    justify-content: center;
+}
+.Top2 ul li img {
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Top2 Library 버튼 */
+.Sidebar>.Menu>.Top2>.Library, .History, .YourVideo, .Liked_Videos, .Show_More{
+    width: 144px;
+    padding: 4px 0px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Top2 History 버튼 */
+.Sidebar>.Menu>.Top2>.History{
+    padding: 8px 8px 8px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+/* Subscription */
+
+ /*Subscription 전체*/
+.Sidebar>.Subscription{
+    padding-Top: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 224px;
+    justify-content: center;
+    padding: 8px 24px;
+    align-items: flex-start;
+}
+/* Subscription 각 Aritsts 버튼 and Show More 버튼 */
+.Sidebar>.Subscription>.Menu>.Artist{
+    width: 192px;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+
+/*Sidebar More Form(하단) */
+
+/* Sidebar More Form  전체 */
+.Sidebar>.More_From{
+    padding-Top: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 224px;
+    justify-content: center;
+    padding: 8px 24px;
+    gap: 10px;
+}
+
+
+.Sidebar>.Navigation>.Bottom{
+    padding-Top: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 8px 8px 24px;
+    gap: 10px;
+}
+
+
+/*Sidebar Navigation Footer 전체*/
+.Sidebar>.Navigation>.Footer{
+    width: 224px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+/* 사이드바 js */
+.showSidebar {
+    transform: translateX(0%);
+  }
+  
+  /* 화면 크기가 작을 때 */
+@media (max-width: 768px) {
+    .Sidebar_Large {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    body.showSidebar .Sidebar_Large {
+      transform: translateX(0%);
+    }
+  }
+  
+  /* 화면 크기가 클 때 */
+  @media (min-width: 769px) {
+    .sidebar {
+      display: block;
+    }
+    body.hideSidebar .Sidebar_Large {
+      display: none;
+    }
+  }
