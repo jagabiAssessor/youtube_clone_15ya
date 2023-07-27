@@ -3,7 +3,7 @@
 body{
   background-color: black;
 }
- /* 사이드바 전체 */
+
 
  
  .Sidebar_Mini, .Sidebar_Large{
@@ -13,7 +13,7 @@ body{
     flex-shrink: 1;
     flex-basis: 0%;
     float: left;
-    height: 100vh;
+    height: 100%;
     padding-right: 0px;
     flex-direction: column;
     background: #000000;
@@ -96,18 +96,35 @@ body{
 }
 /* 사이드바 js */
 .showSidebar {
+    height: 100%;
     transform: translateX(0%);
+    position: fixed;
   }
-  
+
   /* 화면 크기가 작을 때 */
 @media (max-width: 768px) {
     .Sidebar_Large {
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
     }
+    body.showSidebar:before {
+      content: '';
+      background-color: rgba(0, 0, 0, 0.5); /* 어두운 블랙색상 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+    body.showSidebar .Navigations {
+      z-index:10;
+    }
     body.showSidebar .Sidebar_Large {
       transform: translateX(0%);
+      z-index: 10;
     }
+    
   }
   
   /* 화면 크기가 클 때 */
@@ -118,4 +135,5 @@ body{
     body.hideSidebar .Sidebar_Large {
       display: none;
     }
+
   }
