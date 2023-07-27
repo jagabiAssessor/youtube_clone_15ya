@@ -3,10 +3,11 @@
 .Top-menu {
     position: fixed;
     top : 56px;
-    left: 120px;
+    left: 70px;
     display: flex;
-    width: 1200px;
-    background: var(--background-color, #212121);
+    width: 100%;
+
+    background: var(--background-color, #000000);
 }
 .Top-menu > .Item {
     display: flex;
@@ -20,15 +21,24 @@
     color: #ffffff;
     border-radius: 5px;
     padding: 5px 10px;
-    background-color: #333333;
+    background-color: rgb(61, 61, 61);
+    cursor: pointer;
   }
-  
+
+.Top-menu .Item :hover {
+    background-color: #6b6b6b;
+}
 
 /* 탑메뉴 우측 화살표 아이콘 */
-.Top-menu > .Icon {
-    display: inline-flex;
-    padding: 20px;
-    gap: 10px;
+.Item > .Icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background: rgba(33, 33, 33, 0.90);
+}
+.Itme > .Icon > img {
+    width: 20px;
+    height: 20px;
 }
