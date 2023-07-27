@@ -124,27 +124,8 @@ function displayVideoThumbnail(videoInfo) {
     videoTitle.className = 'video-title';
     videoTitle.textContent = videoInfo.video_title;
     videoContainer.appendChild(videoTitle);
-
-    // p 요소 생성해서 uploadDate에 추가
-    const uploadDate = document.createElement('p');
-    uploadDate.className = 'upload-date';
-    uploadDate.textContent = 'update: ' + videoInfo.upload_date;
-    videoContainer.appendChild(uploadDate);
-
-    // p 요소 생성해서 videoDetail에 추가
-    const videoDetail = document.createElement('p');
-    videoDetail.className = 'video-channel';
-    videoDetail.textContent = videoInfo.video_detail;
-    videoContainer.appendChild(videoDetail);
-
-    // p 요소 생성해서 views에 추가
-    const views = document.createElement('p');
-    views.className = 'views';
-    views.textContent = '조회수: ' + videoInfo.views;
-    videoContainer.appendChild(views);
     
-    // videoGrid>videoContainer>videoTitle>sourceElem>uploadDate>videoDetail>views
+    // videoGrid>videoContainer>videoTitle>sourceElem>videoInfo 이렇게 생각하면 된다
     videoGrid.appendChild(videoContainer);
 }
-
 
