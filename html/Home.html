@@ -26,17 +26,39 @@
         --font-medium:14px;
         --font-small:12px;
         --font-micro:10px;
-
     }
+
     *{
         padding:0;
         margin:0;
         box-sizing: border-box;
     }
-    
+
     li{
         list-style: none;
      }
+
+     /* .gallerybox {} */
+     .youtubelist {
+        max-width: 1200px;
+        margin: 0 auto;
+        font-size: 0;
+     }
+
+     .youtubelist > li {
+        display: inline-block;
+        vertical-align: top;
+        width: 25%
+     }
+
+     .youtubelist > li > div {
+        width: auto;
+        padding: 15px;
+     }
+    
+     .youtubelist > li h3 {font-size: 12px; color: #000; font-weight: 500;}
+     .youtubelist > li p {font-size: 12px; color:#999; font-weight: 400;}
+
     </style>
 
 
@@ -178,40 +200,199 @@
         </div>
     </aside>
 
+
+
     <!-- videos -->
     <section>
         <article>
-            <div>
-                <img src="/res/img/Thumbnail/Images.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-1.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-2.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-3.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+            <div class = "gallerybox">
+                <ul class = "youtubelist">
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-4.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-1.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon-1.svg">Alen Coper</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-2.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon-2.svg">Marcus Levine</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-3.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon-3.svg">Alexis Sears</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class = "youtubelist">
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-7.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon-4.svg">Jasica Lambert</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-8.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon-3.svg">Anna White</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-9.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/User-Avatar.svg">Skylar Dias</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-10.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class = "youtubelist">
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-1.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-5.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-2.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p>James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-3.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class = "youtubelist">
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-7.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-8.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-9.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a class = "screen" href = "#" target="_blank">
+                                <img src="/res/img/Thumbnail/Images-10.svg">
+                                <img class = "on" src="">
+                            </a>
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                            <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                            <p>15k Views . 1week ago</p>
+                        </div>
+                    </li> 
+                </ul>
             </div>
-            <div>
-                <img src="/res/img/Thumbnail/Images-7.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-8.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-9.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                <img src="/res/img/Thumbnail/Images-13.svg" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-            </div>
-            <div>
-                <img src="/res/img/Thumbnail/Images-1.svg" alt="">
-
-                <img src="/res/img/Thumbnail/Images-14.svg" alt="">
-
-                <img src="/res/img/Thumbnail/Images-15.svg" alt="">
-
-                <img src="/res/img/Thumbnail/Images-16.svg" alt="">
-
-            </div>
-        </article>
+            
+        </article>    
     </section>
 
     
@@ -219,3 +400,26 @@
 <script src="/js/index.js"></script>
 <script src="/js/youtubMainpage.js"></script>
 </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
