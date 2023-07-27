@@ -55,7 +55,7 @@ li{
 }
 
 .hashtags li {
-    margin-right: var(--padding);
+    margin-right: 5px;
 }
 
 .actions .btn {
@@ -127,15 +127,18 @@ li{
                     <!-- <section class="player"> -->
                         <video controls src = ""></video>     <!--  비디오 정보 넣으면 됨 -->
                     </section>
-                    <!---Video Info Box --->
+                    <!--- Video Info Box --->
                     <section class="info">
                         <div class="metadata">
-                            <!-- 해시태그 구현해봄 -->
+
+                            <!-- Hashtag 구현해봄 -->
                             <ul class= "hashtags">
                                 <li><a class="hashtagBtn" href="https://www.youtube.com/results?search_query=marcus+levine" target = "_blank" style="text-decoration: none;">#MarcusLevin</a></li>
                                 <li><a class="hashtagBtn" href="https://www.youtube.com/results?search_query=singersongwritter" target = "_blank" style="text-decoration: none;">#SingerSongWriter</a></li>
                                 <li><a class="hashtagBtn" href="https://www.youtube.com/results?search_query=bohemian" target = "_blank" style="text-decoration: none;">#Bohemian</a></li>
                             </ul>
+
+                            <!-- title -->
                             <div class="titleAndButton">
                                 <span class="title clamp">
                                     Blind Woodturner: Turning passion into fine art
@@ -147,6 +150,7 @@ li{
                             </div>
                         </div>
                         <div class="actions">
+                            <!-- 좋아요 공유 저장 버튼인데 다른방향으로 구현이 가능하다면 안쓰셔도 됩니다. -->
                             <li>
                                 <button src = "/res/Group/Group1.svg" class = "btn"><p>1.7k</p></button>
                             </li>
@@ -165,7 +169,7 @@ li{
                         </div>
                     </section>
                 </div>
-                         <!-- 비디오밑에 아티스트 정보-->
+                         <!-- Video-Desc -->
                         <div class="videoInfo">
                             <img src="/res/image/Video/Video-Desc.svg" alt="">
                             <div class="channel">
@@ -185,7 +189,7 @@ li{
 
 
                     
-
+                    <!-- Comment-->  <!-- 오늘 해야할 부분 -->
                     <section class="comment">
                        <img src="/res/image/Video/Comment.svg">
                        <a style="color:var(--black-color);">286 Comments</a>
