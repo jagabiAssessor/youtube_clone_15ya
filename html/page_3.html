@@ -5,107 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Page_3</title>
-    <link rel="stylesheet" href="/css/Video.css">
+    <link rel="stylesheet" href="./css/Video.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/Navstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navigations">
-        <!-- logo & menu -->
-        <div class="ytBtn">
-            <img src="/res/img/Navigations/hamburger.svg" alt="">
-            <a href="https://www.youtube.com/"><img src="/res/img/Navigations/Logo.svg" alt=""></a>
+    <header class="Navigations">
+        <!-- logo & Menu -->
+        <div class="Yt-Button">
+            <img src="./res/image/Navigations/hamburger.svg" class="icon">
+            <a href="/html/first_page.html" class="Button" ><img src="./res/image/Navigations/Logo.svg" ></a>
         </div>
-
         <!-- main_search_box -->
-        <div class="navigationsSearchBox">
+        <div class="center">
+            <div class="Search">
+                <input class="SearchBox" type="text" placeholder="Search">
+            </div>
+            <button class="SearchBox-Button" onclick="fetchVideoAndInfo()">
+                <img src="./res/image/Navigations/SearchBox-Button.svg">
+            </button>
+            <div class="Icon">
+                <img src="./res/image/Navigations/Icon.svg">
+            </div>
         </div>
-
         <!-- main_profile -->
-        <div class="navigationsProfile">
-            <img src="/res/img/Navigations/notifications.svg" alt="">
-            <img src="/res/img/Navigations/apps.svg" alt="">
-            <img src="/res/img/Navigations/Create.svg" alt="">
-            <img src="/res/img/Navigations/Profile-pic.svg" alt="">
+        <div id="Profile">
+            <img src="./res/image/Navigations/Create.svg" class="Create">
+            <img src="./res/image/Navigations/apps.svg" class="Apps">
+            <img src="./res/image/Navigations/notifications.svg" class="Notifications">
+            <img src="./res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
 
     <main>
-        <section>
+        <!-- 섹션 최상단 컨테이너 추가 -->
+        <section class="Container">
             <!-- Primary -->
             <div class="Primary">
                 <div class="PrimaryContent">
-                    <div class="videoPlayer">
-                        <div class="youtubePlayer">
-                        </div>
-                        <div class="videoInfo">
-                            <!-- <img src="/res/image/Video/Video-Desc.svg" alt=""> -->
-                        </div>
+                    <div class="VideoPlayer">
+                        <video controls class="Youtube-Player"></video>
                     </div>
+                    <div class="Video-Desc">
+                        <div class="Video-DescTitle">
+                            <h1>유튜브 클론코딩 십오야아아아아아아아아아아아아아아아아아!!!</h1>
+                        </div>
+                        <ul class="VideoChannel">
+                            <span><img src="./res/image/Video/profile-pic.svg" class="Profile"></span>
+                            <span class="VideoChannelTitle">채널 15ya</span>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/Navigations/notifications.svg">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/UesdSvg/liked17k.svg">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/UesdSvg/DisLiked.svg">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/UesdSvg/Share.svg">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/UesdSvg/Save.svg">
+                                </button>
+                            </li>
+                            <li>
+                                <button class="DescButton">
+                                    <img src="./res/image/UesdSvg/More.svg">
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="Description">
+
+                        </div>
+                        <div class="Border"></div>
+                    </div>
+                </div>
 
                     <div class="comment">
-                        <img src="/res/image/Video/Comment.svg" alt="">
+                        <img src="./res/image/Video/Comment.svg" alt="">
                     </div>
                     <div class="comments">
-                        <img src="/res/image/Video/Comment-1.svg" alt="">
+                        <img src="./res/image/Video/Comment-1.svg" alt="">
                     </div>
                 </div>
             </div>
 
             <!-- Secondary -->
-            <div class="secondary">
-                <div class="secondaryContent">
-                    <div class="topMenu">
-                        <img src="/res/image/Video/Top-Menu/Item.svg" alt="">
-                        <img src="/res/image/Video/Top-Menu/Item-1.svg" alt="">
+            <div class="Secondary">
+                <div class="Content">
+                    <div class="Top-Menu">
+                        <img src="./res/image/Video/Top-Menu/Item.svg" alt="">
+                        <img src="./res/image/Video/Top-Menu/Item-1.svg" alt="">
                     </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-4.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-2.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-6.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-1.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-5.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-3.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-7.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
-                    </div>
-                    <div class="videos">
-                        <img src="/res/image/Video/Thumbnail-4.svg" alt="">
-                        <img src="/res/image/Video/Ep 6_ Living to Serve _ SEARCH ON-1.svg" alt="">
-                        <img src="/res/image/Video/Channel-Desc-1.svg" alt="">
+                    <div class="Video-Grid">
+                        <!-- 썸네일 나오는 영역 -->
                     </div>
                 </div>
             </div>
         </section>
     </main>
 </body>
-<script src="/js/video.js"></script>
+<script src="./js/youtubeVideoPage.js"></script>
 </html>

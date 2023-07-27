@@ -9,36 +9,68 @@
     <link rel="stylesheet" href="/css/Top-menustyle.css">
     <link rel="stylesheet" href="/css/Thumbnailstyle.css">
     <title>Youtube</title>
-</head>
+    <style>
+    :root {
+        /* Color */
+        --white-color: #fff;
+        --black-color: #140a00;
+        --blue-color:  #045fd4;
+        --red-color:    #ff0000;
+        --grey-dark-color: #909090;
+        --grey-light-color: #e0e0e0;
+
+        --padding:12px;
+        --avatar-size:36px;
+
+        --font-large:18px;
+        --font-medium:14px;
+        --font-small:12px;
+        --font-micro:10px;
+
+    }
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    
+    li{
+        list-style: none;
+     }
+    </style>
+
 
 <body>
-    <!-- Top -->
+    <!-- Navigation -->
     <header class="Navigations">
         <!-- logo & Menu -->
         <div class="Yt-Button">
-            <img src="/res/img/Navigations/hamburger.svg" class="icon">
-            <a href="https://www.youtube.com/" class="Button" ><img src="/res/img/Navigations/Logo.svg" ></a>
+            <img src="../res/image/Navigations/hamburger.svg" class="icon">
+            <a href="/html/first_page.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
         </div>
         <!-- main_search_box -->
-        <div class="Search">
-            <input class="SearchBox" type="text" placeholder="Search">
-            <img src="/res/img/Navigations/SearchBox-Button.svg" class="SearchBox-Button">
-        </div>
-
-        <!-- Icon -->
-        <div class="Icon">
-            <img src="/res/img/Navigations/Icon.svg">
+        <div class="center">
+            <div class="Search">
+                <input class="SearchBox" type="text" placeholder="Search">
+            </div>
+            <button class="SearchBox-Button">
+                <img src="../res/image/Navigations/SearchBox-Button.svg">
+            </button>
+            <div class="Icon">
+                <img src="../res/image/Navigations/Icon.svg">
+            </div>
         </div>
         <!-- main_profile -->
         <div id="Profile">
-            <img src="/res/img/Navigations/Create.svg" class="Create">
-            <img src="/res/img/Navigations/apps.svg" class="Apps">
-            <img src="/res/img/Navigations/notifications.svg" class="Notifications">
-            <img src="/res/img/Navigations/Profile-pic.svg" class="Profile">
+            <img src="../res/image/Navigations/Create.svg" class="Create">
+            <img src="../res/image/Navigations/apps.svg" class="Apps">
+            <img src="../res/image/Navigations/notifications.svg" class="Notifications">
+            <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
 
-    <nav class="Top-menu">
+    <div class="chips">
+        <div class = "chips_item chips__item--selected">
         <ul class="Item">
             <li>전체</li>
             <li>게임</li>
@@ -50,9 +82,11 @@
             <li>반려동물</li>
             <li>감상한 동영상</li>
             <li>새로운 맞춤 동영상</li>
-            <div class="Icon"><img src="/res/Top-Menu/leftBottom.svg"><div/>
+            <div class="Icon"><img src="/res/Top-Menu/leftBottom.svg"></div>
         </ul>
-    </nav>
+        </div>
+    </div>
+     
     <!-- side_bar -->
     <aside class="Sidebar">
         <!-- Sidebar_mini 메뉴 버튼 클릭으로 사이드 바 닫혔을 때 뜨는 미니버전 -->
@@ -149,21 +183,33 @@
         <article>
             <div>
                 <img src="/res/img/Thumbnail/Images.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-1.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-2.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-3.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
             </div>
             <div>
                 <img src="/res/img/Thumbnail/Images-7.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-8.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-9.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                 <img src="/res/img/Thumbnail/Images-13.svg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
             </div>
             <div>
                 <img src="/res/img/Thumbnail/Images-1.svg" alt="">
+
                 <img src="/res/img/Thumbnail/Images-14.svg" alt="">
+
                 <img src="/res/img/Thumbnail/Images-15.svg" alt="">
+
                 <img src="/res/img/Thumbnail/Images-16.svg" alt="">
+
             </div>
         </article>
     </section>
@@ -171,4 +217,5 @@
     
 </body>
 <script src="/js/index.js"></script>
-</html>
+<script src="/js/youtubMainpage.js"></script>
+</html> 

@@ -1,10 +1,40 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+:root {
+    /* Color */
+    --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color:  #045fd4;
+    --red-color:    #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+    --padding:12px;
+    --avatar-size:36px;
+
+    --font-large:18px;
+    --font-medium:14px;
+    --font-small:12px;
+    --font-micro:10px;
+
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+    </style>
 </head>
 <link rel="stylesheet" href="/css/Channelstyle.css">
 <!-- common-css -->
@@ -12,31 +42,174 @@
 <link rel="stylesheet" href="/css/Sidebar.css">
 
 <body>
-    <!-- Logo & hamburger menu -->
+    <!-- Navigation -->
     <header class="Navigations">
-        <div class="Yt-button">
-            <div class="icon"><img src="/res/image/Navigations/hamburger.svg" alt=""></div>
-            <a href="https://www.youtube.com/" class="button"><img src="/res/image/Navigations/Logo.svg" alt=""></a>
-
+        <!-- logo & Menu -->
+        <div class="Yt-Button">
+            <img src="../res/image/Navigations/hamburger.svg" class="icon">
+            <a href="/html/first_page.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
         </div>
-        <div id="SearchBox">
-            <div class="SearchBoxArea"><img src="/res/image/Navigations/SearchBox.svg" alt=""></div>
+        <!-- main_search_box -->
+        <div class="center">
+            <div class="Search">
+                <input class="SearchBox" type="text" placeholder="Search">
+            </div>
+            <button class="SearchBox-Button">
+                <img src="../res/image/Navigations/SearchBox-Button.svg">
+            </button>
+            <div class="Icon">
+                <img src="../res/image/Navigations/Icon.svg">
+            </div>
         </div>
-        <!-- Seach-box -->
-
-        <!--  -->
+        <!-- main_profile -->
         <div id="Profile">
-            <a href="#"><img src="/res/image/Navigations/Create.svg" alt=""></a>
-            <a href="#"><img src="/res/image/Navigations/apps.svg" alt="" class="apps"></a>
-            <a href="#"><img src="/res/image/Navigations/notifications.svg" alt="" class="notifications"></a>
-            <a href="#"><img src="/res/image/Navigations/Profile-pic.svg" alt=""></a>
+            <img src="../res/image/Navigations/Create.svg" class="Create">
+            <img src="../res/image/Navigations/apps.svg" class="Apps">
+            <img src="../res/image/Navigations/notifications.svg" class="Notifications">
+            <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
-
-    <div class="Container">
+    
+    
         <!-- side_bar -->
         <aside class="Sidebar">
-            <!-- top -->
+            <!-- Sidebar_mini 메뉴 버튼 클릭으로 사이드 바 닫혔을 때 뜨는 미니버전 -->
+            <div class="Sidebar_Mini">
+                <li class="Home"><img src="/res/image/Sidebar/home-fill.svg" >Home</li>
+                <li class="Explore"><img src="/res/image/Sidebar/explore-fill.svg" >Explore</li>
+                <li class="Subscription"><img src="/res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+                <li class="Library"><img src="/res/image/Sidebar/library-fill.svg">Library</li>
+                <li class="History"><img src="/res/image/Sidebar/history-fill.svg">History</li>
+                <li class="YourVideo"><img src="/res/image/Sidebar/yourVideos.svg">Your Videos</li>
+            </div>
+    
+            <!-- Sidebar_Large 메뉴 버튼 클릭시 or 화면 클 때 뜨는 사이드바 -->
+            <div class="Sidebar_Large">
+                <!-- Top -->    
+                <div class="Top">
+                    <ul>
+                        <li class="Home"><img src="/res/image/Sidebar/home-fill.svg" >Home</li>
+                        <li class="Explore"><img src="/res/image/Sidebar/explore-fill.svg" >Explore</li>
+                        <li class="Subscription"><img src="/res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+                    </ul>
+                </div>
+                <!-- Top2 -->
+                <div class="Top2">
+                    <ul>
+                        <li class="Library"><img src="/res/image/Sidebar/library-fill.svg">Library</li>
+                        <li class="History"><img src="/res/image/Sidebar/history-fill.svg">History</li>
+                        <li class="YourVideo"><img src="/res/image/Sidebar/yourVideos.svg">Your Videos</li>
+                        <li class="Liked_Videos"><img src="/res/image/Sidebar/liked-fill.svg">Liked Videos</li>
+                        <li class="Show_More"><img src="/res/image/Sidebar/arrowBottom.svg">Show More</li>
+                    </ul>
+                </div>
+    
+                <!-- subscriptions -->
+                <div class="Sub">
+                    <div>SUBSCRIPTIONS</div>
+                    <ul>
+                        <li><img src="/res/img/Sidebar/Icon.svg">James Gouse</li>
+                        <li><img src="/res/img/Sidebar/Icon-1.svg">alan Cooper</li>
+                        <li><img src="/res/img/Sidebar/Icon-2.svg">Marcus Levin</li>
+                        <li><img src="/res/img/Sidebar/Icon-3.svg">Alexis Sears</li>
+                        <li><img src="/res/img/Sidebar/Icon-4.svg">Jesica Lambert</li>
+                        <li><img src="/res/img/Sidebar/Icon-5.svg">Anna White</li>
+                        <li><img src="/res/img/Sidebar/User-Avatar.svg">Skylar Dias</li>
+                        <li class="Show_More"><img src="/res/image/Sidebar/arrowBottom.svg">Show 13 More</li>
+                    </ul>
+                </div>
+    
+                <div class="More_From">
+                    <div>MORE FROM YOUTUBE</div>
+                    <ul>
+                        <li><img src="/res/image/Sidebar/premium.svg">Youtube Premium</li>
+                        <li><img src="/res/image/Sidebar/gaming.svg">Gaming</li>
+                        <li><img src="/res/image/Sidebar/live.svg">Live</li>
+                        <li><img src="/res/image/Sidebar/sports.svg">Sports</li>
+                    </ul>
+                </div>
+    
+                <div class="Bottom">
+                    <ul>
+                        <li>Settings</li>
+                        <li>Report history</li>
+                        <li>Help</li>
+                        <li>Send feedback</li>
+                    </ul>
+                </div>
+    
+                <div class="Footer">
+                    <ul>
+                        <li>About</li>
+                        <li>Press</li>
+                        <li>Copyright</li>
+                        <li>Contact us</li>
+                        <li>Creators</li>
+                        <li>Advertise</li>
+                        <li>Developers</li>
+                    </ul>
+                    <ul>
+                        <li>Terms</li>
+                        <li>Privacy</li>
+                        <li>Policy & Safety</li>
+                        <li>How Youtube works</li>
+                        <li>Test New features</li>
+                    </ul>
+                    <ul>
+                        <li>© 2021 Google LLC</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <section class="Channel">
+            <!-- cover-img -->
+            <div class="Channel-Cover">
+                <img src="/res/image/Channel-Cover.svg" alt="">
+            </div>
+
+            <!-- title & subscribes-btn -->
+            <div class="Channel-Title">
+                <div class="channel-profile">
+                    <img src="/res/image/Channel/Channel/Profile.svg" alt="">
+                </div>
+                <div class="Chennel-Subscribes">
+                    <!-- <img src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt=""> -->
+                    <button class="btn" id="btn" type="button" style="padding:0px; margin:0px;"><img class="img_btn" src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt=""></button>
+                </div>
+            </div>
+
+            <!-- toolbar -->
+            <div class="Channel-Toolbar">
+                <div class="toolbars">
+                    <img src="/res/image/Channel/Toolbars.svg" alt="">
+                </div>
+                <div class="toolbars-search">
+                    <img src="/res/image/Channel/Search.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 이전에 있던 코드인데 지워도 될거같은데 혹시 몰라서 남겨 놓음 -->
+    <div class="Container">
+         <!--side_bar -->
+        <aside class="Sidebar">
+             top 
             <div class="Top">
                 <li>
                     <ul><a href="#" class="ul"><img src="/res/image/Sidebar/home-fill.svg" alt=""> Home</a></ul>
@@ -84,7 +257,7 @@
         </aside>
 
 
-        <nav class="Channel">
+        <section class="Channel">
             <!-- cover-img -->
             <div class="Channel-Cover">
                 <img src="/res/image/Channel-Cover.svg" alt="">
@@ -109,7 +282,7 @@
                     <img src="/res/image/Channel/Search.svg" alt="">
                 </div>
             </div>
-        </nav>
+        </section>
 
         <section>
             <article>
@@ -120,5 +293,5 @@
         </section>
     </div>
 </body>
-
+<script src =''></script>
 </html>
