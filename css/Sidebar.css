@@ -3,7 +3,7 @@
 body{
   background-color: black;
 }
-
+ /* 사이드바 전체 */
 
  
  .Sidebar_Mini, .Sidebar_Large{
@@ -107,6 +107,10 @@ body{
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
     }
+    .Top-menu{
+      position: fixed;
+      left: 70px;
+    }
     body.showSidebar:before {
       content: '';
       background-color: rgba(0, 0, 0, 0.5); /* 어두운 블랙색상 */
@@ -124,6 +128,10 @@ body{
       transform: translateX(0%);
       z-index: 10;
     }
+    body.showSidebar .Top-menu{
+      position: fixed;
+      left: 70px;
+    }
     
   }
   
@@ -132,8 +140,17 @@ body{
     .sidebar {
       display: block;
     }
+    .Top-menu{
+      position: fixed;
+      left: 240px;
+    }
     body.hideSidebar .Sidebar_Large {
       display: none;
+    }
+
+    body.hideSidebar .Top-menu{
+      position: fixed;
+      left: 70px;
     }
 
   }

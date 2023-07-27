@@ -3,7 +3,6 @@
 .Top-menu {
     position: fixed;
     top : 56px;
-    left: 70px;
     display: flex;
     width: 100%;
 
@@ -29,7 +28,7 @@
     background-color: #6b6b6b;
 }
 
-/* 탑메뉴 화살표 아이콘 */
+/* 탑메뉴 우측 화살표 아이콘 */
 .Item > .Icon {
     width: 30px;
     height: 30px;
