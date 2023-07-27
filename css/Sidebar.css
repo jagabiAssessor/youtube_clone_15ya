@@ -7,7 +7,8 @@ body{
 
  
  .Sidebar_Mini, .Sidebar_Large{
-    position: relative;
+    position: fixed;
+    top : 56px;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
