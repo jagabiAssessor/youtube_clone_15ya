@@ -1,0 +1,47 @@
+/* 메인페이지 탑메뉴 */
+.chips_item {
+    position: fixed;
+    top: 56px;
+    display: flex;
+    width: 100%;
+    background: #313131;
+    z-index: 999;
+
+
+}
+
+.chips_item>.Item {
+    display: flex;
+    padding: 12px 12px 12px 24px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+/* li 요소의 글자 색상 변경 및 테두리 스타일 추가 */
+.chips_item .Item li {
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgb(61, 61, 61);
+    cursor: pointer;
+}
+
+.chips_item .Item :hover {
+    background-color: #6b6b6b;
+}
+
+/* 탑메뉴 우측 화살표 아이콘 */
+.Item>.Icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Itme>.Icon>img {
+    width: 20px;
+    height: 20px;
+}
