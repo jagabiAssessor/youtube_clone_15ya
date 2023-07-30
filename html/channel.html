@@ -1,0 +1,513 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:root {
+    /* Color */
+    --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color:  #045fd4;
+    --red-color:    #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+    --padding:12px;
+    --avatar-size:36px;
+
+    --font-large:18px;
+    --font-medium:14px;
+    --font-small:12px;
+    --font-micro:10px;
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+.toolbars > ul > li {
+    display: inline-block;
+}
+
+.youtubelist > li {
+        display: inline-block;
+        vertical-align: top;
+        width: 18%
+}
+
+.youtubelist > li h3 {font-size: 12px; color: #000; font-weight: 500;}
+.youtubelist > li p {font-size: 12px; color:#999; font-weight: 400;}
+
+    </style>
+    </head>
+
+
+<link rel="stylesheet" href="/css/Channelstyle.css">
+<!-- common-css -->
+<link rel="stylesheet" href="/css/Navstyle.css">
+<link rel="stylesheet" href="/css/Sidebar.css">
+
+<body>
+    <img src = "res/image/Channel/image2.svg">
+
+    <!-- Navigation -->
+    <header class="Navigations">
+        <!-- logo & Menu -->
+        <div class="Yt-Button">
+            <img src="../res/image/Navigations/hamburger.svg" class="icon">
+            <a href="/html/first_page.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
+        </div>
+        <!-- main_search_box -->
+        <div class="center">
+            <div class="Search">
+                <input class="SearchBox" type="text" placeholder="Search">
+            </div>
+            <button class="SearchBox-Button">
+                <img src="../res/image/Navigations/SearchBox-Button.svg">
+            </button>
+            <div class="Icon">
+                <img src="../res/image/Navigations/Icon.svg">
+            </div>
+        </div>
+        <!-- main_profile -->
+        <div id="Profile">
+            <img src="../res/image/Navigations/Create.svg" class="Create">
+            <img src="../res/image/Navigations/apps.svg" class="Apps">
+            <img src="../res/image/Navigations/notifications.svg" class="Notifications">
+            <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
+        </div>
+    </header>
+    
+    
+        <!-- side_bar -->
+        <aside class="Sidebar">
+            <!-- Sidebar_mini 메뉴 버튼 클릭으로 사이드 바 닫혔을 때 뜨는 미니버전 -->
+            <div class="Sidebar_Mini">
+                <li class="Home"><img src="/res/image/Sidebar/home-fill.svg" >Home</li>
+                <li class="Explore"><img src="/res/image/Sidebar/explore-fill.svg" >Explore</li>
+                <li class="Subscription"><img src="/res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+                <li class="Library"><img src="/res/image/Sidebar/library-fill.svg">Library</li>
+                <li class="History"><img src="/res/image/Sidebar/history-fill.svg">History</li>
+                <li class="YourVideo"><img src="/res/image/Sidebar/yourVideos.svg">Your Videos</li>
+            </div>
+    
+            <!-- Sidebar_Large 메뉴 버튼 클릭시 or 화면 클 때 뜨는 사이드바 -->
+            <div class="Sidebar_Large">
+                <!--Sidebar Top -->    
+                <div class="Top">
+                    <ul>
+                        <li class="Home"><img src="/res/image/Sidebar/home-fill.svg" >Home</li>
+                        <li class="Explore"><img src="/res/image/Sidebar/explore-fill.svg" >Explore</li>
+                        <li class="Subscription"><img src="/res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+                    </ul>
+                </div>
+                <!-- Sidebar Top2 -->
+                <div class="Top2">
+                    <ul>
+                        <li class="Library"><img src="/res/image/Sidebar/library-fill.svg">Library</li>
+                        <li class="History"><img src="/res/image/Sidebar/history-fill.svg">History</li>
+                        <li class="YourVideo"><img src="/res/image/Sidebar/yourVideos.svg">Your Videos</li>
+                        <li class="Liked_Videos"><img src="/res/image/Sidebar/liked-fill.svg">Liked Videos</li>
+                        <li class="Show_More"><img src="/res/image/Sidebar/arrowBottom.svg">Show More</li>
+                    </ul>
+                </div>
+    
+                <!-- Sidebar Subscriptions -->
+                <div class="Sub">
+                    <div>SUBSCRIPTIONS</div>
+                    <ul>
+                        <li><img src="/res/img/Sidebar/Icon.svg">James Gouse</li>
+                        <li><img src="/res/img/Sidebar/Icon-1.svg">alan Cooper</li>
+                        <li><img src="/res/img/Sidebar/Icon-2.svg">Marcus Levin</li>
+                        <li><img src="/res/img/Sidebar/Icon-3.svg">Alexis Sears</li>
+                        <li><img src="/res/img/Sidebar/Icon-4.svg">Jesica Lambert</li>
+                        <li><img src="/res/img/Sidebar/Icon-5.svg">Anna White</li>
+                        <li><img src="/res/img/Sidebar/User-Avatar.svg">Skylar Dias</li>
+                        <li class="Show_More"><img src="/res/image/Sidebar/arrowBottom.svg">Show 13 More</li>
+                    </ul>
+                </div>
+                <!-- Sidebar More Form -->
+                <div class="More_From">
+                    <div>MORE FROM YOUTUBE</div>
+                    <ul>
+                        <li><img src="/res/image/Sidebar/premium.svg">Youtube Premium</li>
+                        <li><img src="/res/image/Sidebar/gaming.svg">Gaming</li>
+                        <li><img src="/res/image/Sidebar/live.svg">Live</li>
+                        <li><img src="/res/image/Sidebar/sports.svg">Sports</li>
+                    </ul>
+                </div>
+                <!-- Sidebar Bottom -->
+                <div class="Bottom">
+                    <ul>
+                        <li>Settings</li>
+                        <li>Report history</li>
+                        <li>Help</li>
+                        <li>Send feedback</li>
+                    </ul>
+                </div>
+
+
+                <!-- footer  -->
+                <div class="Footer">
+                    <ul>
+                        <li>About</li>
+                        <li>Press</li>
+                        <li>Copyright</li>
+                        <li>Contact us</li>
+                        <li>Creators</li>
+                        <li>Advertise</li>
+                        <li>Developers</li>
+                    </ul>
+                    <ul>
+                        <li>Terms</li>
+                        <li>Privacy</li>
+                        <li>Policy & Safety</li>
+                        <li>How Youtube works</li>
+                        <li>Test New features</li>
+                    </ul>
+                    <ul>
+                        <li>© 2021 Google LLC</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+
+        <!-- Channel-->
+        <section class="Channel">
+            <!-- cover-img -->
+            <div class="Channel-Cover">
+                <img src="/res/image/Channel-Cover.svg" alt="">
+            </div>
+
+            <!-- Channel title & subscribes-btn -->
+            <div class="Channel-Title">
+                <div class="channel-profile">
+                    <img src="/res/image/Channel/Channel/Profile.svg" alt="">
+                </div>
+                <div class="Chennel-Subscribes">
+                    <!-- <img src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt=""> -->
+                    <button class="btn" id="btn" type="button" style="padding:0px; margin:0px;"><img class="img_btn" src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt=""></button>
+                </div>
+            </div>
+            
+            <!-- Channel Small Video -->
+            <section id = "player" class = "style-scope ytd-watch-flex">
+                <!-- <section class="player"> -->
+                    <video controls src = ""></video>     <!--  비디오 정보 넣으면 됨 -->
+                    <h4>Blind Woodturner: Turning passion into fine art</h4>
+                    <p>576,969 views . 3 weeks ago</p>
+                    <p style="font-size: 14px;">Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
+            </section>
+
+            <!-- toolbar -->
+            <div class="Channel-Toolbar">
+                <div class="toolbars">
+                    <img src="/res/image/Channel/Toolbars.svg" >
+                </div>
+                <ul>
+                    <li>HOME</li>
+                    <li>VIDEOS</li>
+                    <li>PLAYLISTS</li>
+                    <li>COMMUNITY</li>
+                    <li>CHANNNELS</li>
+                    <li>ABOUT</li>
+                </ul>
+                <div class="toolbars-search">
+                    <img src="/res/image/Channel/Search.svg">
+                    <img sre="/res/image/Channel/arrow.svg">
+                </div>
+            </div>
+        </section>
+
+            <!-- Channel Play-List videos -->
+            <section>
+                <article>
+                    <div class = "gallerybox">
+                        <p>Search on`21<img src="/res/image/Channel/Play-Lİst.svg"></p>
+                        <ul class = "youtubelist">
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-4.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-1.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon-1.svg">Alen Coper</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-2.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon-2.svg">Marcus Levine</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-3.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon-3.svg">Alexis Sears</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-7.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon-4.svg">Jasica Lambert</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Search on`21<img src="/res/image/Channel/Play-Lİst.svg"></p>
+                        <ul class = "youtubelist">
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-8.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon-3.svg">Anna White</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-9.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/User-Avatar.svg">Skylar Dias</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-10.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-1.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-5.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Search on`21<img src="/res/image/Channel/Play-Lİst.svg"></p>
+                        <ul class = "youtubelist">
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-2.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-3.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-7.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-8.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a class = "screen" href = "#" target="_blank">
+                                        <img src="/res/img/Thumbnail/Images-9.svg">
+                                        <img class = "on" src="">
+                                    </a>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h3>
+                                    <p><img src="/res/img/Sidebar/Icon.svg">James Gouse</p>
+                                    <p>15k Views . 1week ago</p>
+                                </div>
+                            </li>
+                        </ul>      
+                    </div>   
+                </article>    
+            </section>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/youtubMainpage.js"></script>
+</html>
+    
+
+
+
+
+
+
+    <!-- 이전에 있던 코드인데 지워도 될거같은데 혹시 몰라서 남겨 놓음 -->
+    <div class="Container">
+         <!--side_bar -->
+        <aside class="Sidebar">
+             top 
+            <div class="Top">
+                <li>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/home-fill.svg" alt=""> Home</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/explore-fill.svg" alt=""> Explore</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/subscriptions-fill.svg" alt="">
+                            Subscriptions</a></ul>
+                </li>
+            </div>
+            <!-- top2 -->
+            <div class="Top2">
+                <li>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/library-fill.svg" alt=""> Library</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/history-fill.svg" alt=""> History</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/yourVideos.svg" alt=""> Your Videos</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/watchLater.svg" alt=""> Watch Later</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/liked-fill.svg" alt=""> Liked Videos</a>
+                    </ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Show More</a></ul>
+                </li>
+            </div>
+            <div class="Subscribers">
+                <li>
+                    <!-- subscriptions -->
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/" alt=""> James Gouse</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Alan Cooper</a>
+                    </ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Marcus Levin</a>
+                    </ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Alexis Sears</a>
+                    </ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Jesica Lambert</a>
+                    </ul>
+            </div>
+            <!-- more_form -->
+            <div class="More-From">
+                <li>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Youtube Premium</a>
+                    </ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Gaming</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Live</a></ul>
+                    <ul><a href="#" class="ul"><img src="/res/image/Sidebar/arrowBottom.svg" alt=""> Sports</a></ul>
+                    <ul>Sports</ul>
+                </li>
+            </div>
+        </aside>
+
+
+        <section class="Channel">
+            <!-- cover-img -->
+            <div class="Channel-Cover">
+                <img src="/res/image/Channel-Cover.svg" alt="">
+            </div>
+
+            <!-- title & subscribes-btn -->
+            <div class="Channel-Title">
+                <div class="channel-profile">
+                    <img src="/res/image/Channel/Channel/Profile.svg" alt="">
+                </div>
+                <div class="Chennel-Subscribes">
+                    <img src="/res/image/Channel/Channel/Subscribes-Btn.svg" alt="">
+                </div>
+            </div>
+
+            <!-- toolbar -->
+            <div class="Channel-Toolbar">
+                <div class="toolbars">
+                    <img src="/res/image/Channel/Toolbars.svg" alt="">
+                </div>
+                <div class="toolbars-search">
+                    <img src="/res/image/Channel/Search.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <article>
+                <div class="Smal-Video">
+                    <img src="/res/img/Thumbnail/Images.svg" alt="">
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+<script src =''></script>
+</html>
