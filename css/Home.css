@@ -26,69 +26,57 @@ li {
     list-style: none;
 }
 
-/* .gallerybox {} */
-.youtubelist {
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0;
+section{
+    background-color: black;
 }
-
-.youtubelist>li {
-    display: inline-block;
-    vertical-align: top;
-    width: 25%
-}
-
-.youtubelist>li>div {
-    width: auto;
-    padding: 15px;
-}
-
-.youtubelist>li h3 {
-    font-size: 12px;
-    color: #000;
-    font-weight: 500;
-}
-
-.youtubelist>li p {
-    font-size: 12px;
-    color: #999;
-    font-weight: 400;
-}
-
 
 /* 컨테이너 설정 */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 8px;
-    padding: 16px;
+    grid-gap: 15px;
     overflow: hidden;
-    margin-left: 240px;
     padding-top: 110px;
+    z-index: 3;
 }
 
 /* 영상 컨테이너 설정 */
 .video-container {
+    display: flex;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     margin-top: 20px;
     /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
-    display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+.video-info-container{
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+}
+.video-info {
+    margin-left: 10px;
+    overflow-x: hidden;
+    width: 100%;
 
+}
+.view-date{
+    display: flex;
+    gap: 5px;
+}
 /* 비디오 제목 설정 */
 .video-title {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 4px;
     color: white;
+    overflow-wrap: break-word;
+    overflow: hidden;
 }
 
 /* 채널 및 조회수에 대한 스타일 */
@@ -100,4 +88,51 @@ li {
     margin-bottom: 4px;
 }
 
+.video-container video,
+.thumbnail {
+    width: 100%;
+    max-width: 500px;
+    max-height: 310px;
+
+}
+.thumbnail{
+    border-radius: 10px;
+}
+.channel-profile{
+    border-radius: 100%;
+}
+
 /* channel-title-container 설정 (Flexbox 적용) */
+
+
+/* 반응형 스타일 적용 */
+@media (min-width: 1920px) {
+  .video-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 1919px) {
+  .video-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  .video-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
