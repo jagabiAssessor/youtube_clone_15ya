@@ -128,16 +128,24 @@ function displayVideoThumbnail(videoInfo) {
     
     // 우측 동영상 리스트 코드
     // 우측 동영상 이름
-    const titleText = document.createTextNode(videoInfo.video_title);   // textContent에는 br이 적용이 안됨.
+    const titleText = document.createElement('span');
+    titleText.className = 'Video-Title-Text'; // 클래스 추가
+    titleText.textContent = videoInfo.video_title;
     videoTitle.appendChild(titleText);
     videoTitle.appendChild(document.createElement('br'));
+
     // 중간중간에 br 들어감
     // 우측 동영상 채널명
-    const channelText = document.createTextNode(videoInfo.video_channel);
+    const channelText = document.createElement('span');
+    channelText.className = 'Video-Channel-Text'; // 클래스 추가
+    channelText.textContent = videoInfo.video_channel;
     videoTitle.appendChild(channelText);
     videoTitle.appendChild(document.createElement('br'));
+
     // 우측 동영상 날짜
-    const dateText = document.createTextNode(videoInfo.upload_date);
+    const dateText = document.createElement('span');
+    dateText.className = 'Video-Date-Text'; // 클래스 추가
+    dateText.textContent = videoInfo.upload_date;
     videoTitle.appendChild(dateText);
 
     videoContainer.appendChild(videoTitle);
