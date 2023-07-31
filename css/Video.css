@@ -1,7 +1,9 @@
 /* Video Page*/
 /*  Navigation은 공통이라 이곳에 안적었습니다.
-그래서 요소가 Primary와 Secondary가 있는데 작업은 Primary까지 하였습니다. */
-/* Secondary까지 완료  VideoChannel 및 comments 작업해야 합니다.*/
+그래서 요소가 Primary와 Secondary가 있는데 작업은 Primary까지 하였습니다.
+Secondary까지 완료  
+VideoChannel 및 comments 작업 완료 */
+
 
 * {
     box-sizing: border-box;
@@ -10,17 +12,19 @@
 .Container {
     display: flex;
     width: 100%;
+    height: 100%;
+    background: #181818;
 }
+
 
 /* Primary */
 
 /* 전체 */
-/* 밑단 Secondary와 안 맞아서 height 40px 늘림*/
 .Primary {
+    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
     display: flex;
     width: 70%;
     height: 1200px;
-    /* padding: 24px 0px 0px 24px; */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -55,7 +59,7 @@
 .Video-Desc {
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 150px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -72,25 +76,41 @@
 
 /* 비디오 플레이어 설명 채널 전체 */
 .VideoChannel {
+    width: 90%;
     display: flex;
     margin-left: 50px;
+    margin-bottom: 20px;
     align-items: center;
     float: left;
 }
 
-/* 비디오 플레이어 설명 채널명 */
+/* 비디오 플레이어 설명 채널명, 아바타, 알림버튼 */
 .VideoChannel .VideoChannelTitle {
+    width: 30%;
+    display: flex;
     font-size: 24px;
     color: #FFF;
     margin-right: 10px;
+    align-items: center;
+}
+
+.VideoChannel .VideoChannelTitle button {
+    margin-left: 10px;
+}
+
+
+.VideoChannel .DescButtonList {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* 비디오 플레이어 설명 채널 버튼 */
 .VideoChannel .DescButton {
-    display: flex;
+    margin-left: 5px;
     padding: 8px 12px;
-    flex-direction: column;
-    align-items: flex-end;
     gap: 10px;
     border-radius: 32px;
     border: 0.3px solid var(--gray-color, #AAA);
@@ -101,14 +121,27 @@ li {
     list-style: none;
 }
 
-
 /* 비디오 플레이어 채널 아래 설명*/
 .Video-Desc .Description {
+    margin-left: 50px;
+    width: 90%;
+    height: 45%;
     display: flex;
+    padding: 10px;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
+    background-color: #AAA;
     gap: 10px;
+}
+
+.Video-Desc .Description p {
+    font-size: 15px;
+}
+
+.Video-Desc .Border {
+    margin-top: 10px;
+    border-bottom: 1px solid #303030;
 }
 
 .VideoPlayer .Video-Desc .Border{
@@ -117,131 +150,77 @@ li {
 }
 
 
+/* Comment 댓글 쓰기 부분 */
+
+.Comment {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.Comment textarea {
+    width: 90%;
+    min-height: 60px;
+    padding: 10px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.Comment .ButtonArea {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+    justify-content: flex-end;
+}
+
+
+.Comment .ButtonArea button {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    border-radius: 32px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+    color: #FFF;
+}
+
 /* Comments 댓글 쓰기 부분 아래 댓글들  */
 /* Comments 전체 */
-.Comments{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
 
-.Comments .Comment {
+.comment {
     display: flex;
-    width: 640px;
-    padding-bottom: 0px;
-    align-items: flex-start;
-}
-.Comments .Comment .Profile-Pic{
-    display: flex;
-    padding-right: 0px;
-    align-items: flex-start;
-    gap: 10px;
-}
-.Comments .Comment .Profile-pic .User-Avatar{
-    display: flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
+    margin-left: 50px;
     align-items: center;
 }
-.Comments .Comment .Comment{
-    display: flex;
-    width: 544px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-}
-.Comments .Comment .Comment .Header{
-    display: flex;
-    padding-bottom: 0px;
-    align-items: flex-start;
-    align-self: stretch;
-}
-.Comments .Comment .Comment .Text{
-    color: var(--white-color, #FFF);
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-}
-.Comments .Comment .Comment .Toolbar{
-    display: flex;
-    padding-top: 4px;
-    align-items: flex-start;
-    align-self: stretch;
+
+.comment img {
+    margin-bottom: 10px;
 }
 
-
-/* Comment 댓글 쓰기 부분 */
-.Comment{
+.Comments .comment-text {
     display: flex;
-    padding: 24px 0px 32px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-}
-.Comment .Short-By{
-    width: 226px;
-    height: 24px;
-}
-.Comment .Short-By .Count{
-    display: inline-flex;
-    padding: 1px 32px 1px 0px;
-    align-items: flex-start;
-}
-.Comment .Short-By .Short-By{
-    width: 226px;
-    height: 24px;
-}
-.Comment .Comment{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-.Comment .Comment .Profile-Pic{
-    display: flex;
-    padding-right: 0px;
-    align-items: flex-start;
-    gap: 10px;
-}
-.Comment .Comment .Profile-Pic .User-Avatar{
-    display: flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-}
-.Comment .Comment .Comment-Area{
-    display: flex;
-    width: 584px;
-    padding: 7px 0px 8px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-}
-.Comment .Comment .Comment-Area .Border{
-    height: 1px;
-    align-self: stretch;
-    background: var(--border-color, #303030);
-}
-.Comment .Comment .Comment-Area .Add_A_Public_Comment{
-    color: var(--gray-color, #AAA);
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
+    width: 90%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #FFF;
 }
 
 
 /* 우측 동영상 전체 */
 .Secondary {
-    margin-top: 40px;
+    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
     display: flex;
     width: 30%;
-    height: 1160px;
-    justify-content: flex-start;
+    height: 1200px;
+    flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     background: #181818;
 }
