@@ -33,14 +33,14 @@ function displayVideoThumbnail(videoInfo) {
     imageElem.className = "thumbnail"
     imageElem.src = videoInfo.image_link;
     imageElem.alt = "Thumbnail for " + videoInfo.video_title;
-    imageElem.width = 276;
-    imageElem.height = 155;
+    // imageElem.width = 276;
+    // imageElem.height = 155;
     videoContainer.appendChild(imageElem);
     // 비디오 요소 만들기
     const videoElem = document.createElement('video');
     videoElem.controls = true;
-    videoElem.width = 276;  // 사이즈 피그마 참고
-    videoElem.height = 155;
+    // videoElem.width = 276;  // 사이즈 피그마 참고
+    // videoElem.height = 155;
     videoElem.style.display = 'none';  // 초기에는 비디오 숨김
     // source 요소 생성해서 sourceElem에 추가
     const sourceElem = document.createElement('source');
@@ -58,7 +58,7 @@ function displayVideoThumbnail(videoInfo) {
     channelProfile.src = videoInfo.channel_profile;
     channelProfile.width = 36;
     channelProfile.height = 36;
-    videoContainer.appendChild(channelProfile);
+
 
     const videoTitle = document.createElement("p");
     videoTitle.className = "video-title";
@@ -68,16 +68,17 @@ function displayVideoThumbnail(videoInfo) {
     videoChannel.className = "video-channel";
     videoChannel.textContent = videoInfo.video_channel;
 
-    const channelTitleContainer = document.createElement("div");
-    channelTitleContainer.className = "video-info";
-    
-    channelTitleContainer.appendChild(videoTitle);
-    channelTitleContainer.appendChild(videoChannel);
-    videoContainer.appendChild(channelTitleContainer);
+    const videoInfoContainer = document.createElement("div");
+    videoInfoContainer.className = "video-info-container";
+    videoInfoContainer.appendChild(channelProfile);
+    const videoInfomation = document.createElement("div");
+    videoInfomation.className = "video-info";
+    videoInfomation.appendChild(videoTitle);
+    videoInfomation.appendChild(videoChannel);
 
     const videoViews = document.createElement("p");
     videoViews.className = "video-views";
-    videoViews.textContent = "조회수 " + Math.round(videoInfo.views / 10000) + "만";
+    videoViews.textContent = "조회수 " + Math.round(videoInfo.views / 10000) + "만회 •";
   
     const uploadDate = document.createElement("p");
     uploadDate.className = "upload-date";
@@ -87,7 +88,11 @@ function displayVideoThumbnail(videoInfo) {
     viewsUploadDateContainer.className = "view-date";
     viewsUploadDateContainer.appendChild(videoViews);
     viewsUploadDateContainer.appendChild(uploadDate);
-    videoContainer.appendChild(viewsUploadDateContainer);
+    videoInfomation.appendChild(viewsUploadDateContainer);
+    videoInfoContainer.appendChild(videoInfomation);
+    videoContainer.appendChild(videoInfoContainer);
+
+
     // 마우스 호버 기능
     videoContainer.addEventListener('mouseover', () => {
         imageElem.style.display = 'none';
