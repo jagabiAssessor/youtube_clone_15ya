@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Page_3</title>
-    <link rel="stylesheet" href="./css/Video.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/Navstyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Video.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/Navstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="Navigations">
         <!-- logo & Menu -->
         <div class="Yt-Button">
-            <img src="./res/image/Navigations/hamburger.svg" class="icon">
-            <a href="/html/first_page.html" class="Button" ><img src="./res/image/Navigations/Logo.svg" ></a>
+            <img src="../res/image/Navigations/hamburger.svg" class="icon">
+            <a href="/html/first_page.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
         </div>
         <!-- main_search_box -->
         <div class="center">
@@ -23,18 +23,18 @@
                 <input class="SearchBox" type="text" placeholder="Search">
             </div>
             <button class="SearchBox-Button" onclick="fetchVideoAndInfo()">
-                <img src="./res/image/Navigations/SearchBox-Button.svg">
+                <img src="../res/image/Navigations/SearchBox-Button.svg">
             </button>
             <div class="Icon">
-                <img src="./res/image/Navigations/Icon.svg">
+                <img src="../res/image/Navigations/Icon.svg">
             </div>
         </div>
         <!-- main_profile -->
         <div id="Profile">
-            <img src="./res/image/Navigations/Create.svg" class="Create">
-            <img src="./res/image/Navigations/apps.svg" class="Apps">
-            <img src="./res/image/Navigations/notifications.svg" class="Notifications">
-            <img src="./res/image/Navigations/Profile-pic.svg" class="Profile">
+            <img src="../res/image/Navigations/Create.svg" class="Create">
+            <img src="../res/image/Navigations/apps.svg" class="Apps">
+            <img src="../res/image/Navigations/notifications.svg" class="Notifications">
+            <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
 
@@ -44,59 +44,75 @@
             <!-- Primary -->
             <div class="Primary">
                 <div class="PrimaryContent">
+                    <!-- 동영상 플레이어 부분 -->
                     <div class="VideoPlayer">
                         <video controls class="Youtube-Player"></video>
                     </div>
+                    <!-- 동영상 설명 부분 -->
                     <div class="Video-Desc">
                         <div class="Video-DescTitle">
                             <h1>유튜브 클론코딩 십오야아아아아아아아아아아아아아아아아아!!!</h1>
                         </div>
-                        <ul class="VideoChannel">
-                            <span><img src="./res/image/Video/profile-pic.svg" class="Profile"></span>
-                            <span class="VideoChannelTitle">채널 15ya</span>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/Navigations/notifications.svg">
-                                </button>
-                            </li>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/UesdSvg/liked17k.svg">
-                                </button>
-                            </li>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/UesdSvg/DisLiked.svg">
-                                </button>
-                            </li>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/UesdSvg/Share.svg">
-                                </button>
-                            </li>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/UesdSvg/Save.svg">
-                                </button>
-                            </li>
-                            <li>
-                                <button class="DescButton">
-                                    <img src="./res/image/UesdSvg/More.svg">
-                                </button>
-                            </li>
-                        </ul>
+                        <div class="VideoChannel">
+                            <span class="VideoChannelTitle">
+                                <span><img src="../res/image/Video/profile-pic.svg" class="Profile"></span>
+                                <span>채널 15ya</span>
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/Navigations/notifications.svg">
+                                    </button>
+                                </li>
+                            </span>
+                            <ul class="DescButtonList">
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/UesdSvg/liked17k.svg">
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/UesdSvg/DisLiked.svg">
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/UesdSvg/Share.svg">
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/UesdSvg/Save.svg">
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="DescButton">
+                                        <img src="../res/image/UesdSvg/More.svg">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="Description">
-
+                            <p>
+                                “이룰 수 없는 꿈을 꾸고,
+                                이루어질 수 없는 사랑을 하고,
+                                견딜 수 없는 고통을 견디며,
+                                싸워 이길 수 없는 적과 싸움을 하고,
+                                잡을 수 없는 저 하늘의 별을 잡자.”<br><br>
+                                뮤지컬 ‘맨 오브 라만차(Man of La Mancha)’ 중
+                            </p>
                         </div>
                         <div class="Border"></div>
                     </div>
-                </div>
-
-                    <div class="comment">
-                        <img src="./res/image/Video/Comment.svg" alt="">
+                    <!-- 댓글 부분 -->
+                    <div class="Comment">
+                        <textarea class="CommentInput" placeholder="댓글 추가..."></textarea>
+                        <div class="ButtonArea">
+                            <button class="DescButton" onclick="addComment()">댓글</button>
+                        </div>
                     </div>
-                    <div class="comments">
-                        <img src="./res/image/Video/Comment-1.svg" alt="">
+                    <!-- 댓글 리스트 -->
+                    <div class="Comments">
+                        <!-- 댓글이 여기에서 계속 생성됩니다. -->
                     </div>
                 </div>
             </div>
@@ -105,8 +121,8 @@
             <div class="Secondary">
                 <div class="Content">
                     <div class="Top-Menu">
-                        <img src="./res/image/Video/Top-Menu/Item.svg" alt="">
-                        <img src="./res/image/Video/Top-Menu/Item-1.svg" alt="">
+                        <img src="../res/image/Video/Top-Menu/Item.svg" alt="">
+                        <img src="../res/image/Video/Top-Menu/Item-1.svg" alt="">
                     </div>
                     <div class="Video-Grid">
                         <!-- 썸네일 나오는 영역 -->
@@ -116,5 +132,5 @@
         </section>
     </main>
 </body>
-<script src="./js/youtubeVideoPage.js"></script>
+<script src="../js/youtubeVideoPage.js"></script>
 </html>
