@@ -72,6 +72,15 @@ VideoChannel 및 comments 작업 완료 */
     font-size: 40px;
     color: #FFF;
     font-weight: bold;
+    color: var(--white-color, #FFF);
+    font-variant-numeric: stacked-fractions;
+    font-feature-settings: 'hlig' on, 'dlig' on;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.18px;
 }
 
 /* 비디오 플레이어 설명 채널 전체 */
@@ -82,6 +91,7 @@ VideoChannel 및 comments 작업 완료 */
     margin-bottom: 20px;
     align-items: center;
     float: left;
+    
 }
 
 /* 비디오 플레이어 설명 채널명, 아바타, 알림버튼 */
@@ -110,9 +120,36 @@ VideoChannel 및 comments 작업 완료 */
 /* 비디오 플레이어 설명 채널 버튼 */
 .VideoChannel .DescButton {
     margin-left: 5px;
-    padding: 8px 12px;
+    padding: 8px 30px;
     gap: 10px;
-    border-radius: 32px;
+    border-radius: 50px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+}
+
+.VideoChannel .ChannelName {
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.VideoChannel .DescButton_like {
+    margin-left: 5px;
+    padding: 2px 23px;
+    gap: 10px;
+    border-radius: 50px;
+    border: 0.3px solid var(--gray-color, #AAA);
+    background: var(--border-color, #303030);
+}
+
+.VideoChannel .DescButton_sub {
+    margin-left: 5px;
+    padding: 10px 18px;
+    gap: 10px;
+    border-radius: 50px;
     border: 0.3px solid var(--gray-color, #AAA);
     background: var(--border-color, #303030);
 }
@@ -131,12 +168,13 @@ li {
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #AAA;
+    background-color: rgb(39,39,39);
     gap: 10px;
 }
 
 .Video-Desc .Description p {
     font-size: 15px;
+    color: white;
 }
 
 .Video-Desc .Border {
@@ -158,16 +196,28 @@ li {
     font-family: Arial, sans-serif;
 }
 
-.Comment textarea {
+.Comment {
+    position: relative;
+  }
+  
+  .CommentInput {
     width: 90%;
-    min-height: 60px;
-    padding: 10px;
+    min-height: 40px;
+    padding: 0;
     margin-left: 50px;
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: transparent;
-    color: #FFF;
-}
+    border: none;
+    border-bottom: 1px solid ; /* 기본적으로 밑줄을 없애기 위해 투명하게 설정 */
+    resize: none;
+    color: #fff;
+    outline: none; /* 클릭 시 테두리 제거 */
+  }
+  
+  .CommentInput:focus {
+    border-bottom: 3px solid #fff; /* 클릭 시 밑줄 강조 스타일 적용 */
+  }
 
 .Comment .ButtonArea {
     display: flex;
@@ -258,9 +308,40 @@ li {
     color: #FFF;
 }
 
-/* 오른쪽 영상 */
-.Video-Container video {
-    margin-bottom: 15px;
-    border-radius: 5%;
+
+.Video-Title .Video-Title-Text{
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
 }
 
+.Video-Title .Video-Channel-Text{
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+}
+
+.Video-Title .Video-View {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+  }
+
+.Video-Title .Video-Date-Text {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    margin-left: 10px; /* 조회수와 업로드 날짜 사이 간격 조정 */
+  }
