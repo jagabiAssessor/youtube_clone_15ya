@@ -57,12 +57,14 @@ section{
     margin-top: 10px;
     display: flex;
     cursor: pointer;
-    overflow: hidden;
 }
 .video-info {
-    margin-left: 10px;
+    padding-left: 10px;
     overflow-x: hidden;
-    width: 100%;
+    width: calc(100% - 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 .view-date{
@@ -75,8 +77,9 @@ section{
     font-weight: bold;
     margin-bottom: 4px;
     color: white;
-    overflow-wrap: break-word;
+    word-break: break-all; 
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* 채널 및 조회수에 대한 스타일 */

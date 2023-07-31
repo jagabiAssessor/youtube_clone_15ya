@@ -40,7 +40,12 @@ body{
     font-size: 10px;
     line-height: 1.4rem;
     background: #313131;
+    cursor: pointer;
  }
+ .Sidebar_Mini li:hover{
+  border-radius: 10px;
+  background: rgb(65, 65, 65);
+}
  .Sidebar_Large{
     padding-left: 11px;
     padding-top: 6px;
@@ -119,6 +124,8 @@ body{
     }
     .video-grid{
       margin-left: 80px;
+      z-index: 5;
+      width: 100vw;
     }
 
     body.showSidebar:before {
@@ -132,6 +139,7 @@ body{
       z-index: 5;
     }
     body.showSidebar .Navigations {
+      width: 100vw;
       z-index: 10;
     }
     body.showSidebar .Sidebar_Large {
@@ -140,6 +148,7 @@ body{
     }
     body.showSidebar .chips_item{
       position: fixed;
+      width: 100vw;
       left: 70px;
     }
 
@@ -171,9 +180,11 @@ body{
     }
     .video-grid{
       margin-left: 250px;
+      
     }
     body.hideSidebar .Sidebar_Large {
       display: none;
+      z-index: 10;
     }
 
     body.hideSidebar .chips_item{
@@ -182,6 +193,7 @@ body{
     }
     body.hideSidebar .video-grid{
       margin-left: 80px;
+      z-index: 5;
     }
 
   }
