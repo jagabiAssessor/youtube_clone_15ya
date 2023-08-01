@@ -33,7 +33,8 @@ async function fetchVideoInfo(videoId) {
   
         // 검색어와 videoInfo.video_tag,video_title의 일치 여부를 비교하여, 일치하면 displayVideoThumbnail 함수 실행
         // 배열을 순회하며 키워드 검사
-        if (videoInfo.video_tag.some(tag => tag === keyword) || videoInfo.video_title.includes(keyword)) {
+        if (videoInfo.video_tag.some(tag => tag === keyword) || videoInfo.video_title.includes(keyword) 
+        || videoInfo.video_channel.includes(keyword)) {
             displayVideoThumbnail(videoInfo);
         }
       } else {
@@ -46,4 +47,10 @@ async function fetchVideoInfo(videoId) {
     };
   
     xhr.send();
+  }
+
+  function sendToVideoPage(videoInfo) {
+    // video_id 보내기
+    window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
+  
   }
