@@ -1,19 +1,56 @@
 // 비디오 페이지 검색창 기능 구현
 // 우측 썸네일 동영상 구현 완료
 // 댓글 기능 완료
-// tag값을 검색어로 id값으로 변환해서 동영상 불러오는 코드
 
+async function fetchVideoInfo(videoId, isMainVideo = false) {
+    const xhr = new XMLHttpRequest();
+    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+
+    xhr.open('GET', url, true);
+
+    xhr.onload = async function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+            const videoInfo = JSON.parse(xhr.responseText);
+
+            // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
+            const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
+            videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
+            videoInfo.subscribers = channelProfileUrl.subscribers; // 구독자 수 추가
+
+            displayVideoThumbnail(videoInfo);
+            if (isMainVideo) {
+                displayVideoInfo(videoInfo);
+            }
+        } else {
+            console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
+        }
+    };
+    xhr.onerror = function() {
+        console.error('네트워크 오류가 발생했습니다');
+    };
+    xhr.send();
+}
+
+//쿼리값으로 받은 id값으로 영상 정보 불러오기
+document.addEventListener("DOMContentLoaded", function() {
+    const receiveId = new URLSearchParams(window.location.search);
+    const videoId = receiveId.get("video_id");
+    if (videoId) {
+        fetchVideoInfo(videoId, true);
+    } else {
+        console.error("비디오 정보를 찾을 수 없습니다.");
+    }
+});
 
 const videoGrid = document.querySelector('.Video-Grid');
 
-// 0부터 20까지의 video_id
 const videoIds = Array.from({length: 21}, (_, i) => i);
-// video_id 값 하나씩 함수에 대입
+
 videoIds.forEach(videoId => {
     fetchVideoInfo(videoId);
 });
 
-async function fetchVideoInfo(videoId) {
+async function fetchVideoPlayer(videoId) {
     const xhr = new XMLHttpRequest();
     const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
@@ -28,7 +65,9 @@ async function fetchVideoInfo(videoId) {
         videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
         videoInfo.subscribers = channelProfileUrl.subscribers; // 구독자 수 추가
 
-            displayVideoThumbnail(videoInfo);
+        displayVideoInfo(videoInfo);
+
+
         } else {
             console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
         }
@@ -94,16 +133,6 @@ function addComment() {
 }
 
 
-//로컬 저장소에서 영상 정보 받아 불러오기
-document.addEventListener("DOMContentLoaded", function() {
-    const videoInfo = JSON.parse(localStorage.getItem("videoInfo"));
-
-    if (videoInfo) {
-        displayVideoInfo(videoInfo);
-    } else {
-        console.error("비디오 정보를 찾을 수 없습니다.");
-    }
-});
 
 function displayVideoInfo(videoInfo) {
     const VideoPlayer = document.createElement('div');
@@ -176,7 +205,6 @@ function displayVideoInfo(videoInfo) {
 
 function sendToVideoPage(videoInfo) {
     // 비디오 정보를 로컬 스토리지에 저장하기
-    localStorage.setItem('videoInfo', JSON.stringify(videoInfo));
-    // Video.html 페이지로 이동하기
-    window.location.href = 'Video.html';
+    window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
+
 }

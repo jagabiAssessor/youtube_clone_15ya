@@ -49,9 +49,8 @@ async function fetchVideoInfo(videoId) {
     xhr.send();
   }
 
-  function sendToVideoPage(videoInfo) {
-    // 비디오 정보를 로컬 스토리지에 저장하기
-    localStorage.setItem('videoInfo', JSON.stringify(videoInfo));
-    // Video.html 페이지로 이동하기
-    window.location.href = 'Video.html';
+function sendToVideoPage(videoInfo) {
+  // video_id 보내기
+  window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
+
 }

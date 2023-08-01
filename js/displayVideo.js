@@ -1,6 +1,7 @@
 //displayVideo.js가 html에서 Mainpage.js와 SearchPage.js 보다 상단에 위치해야합니다
 
 
+
 //채널 정보
 async function fetchChannelInfo(channelName) {
     try {
@@ -94,14 +95,14 @@ function displayVideoThumbnail(videoInfo) {
     videoContainer.appendChild(videoInfoContainer);
 
 
-    const handleClick = () => {
+    const videoClick = () => {
         sendToVideoPage(videoInfo);
       };
-      
-      videoTitle.addEventListener('click', handleClick);
-      imageElem.addEventListener('click', handleClick);
-      videoElem.addEventListener('click', handleClick);
-      viewsUploadDateContainer.addEventListener('click', handleClick);
+      videoTitle.addEventListener('click', videoClick);
+      imageElem.addEventListener('click', videoClick);
+      videoElem.addEventListener('click', videoClick);
+      viewsUploadDateContainer.addEventListener('click', videoClick);
+
 
 
     // 마우스 호버 기능
@@ -144,6 +145,7 @@ function getTimeDiff(uploadDate) {
 
 
 //전역개체로 선언하여 다른 js에서도 접근 가능
+
 window.displayVideoThumbnail = displayVideoThumbnail;
 window.fetchChannelInfo = fetchChannelInfo;
 window.getTimeDiff = getTimeDiff;
