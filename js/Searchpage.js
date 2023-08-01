@@ -17,6 +17,8 @@ window.onload = function() {
   
 };
 
+let channelInfoDisplayed = false;
+
 async function fetchVideoInfo(videoId) {
     const xhr = new XMLHttpRequest();
     const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
@@ -36,6 +38,13 @@ async function fetchVideoInfo(videoId) {
         // 배열을 순회하며 키워드 검사
         if (videoInfo.video_tag.some(tag => tag === keyword) || videoInfo.video_title.includes(keyword) || videoInfo.video_channel.includes(keyword)) {
           displayVideoThumbnail(videoInfo);
+
+          
+        //채널 정보 추가
+        if (!channelInfoDisplayed && videoInfo.video_channel.includes(keyword)){    //검색어에 채널명이 포함되어 있을경우 표시
+          displaychannelInfo(videoInfo);
+          channelInfoDisplayed = true;
+        }
       }
       } else {
         console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
@@ -47,10 +56,46 @@ async function fetchVideoInfo(videoId) {
     };
   
     xhr.send();
-  }
+}
+
+
+const channel= document.querySelector('.channel');
+
+//채널 정보 표시하는 함수
+function displaychannelInfo(videoInfo) {
+    
+    const channelContainer = document.createElement('div');
+    channelContainer.className = 'channel-Container';
+    //채널
+    const channelProfile = document.createElement("img");
+    channelProfile.className = "profile";
+    channelProfile.src = videoInfo.channel_profile;
+    channelProfile.width = 136;
+    channelProfile.height = 136;
+  
+    const channelInfo = document.createElement('div');
+    const videoChannel = document.createElement("p");
+    videoChannel.className = "channelName";
+    videoChannel.textContent = videoInfo.video_channel;
+  
+    const subscribers = document.createElement('p');
+    subscribers.className = "subscribers";
+    subscribers.textContent = "구독자수 " + Math.round(videoInfo.subscribers/10000)+"만명";
+  
+    channelInfo.appendChild(videoChannel);
+    channelInfo.appendChild(subscribers);
+    channelContainer.appendChild(channelProfile);
+    channelContainer.appendChild(channelInfo);
+  
+    channel.appendChild(channelContainer);
+};
+
 
 function sendToVideoPage(videoInfo) {
   // video_id 보내기
   window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
 
 }
+
+
+
