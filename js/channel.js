@@ -86,7 +86,20 @@ function displayVideoThumbnail(videoInfo) {
     videoGrid.appendChild(videoContainer);
 }
 
-
+document.getElementById("btn").addEventListener("click", function() {
+    const imgBtn = document.querySelector(".img_btn");
+  
+    // 이미지 클래스에 "clicked" 클래스를 토글하여 이미지를 변경
+    imgBtn.classList.toggle("clicked");
+    const subscribedImage = "../res/image/UesdSvg/Subscribes-Btn-Korean-Clicked-Bell.svg";
+    const defaultImage = "../res/image/UesdSvg/Subscribes-Btn-Korean.svg";
+    // 이미지를 변경하는 방법:
+    if (imgBtn.classList.contains("clicked")) {
+        imgBtn.src = subscribedImage;
+    } else {
+        imgBtn.src = defaultImage;
+    }
+  });
 
 
 // function displayVideoThumbnail(videoInfo) {
