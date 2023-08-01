@@ -1,6 +1,7 @@
 //displayVideo.js가 html에서 Mainpage.js와 SearchPage.js 보다 상단에 위치해야합니다
 
 
+
 //채널 정보
 async function fetchChannelInfo(channelName) {
     try {
@@ -12,7 +13,7 @@ async function fetchChannelInfo(channelName) {
         });
         let data = await response.json();
 
-        return data.channel_profile;
+        return data;
 
     } catch (error) {
         console.error('Error fetching channel information:', error);
@@ -52,7 +53,7 @@ function displayVideoThumbnail(videoInfo) {
     
 
 
-    //채널 이름 
+    //채널
     const channelProfile = document.createElement("img");
     channelProfile.className = "channel-profile";
     channelProfile.src = videoInfo.channel_profile;
@@ -63,6 +64,7 @@ function displayVideoThumbnail(videoInfo) {
     const videoTitle = document.createElement("p");
     videoTitle.className = "video-title";
     videoTitle.textContent = videoInfo.video_title;
+
 
     const videoChannel = document.createElement("p");
     videoChannel.className = "video-channel";
@@ -91,6 +93,16 @@ function displayVideoThumbnail(videoInfo) {
     videoInfomation.appendChild(viewsUploadDateContainer);
     videoInfoContainer.appendChild(videoInfomation);
     videoContainer.appendChild(videoInfoContainer);
+
+
+    const videoClick = () => {
+        sendToVideoPage(videoInfo);
+      };
+      videoTitle.addEventListener('click', videoClick);
+      imageElem.addEventListener('click', videoClick);
+      videoElem.addEventListener('click', videoClick);
+      viewsUploadDateContainer.addEventListener('click', videoClick);
+
 
 
     // 마우스 호버 기능
@@ -129,7 +141,13 @@ function getTimeDiff(uploadDate) {
     }
 }
 
+
+
+
 //전역개체로 선언하여 다른 js에서도 접근 가능
+
 window.displayVideoThumbnail = displayVideoThumbnail;
 window.fetchChannelInfo = fetchChannelInfo;
 window.getTimeDiff = getTimeDiff;
+
+

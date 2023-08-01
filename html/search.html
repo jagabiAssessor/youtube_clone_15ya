@@ -16,19 +16,21 @@
         <!-- logo & Menu -->
         <div class="Yt-Button">
             <img src="../res/image/Navigations/hamburger.svg" class="icon">
-            <a href="../html/Home.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
+            <a href="../html/Home.html" class="Button"><img src="../res/image/Navigations/Logo.svg"></a>
         </div>
         <!-- main_search_box -->
         <div class="center">
-            <div class="Search">
-                <input class="SearchBox" type="text" placeholder="Search">
-            </div>
-            <button class="SearchBox-Button">
-                <img src="../res/image/Navigations/SearchBox-Button.svg">
-            </button>
-            <div class="Icon">
-                <img src="../res/image/Navigations/Icon.svg">
-            </div>
+            < <form action="search.html" method="GET" style="display: flex;">
+                <div class="Search">
+                    <input class="SearchBox" type="text" placeholder="Search" name="keyword">
+                </div>
+                <button class="SearchBox-Button" type="submit">
+                    <img src="../res/image/Navigations/SearchBox-Button.svg">
+                </button>
+                </form>
+                <div class="Icon">
+                    <img src="../res/image/Navigations/Icon.svg">
+                </div>
         </div>
         <!-- main_profile -->
         <div id="Profile">
@@ -40,30 +42,30 @@
     </header>
     <!-- Chips -->
     <div class="chips">
-        <div class = "chips_item">
-        <ul class="Item">
-            <li>전체</li>
-            <li>게임</li>
-            <li>뉴스</li>
-            <li>음악</li>
-            <li>실시간</li>
-            <li>야생생물</li>
-            <li>요리</li>
-            <li>반려동물</li>
-            <li>감상한 동영상</li>
-            <li>새로운 맞춤 동영상</li>
-            <div class="Icon"><img src="../res/image/Top-Menu/leftBottom.svg"></div>
-        </ul>
+        <div class="chips_item">
+            <ul class="Item">
+                <li>전체</li>
+                <li>게임</li>
+                <li>뉴스</li>
+                <li>음악</li>
+                <li>실시간</li>
+                <li>야생생물</li>
+                <li>요리</li>
+                <li>반려동물</li>
+                <li>감상한 동영상</li>
+                <li>새로운 맞춤 동영상</li>
+                <div class="Icon"><img src="../res/image/Top-Menu/leftBottom.svg"></div>
+            </ul>
         </div>
     </div>
-     
+
     <!-- side_bar -->
     <aside class="Sidebar">
         <!-- Sidebar_mini 메뉴 버튼 클릭으로 사이드 바 닫혔을 때 뜨는 미니버전 -->
         <div class="Sidebar_Mini">
-            <li class="Home"><img src="../res/image/Sidebar/home-fill.svg" >Home</li>
-            <li class="Explore"><img src="../res/image/Sidebar/explore-fill.svg" >Explore</li>
-            <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+            <li class="Home"><img src="../res/image/Sidebar/home-fill.svg">Home</li>
+            <li class="Explore"><img src="../res/image/Sidebar/explore-fill.svg">Explore</li>
+            <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg">Subscriptions</li>
             <li class="Library"><img src="../res/image/Sidebar/library-fill.svg">Library</li>
             <li class="History"><img src="../res/image/Sidebar/history-fill.svg">History</li>
             <li class="YourVideo"><img src="../res/image/Sidebar/yourVideos.svg">Your Videos</li>
@@ -71,12 +73,12 @@
 
         <!-- Sidebar_Large 메뉴 버튼 클릭시 or 화면 클 때 뜨는 사이드바 -->
         <div class="Sidebar_Large">
-            <!-- Top -->    
+            <!-- Top -->
             <div class="Top">
                 <ul>
-                    <li class="Home"><img src="../res/image/Sidebar/home-fill.svg" >Home</li>
-                    <li class="Explore"><img src="../res/image/Sidebar/explore-fill.svg" >Explore</li>
-                    <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg" >Subscriptions</li>
+                    <li class="Home"><img src="../res/image/Sidebar/home-fill.svg">Home</li>
+                    <li class="Explore"><img src="../res/image/Sidebar/explore-fill.svg">Explore</li>
+                    <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg">Subscriptions</li>
                 </ul>
             </div>
             <!-- Top2 -->
@@ -160,5 +162,6 @@
 </body>
 <script src="../js/index.js"></script>
 <script src="../js/displayVideo.js"></script>
-<script src="../js/Mainpage.js"></script>
-</html> 
+<script src="../js/Searchpage.js"></script>
+
+</html>
