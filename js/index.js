@@ -69,6 +69,9 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
+function openChannel(element) {
+  var channelName = element.getAttribute("data-channel");
+  window.location.href = "test_channel.html?channel=" + encodeURIComponent(channelName);
+}
 
 
