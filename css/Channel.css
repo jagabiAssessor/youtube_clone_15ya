@@ -49,6 +49,44 @@ li {
 .Channel .Channel-Title .Channel-Profile {
     margin-left: 80px;
 }
+/* 프로필 세부 사항 */
+.channel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.channel-image {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    opacity: 0.6499999761581421;
+    gap: 10px;
+    padding-right: 0px;
+}
+.channel-name {
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 24px;
+    white-space: pre-wrap;
+}
+.subscriber-count {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: pre-wrap;
+    /* 강제로 구독자 수가 다음 줄로 내려가도록 추가 스타일 지정 */
+    word-break: break-all;
+}
 /* 우측 구독버튼 */
 .Channel .Channel-Title .Chennel-Subscribes {
     background-color: transparent;

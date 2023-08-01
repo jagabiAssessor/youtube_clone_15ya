@@ -103,7 +103,12 @@ function displayVideoThumbnail(videoInfo) {
       videoElem.addEventListener('click', videoClick);
       viewsUploadDateContainer.addEventListener('click', videoClick);
 
-
+    
+    const channelClick = () => {
+        sendToChannelPage(videoInfo);
+    };
+    channelProfile.addEventListener('click', channelClick);
+    
 
     // 마우스 호버 기능
     videoContainer.addEventListener('mouseover', () => {
