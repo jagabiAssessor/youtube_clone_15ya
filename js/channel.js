@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const channelName = urlParams.get('channel');
 
     // API 요청을 위한 URL을 생성합니다.
-    const apiUrl = `http://oreumi.appspot.com/channel/getChannelVideo?video_channel=${encodeURIComponent(channelName)}`;
+    const apiUrl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${encodeURIComponent(channelName)}`;
 
     // XMLHttpRequest 객체를 생성합니다.
     const xhr = new XMLHttpRequest();
@@ -28,34 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.send();
 });
 
-// 채널 정보를 화면에 표시하는 함수입니다.
-function displayChannelInfo(responseData) {
-    const channelInfoDiv = document.getElementById("channelInfo");
-
-    // responseData는 이미 JSON 형식의 문자열이므로 바로 사용할 수 있습니다.
-    const videoId = responseData[0].video_id;
-    const videoInfoApiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${encodeURIComponent(videoId)}`;
-
-    // 두 번째 API 요청을 보내고, 응답을 처리합니다.
-    fetch(videoInfoApiUrl)
-        .then(response => response.json())
-        .then(videoInfo => {
-            // 비디오 링크를 맨 위에 추가합니다.
-            channelInfoDiv.innerHTML = `
-                <p>Title: ${responseData[0].video_title}</p>
-                <p>Views: ${responseData[0].views}</p>
-                <p>Detail: ${responseData[0].video_detail}</p>
-            `;
-
-            // videoPlayer 태그에 영상 소스를 지정합니다
-            const videoPlayer = document.getElementById("videoPlayer");
-            videoPlayer.src = videoInfo.video_link; // 영상 파일 경로 설정
-            videoPlayer.controls = true; // 영상 컨트롤 표시
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-}
 
 function displayVideoThumbnail(videoInfo) {
     // div 요소 생성해서 videoContainer에 추가
@@ -84,6 +56,32 @@ function displayVideoThumbnail(videoInfo) {
     
     // videoGrid>videoContainer>videoTitle>sourceElem>videoInfo 이렇게 생각하면 된다
     videoGrid.appendChild(videoContainer);
+}
+
+function displayChannelInfo(channelData) {
+    // 채널 정보를 받아와서 HTML 구조를 동적으로 생성합니다.
+    const channelWrapper = document.getElementById("channelInfoContainer");
+
+    // 채널 사진 이미지 엘리먼트를 생성합니다.
+    const channelImage = document.createElement("img");
+    channelImage.classList.add("channel-image");
+    channelImage.src = channelData.channel_profile; // API에서 받아온 프로필 사진 URL을 사용
+
+    // 채널명을 표시할 엘리먼트를 생성합니다.
+    const channelNameElement = document.createElement("div");
+    channelNameElement.classList.add("channel-name");
+    channelNameElement.innerText = channelData.channel_name; // API에서 받아온 채널명을 사용
+    
+
+    // 구독자수를 표시할 엘리먼트를 생성합니다.
+    const subscriberCountElement = document.createElement("div");
+    subscriberCountElement.classList.add("subscriber-count");
+    subscriberCountElement.innerText = `구독자수: ${channelData.subscribers}명`; // API에서 받아온 구독자수를 사용
+
+    // 생성한 엘리먼트들을 채널 정보 컨테이너에 추가합니다.
+    channelWrapper.appendChild(channelImage);
+    channelWrapper.appendChild(channelNameElement);
+    channelWrapper.appendChild(subscriberCountElement);
 }
 
 document.getElementById("btn").addEventListener("click", function() {
