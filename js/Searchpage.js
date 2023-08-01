@@ -29,7 +29,8 @@ async function fetchVideoInfo(videoId) {
   
         // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
         const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
-        videoInfo.channel_profile = channelProfileUrl; // 프로필 이미지 URL 객체에 추가
+        videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
+        videoInfo.subscribers = channelProfileUrl.subscribers;
   
         // 검색어와 videoInfo.video_tag,video_title의 일치 여부를 비교하여, 일치하면 displayVideoThumbnail 함수 실행
         // 배열을 순회하며 키워드 검사
@@ -47,3 +48,10 @@ async function fetchVideoInfo(videoId) {
   
     xhr.send();
   }
+
+  function sendToVideoPage(videoInfo) {
+    // 비디오 정보를 로컬 스토리지에 저장하기
+    localStorage.setItem('videoInfo', JSON.stringify(videoInfo));
+    // Video.html 페이지로 이동하기
+    window.location.href = 'Video.html';
+}

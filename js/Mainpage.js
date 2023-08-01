@@ -17,10 +17,10 @@ async function fetchVideoInfo(videoId) {
         if (xhr.status >= 200 && xhr.status < 400) {
             const videoInfo = JSON.parse(xhr.responseText);
             
-            // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
-            const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
-            videoInfo.channel_profile = channelProfileUrl; // 프로필 이미지 URL 객체에 추가
-
+        // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
+        const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
+        videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
+        videoInfo.subscribers = channelProfileUrl.subscribers;
             displayVideoThumbnail(videoInfo);
         } else {
             console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
@@ -32,4 +32,11 @@ async function fetchVideoInfo(videoId) {
     };
 
     xhr.send();
+}
+
+function sendToVideoPage(videoInfo) {
+    // 비디오 정보를 로컬 스토리지에 저장하기
+    localStorage.setItem('videoInfo', JSON.stringify(videoInfo));
+    // Video.html 페이지로 이동하기
+    window.location.href = 'Video.html';
 }
