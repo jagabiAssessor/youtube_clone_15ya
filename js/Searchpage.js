@@ -34,9 +34,9 @@ async function fetchVideoInfo(videoId) {
   
         // 검색어와 videoInfo.video_tag,video_title의 일치 여부를 비교하여, 일치하면 displayVideoThumbnail 함수 실행
         // 배열을 순회하며 키워드 검사
-        if (videoInfo.video_tag.some(tag => tag === keyword) || videoInfo.video_title.includes(keyword)) {
-            displayVideoThumbnail(videoInfo);
-        }
+        if (videoInfo.video_tag.some(tag => tag === keyword) || videoInfo.video_title.includes(keyword) || videoInfo.video_channel.includes(keyword)) {
+          displayVideoThumbnail(videoInfo);
+      }
       } else {
         console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
       }
