@@ -102,7 +102,32 @@ section{
     border-radius: 10px;
 }
 .channel-profile{
-    border-radius: 100%;
+  border-radius: 100%;
+}
+
+.channel-Container{
+  display: flex;
+  padding-top: 110px;
+  box-sizing: border-box;
+  position: relative;
+  top: 20px;
+  color: white;
+  border-bottom: 1px solid rgb(265,265,265,0.3);
+  align-items: center;
+  display: flex;
+  padding-bottom: 24px;
+}
+.profile{
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 100%;
+}
+.channelName{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.subscribers{
+  font-size: 12px;
 }
 
 /* channel-title-container 설정 (Flexbox 적용) */

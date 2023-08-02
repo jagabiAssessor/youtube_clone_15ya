@@ -87,7 +87,7 @@ body{
 
 
 
- .sub img {
+ .Sub img {
   padding-right: 12px;
   border-radius: 50%; /* 아바타 라운드로 만들기 */ 
  }
@@ -153,7 +153,14 @@ a {
       z-index: 5;
       width: 100vw;
     }
-
+    .channel-Container{
+      margin-left: 70px;
+    }
+    .Channel{
+      margin-left: 80px;
+      z-index: 5;
+      width: 100vw;
+    }
     body.showSidebar:before {
       content: '';
       background-color: rgba(0, 0, 0, 0.5); /* 어두운 블랙색상 */
@@ -189,6 +196,12 @@ a {
     .video-grid{
       margin-left: 0px;
     }
+    .channel-Container{
+      margin-left: 0px;
+    }
+    .Channel{
+      margin-left: 0px;
+    }
     body.showSidebar .chips_item{
       position: fixed;
       left: 0px;
@@ -206,8 +219,14 @@ a {
     }
     .video-grid{
       margin-left: 250px;
-      
     }
+    .channel-Container{
+      margin-left: 240px;
+    }
+    .Channel{
+      margin-left: 250px;
+    }
+  }
     body.hideSidebar .Sidebar_Large {
       display: none;
       z-index: 10;
@@ -221,5 +240,11 @@ a {
       margin-left: 80px;
       z-index: 5;
     }
-
-  }
+    body.hideSidebar .channel-Container{
+      margin-left: 70px;
+    }
+    body.hideSidebar .Channel{
+      margin-left: 70px;
+      width: calc(100% - 70px);
+    }
+  
