@@ -22,12 +22,14 @@
         </div>
         <!-- main_search_box -->
         <div class="center">
-            <div class="Search">
-                <input class="SearchBox" type="text" placeholder="Search">
-            </div>
-            <button class="SearchBox-Button">
-                <img src="../res/image/Navigations/SearchBox-Button.svg">
-            </button>
+            <form action="search.html" method="GET" style="display: flex;">
+                <div class="Search">
+                    <input class="SearchBox" type="text" placeholder="Search" name="keyword">
+                </div>
+                <button class="SearchBox-Button" type="submit">
+                    <img src="../res/image/Navigations/SearchBox-Button.svg">
+                </button>
+            </form>
             <div class="Icon">
                 <img src="../res/image/Navigations/Icon.svg">
             </div>
@@ -136,7 +138,8 @@
     </aside>
 
     <!-- Channel-->
-    <section class="Channel">
+     <!-- Channel-->
+     <section class="Channel">
         <!-- cover-img -->
         <div class="Channel-Cover">
             <img src="../res/image/Channel-Cover.svg">
@@ -145,7 +148,11 @@
         <!-- Channel title & subscribes-btn -->
         <div class="Channel-Title">
             <div class="Channel-Profile">
-                <img src="../res/image/Channel/Channel/Profile.svg" alt="">
+                <div id="channelInfoContainer" class="channel-wrapper">
+                    <div class="channel-info">
+                        <!-- Content will be dynamically generated here -->
+                    </div>
+                </div>
             </div>
             <div class="Chennel-Subscribes">
                 <button class="btn" id="btn" type="button">
@@ -172,13 +179,18 @@
                 </button>
             </div>
         </div>
-    </section>
-    <!-- Channel Small Video -->
-    <div class="Channel-Player">
 
-    </div>
+        <!-- Channel Small Video -->
+        <div class="Channel-Player"><!-- 꼭 section 안에 넣어주세요. --></div>
+    </section>
+
+    <main>
+        <div class="video-grid"></div>
+    </main>
+
 </body>
 <script src="../js/index.js"></script>
+<script src="../js/channel.js"></script>
 <script src="../js/youtubMainpage.js"></script>
 
 <!-- youtubeVideoPage.js 같은 파일 활용해서 만들고 
