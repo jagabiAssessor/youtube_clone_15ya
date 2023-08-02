@@ -151,7 +151,6 @@ a {
     .video-grid{
       margin-left: 80px;
       z-index: 5;
-      width: 100vw;
     }
 
     body.showSidebar:before {
