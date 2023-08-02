@@ -7,15 +7,19 @@ VideoChannel 및 comments 작업 완료 */
 
 * {
     box-sizing: border-box;
-    
+
+}
+
+body {
+    background-color: black;
 }
 
 .Container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: black;
-    
 }
 
 
@@ -23,14 +27,18 @@ VideoChannel 및 comments 작업 완료 */
 
 /* 전체 */
 .Primary {
-    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
+    z-index: 100;
+    /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
     display: flex;
-    width: 70%;
-    height: 1200px;
+    max-width: 100%;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background: black;
+    position: relative;
+    padding-bottom: 59.25%;
+    margin-top: 100px;
 }
 
 
@@ -42,9 +50,9 @@ VideoChannel 및 comments 작업 완료 */
 
 
 /* 비디오 플레이어 */
-.VideoPlayer{
+.VideoPlayer {
     position: relative;
-    margin-left: 20px;
+    margin-left: 40px;
     max-width: 1200px;
     max-height: 650px;
     min-width: 435px;
@@ -65,7 +73,7 @@ VideoChannel 및 comments 작업 완료 */
 .Video-Desc {
     display: flex;
     width: 100%;
-    height: 150px;
+    height: 170px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -75,29 +83,27 @@ VideoChannel 및 comments 작업 완료 */
 .Video-DescTitle h1 {
     margin-left: 50px;
     margin-bottom: 20px;
-    font-size: 40px;
-    color: #FFF;
-    font-weight: bold;
     color: var(--white-color, #FFF);
     font-variant-numeric: stacked-fractions;
     font-feature-settings: 'hlig' on, 'dlig' on;
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 22px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
     letter-spacing: 0.18px;
+
 }
 
 /* 비디오 플레이어 설명 채널 전체 */
 .VideoChannel {
-    width: 90%;
+    width: 95%;
     display: flex;
     margin-left: 50px;
     margin-bottom: 20px;
     align-items: center;
     float: left;
-    
+
 }
 
 /* 비디오 플레이어 설명 채널명, 아바타, 알림버튼 */
@@ -108,7 +114,14 @@ VideoChannel 및 comments 작업 완료 */
     color: #FFF;
     margin-right: 10px;
     align-items: center;
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+
 
 .VideoChannel .VideoChannelTitle button {
     margin-left: 10px;
@@ -167,14 +180,14 @@ li {
 /* 비디오 플레이어 채널 아래 설명*/
 .Video-Desc .Description {
     margin-left: 50px;
-    width: 90%;
-    height: 45%;
+    width: 95%;
+    height: 60%;
     display: flex;
     padding: 10px;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
-    background-color: rgb(39,39,39);
+    background-color: rgb(39, 39, 39);
     gap: 10px;
 }
 
@@ -188,7 +201,7 @@ li {
     border-bottom: 1px solid #303030;
 }
 
-.VideoPlayer .Video-Desc .Border{
+.VideoPlayer .Video-Desc .Border {
     width: 640px;
     height: 1px;
 }
@@ -200,14 +213,12 @@ li {
     margin-top: 70px;
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
+    /* Add position relative to keep comments within the flow */
+    position: relative;
 }
 
-.Comment {
-    position: relative;
-  }
-  
-  .CommentInput {
-    width: 90%;
+.CommentInput {
+    width: 95%;
     min-height: 40px;
     padding: 0;
     margin-left: 50px;
@@ -215,23 +226,25 @@ li {
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid ; /* 기본적으로 밑줄을 없애기 위해 투명하게 설정 */
+    border-bottom: 1px solid;
+    /* 기본적으로 밑줄을 없애기 위해 투명하게 설정 */
     resize: none;
     color: #fff;
-    outline: none; /* 클릭 시 테두리 제거 */
-  }
-  
-  .CommentInput:focus {
-    border-bottom: 3px solid #fff; /* 클릭 시 밑줄 강조 스타일 적용 */
-  }
+    outline: none;
+    /* 클릭 시 테두리 제거 */
+}
+
+.CommentInput:focus {
+    border-bottom: 3px solid #fff;
+    /* 클릭 시 밑줄 강조 스타일 적용 */
+}
 
 .Comment .ButtonArea {
     display: flex;
-    width: 90%;
+    width: 95%;
     margin-left: 50px;
     justify-content: flex-end;
 }
-
 
 .Comment .ButtonArea button {
     display: flex;
@@ -252,6 +265,8 @@ li {
     display: flex;
     margin-left: 50px;
     align-items: center;
+    /* Use position relative to keep comments within the flow */
+    position: relative;
 }
 
 .comment img {
@@ -268,42 +283,40 @@ li {
     color: #FFF;
 }
 
-
 /* 우측 동영상 전체 */
 .Secondary {
-    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
+    z-index: 100;
     display: flex;
-    width: 402px;
+    width: auto;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background-color: black;
     margin-left: 20px;
-
 }
 
-.Secondary .Content{
+
+.Secondary .Content {
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
-    
     /* align-items: flex-start; */
 }
 
 /* 오른쪽 영상 리스트 위에 메뉴 */
 
-.Secondary .Content .Top-Menu{
+.Secondary .Content .Top-Menu {
     display: flex;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
+    margin-top: 100px;
 }
 
 /* 오른쪽 영상 리스트 위에 메뉴 버튼 */
-.Secondary .Content .Top-Menu .Item{
+.Secondary .Content .Top-Menu .Item {
     display: flex;
     padding: 8px 8px 8px 0px;
-    flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
@@ -312,6 +325,7 @@ li {
     overflow: hidden;
     z-index: 3;
 }
+
 
 /* 영상 컨테이너 설정 */
 .video-container {
@@ -325,13 +339,15 @@ li {
     font-family: Arial, sans-serif;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    
+
 }
-.video-info-container{
+
+.video-info-container {
     margin-top: 10px;
     display: flex;
     cursor: pointer;
 }
+
 .video-info {
     padding-left: 10px;
     overflow-x: hidden;
@@ -341,17 +357,19 @@ li {
     justify-content: center;
 
 }
-.view-date{
+
+.view-date {
     display: flex;
     gap: 5px;
 }
+
 /* 비디오 제목 설정 */
 .video-title {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 4px;
     color: white;
-    word-break: break-all; 
+    word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -372,9 +390,52 @@ li {
     height: 94px;
 
 }
-.thumbnail{
+
+.thumbnail {
     border-radius: 10px;
 }
-.channel-profile{
+
+.channel-profile {
     display: none;
+    border-radius: 50%;
+}
+
+/* Secondary 해상도에 따른 설정 */
+/* QHD 해상도 */
+@media (min-width: 2560px) {
+    .Secondary {
+        height: 60vh;
+    }
+}
+
+/* FHD 해상도 */
+@media (min-width: 1920px) and (max-width: 2559px) {
+    .Secondary {
+        height: 45vh;
+        margin-top: 350px;
+    }
+}
+
+/* HD+ 화면 */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .Secondary {
+        height: 50vh;
+        margin-top: 500px;
+    }
+}
+
+/* SXGA 화면 */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .Secondary {
+        height: 60vh;
+        margin-top: 750px;
+    }
+}
+
+/* HD 화면 */
+@media (min-width: 720px) and (max-width:1279px){
+    .Secondary {
+        height: 70vh;
+        margin-top: 950px;
+    }
 }
