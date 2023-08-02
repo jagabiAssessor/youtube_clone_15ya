@@ -7,13 +7,15 @@ VideoChannel 및 comments 작업 완료 */
 
 * {
     box-sizing: border-box;
+    
 }
 
 .Container {
     display: flex;
     width: 100%;
     height: 100%;
-    background: #181818;
+    background-color: black;
+    
 }
 
 
@@ -28,7 +30,7 @@ VideoChannel 및 comments 작업 완료 */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: #181818;
+    background: black;
 }
 
 
@@ -40,19 +42,23 @@ VideoChannel 및 comments 작업 완료 */
 
 
 /* 비디오 플레이어 */
-.Primary .PrimaryContent .VideoPlayer{
-    display: flex;
-    width: 1300px;
-    height: 680px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.VideoPlayer{
+    position: relative;
+    margin-left: 20px;
+    max-width: 1200px;
+    max-height: 650px;
+    min-width: 435px;
+    min-height: 245px;
 }
 
 /* .Primary .PrimaryContent 안에 있습니다 */
-.VideoPlayer .Youtube-Player {
-    width: 1200px;
-    height: 650px;
+.Youtube-Player {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 650px;
+    min-width: 435px;
+    min-height: 245px;
 }
 
 /* 비디오 플레이어 설명 */
@@ -267,18 +273,21 @@ li {
 .Secondary {
     z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
     display: flex;
-    width: 30%;
-    height: 1200px;
+    width: 402px;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: #181818;
+    background-color: black;
+    margin-left: 20px;
+
 }
 
 .Secondary .Content{
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
+    
     /* align-items: flex-start; */
 }
 
@@ -286,7 +295,6 @@ li {
 
 .Secondary .Content .Top-Menu{
     display: flex;
-    width: 402px;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
@@ -300,48 +308,73 @@ li {
     gap: 10px;
 }
 
-/* 오른쪽 영상 타이틀, 채널명, 날짜 */
-.Video-Title {
-    margin-top: 50px;
-    margin-left: 20px;
-    position: absolute;
-    color: #FFF;
+.Video-Grid {
+    overflow: hidden;
+    z-index: 3;
 }
 
-
-.Video-Title .Video-Title-Text{
-    color: var(--white-color, #FFF);
-    font-family: Roboto;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
+/* 영상 컨테이너 설정 */
+.video-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 20px;
+    /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
 }
+.video-info-container{
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+}
+.video-info {
+    padding-left: 10px;
+    overflow-x: hidden;
+    width: calc(100% - 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.Video-Title .Video-Channel-Text{
-    color: var(--gray-color, #AAA);
-    font-family: Roboto;
+}
+.view-date{
+    display: flex;
+    gap: 5px;
+}
+/* 비디오 제목 설정 */
+.video-title {
     font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 150% */
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: white;
+    word-break: break-all; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.Video-Title .Video-View {
-    color: var(--gray-color, #AAA);
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 150% */
-  }
+/* 채널 및 조회수에 대한 스타일 */
+.video-channel,
+.video-views,
+.upload-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 4px;
+}
 
-.Video-Title .Video-Date-Text {
-    color: var(--gray-color, #AAA);
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px; /* 150% */
-    margin-left: 10px; /* 조회수와 업로드 날짜 사이 간격 조정 */
-  }
+.video-container video,
+.thumbnail {
+    width: 100%;
+    width: 168px;
+    height: 94px;
+
+}
+.thumbnail{
+    border-radius: 10px;
+}
+.channel-profile{
+    display: none;
+}
