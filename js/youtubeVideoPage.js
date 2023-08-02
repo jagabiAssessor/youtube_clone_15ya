@@ -95,10 +95,10 @@ function increaseBackgroundHeight() {
     mainContent.style.height = `${newHeight}px`;
 }
 
-// 댓글, user-avatar 추가하는 코드
+// 댓글, 사용자 아바타 추가하는 코드
 function addComment() {
     const commentInput = document.querySelector('.CommentInput');
-    const commentText = commentInput.value.trim();
+    let commentText = commentInput.value.trim();
 
     if (commentText) {
         // 댓글 컨테이너 생성
@@ -113,24 +113,49 @@ function addComment() {
         // 댓글 텍스트 생성
         const commentTextDiv = document.createElement('div');
         commentTextDiv.className = 'comment-text';
-        commentTextDiv.innerText = commentText;
+        
+        
+        // 댓글을 100자 간격으로 줄 바꿈하여 작성
+        const lineBreakInterval = 100;
+        let commentTextWithLineBreaks = '';
+        while (commentText.length > lineBreakInterval) {
+            commentTextWithLineBreaks += commentText.substring(0, lineBreakInterval) + '\n';
+            commentText = commentText.substring(lineBreakInterval);
+        }
+        commentTextWithLineBreaks += commentText;
+        commentTextDiv.innerText = commentTextWithLineBreaks;
 
         // 댓글 컨테이너에 아바타 및 댓글 텍스트 추가
         commentDiv.appendChild(avatarImg);
         commentDiv.appendChild(commentTextDiv);
 
         // 전체 댓글 컨테이너를 댓글 목록에 추가
-        document.querySelector('.Comments').appendChild(commentDiv);
+        const commentsContainer = document.querySelector('.Comments');
+        commentsContainer.appendChild(commentDiv);
 
         // input 박스 초기화
         commentInput.value = '';
 
         // 댓글을 추가하고 배경화면 높이를 증가
-        increaseBackgroundHeight();
+        increaseCommentsContainerHeight(commentsContainer);
     } else {
         alert('댓글을 작성해 주세요.');
     }
 }
+
+
+// 댓글 추가할 떄, 우측 동영사 메뉴 밀리는 현상 방지
+function increaseCommentsContainerHeight(commentsContainer) {
+    // 각 댓글마다 높이를 50px씩 올린다고 가정
+    // 필요할 때 마다 값 조정
+    const heightIncrease = 44.91;
+    const currentHeight = parseInt(getComputedStyle(commentsContainer).height);
+    const newHeight = currentHeight - heightIncrease;
+
+    commentsContainer.style.height = `${newHeight}px`;
+}
+
+
 
 
 
@@ -170,6 +195,8 @@ function displayVideoInfo(videoInfo) {
     const channelProfile = document.createElement("img");
     channelProfile.className = "Profile";
     channelProfile.src = videoInfo.channel_profile;
+    channelProfile.style.borderRadius ="50%";
+    channelProfile.style.marginRight = "10px";
     channelProfile.width = 36;
     channelProfile.height = 36;
     const channel = document.createElement('div');
@@ -178,9 +205,12 @@ function displayVideoInfo(videoInfo) {
     channelName.textContent = videoInfo.video_channel;
     const subscribers = document.createElement('span');
     subscribers.className = "subscribers";
-    subscribers.textContent = "구독자수 " + Math.round(videoInfo.subscribers/10000)+"만명";
+    subscribers.style.marginRight = "10px";
+    subscribers.textContent = "구독자 " + Math.round(videoInfo.subscribers / 10000) + "만명";
     channel.appendChild(channelName);
+    channel.appendChild(document.createElement("br")); // 줄바꿈
     channel.appendChild(subscribers);
+    
 
     const DescButtonsub = document.querySelector('.DescButton_sub');
     DescButtonsub.parentElement.insertBefore(channelProfile, DescButtonsub);
@@ -190,7 +220,7 @@ function displayVideoInfo(videoInfo) {
     const videoViews = document.createElement("p");
     videoViews.className = "video-views";
     videoViews.textContent = "조회수 " + Math.round(videoInfo.views / 10000) + "만회";
-  
+
     const uploadDate = document.createElement("p");
     uploadDate.className = "upload-date";
     uploadDate.textContent = getTimeDiff(videoInfo.upload_date);
