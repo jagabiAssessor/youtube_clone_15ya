@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/Video.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/Navstyle.css">
+    <link rel="stylesheet" href="../css/VideoSidebar.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <title>Youtube Video</title>
 </head>
@@ -15,16 +16,18 @@
         <!-- logo & Menu -->
         <div class="Yt-Button">
             <img src="../res/image/Navigations/hamburger.svg" class="icon">
-            <a href="../html/Home.html" class="Button" ><img src="../res/image/Navigations/Logo.svg" ></a>
+            <a href="../html/Home.html" class="Button"><img src="../res/image/Navigations/Logo.svg"></a>
         </div>
         <!-- main_search_box -->
         <div class="center">
-            <div class="Search">
-                <input class="SearchBox" type="text" placeholder="Search">
-            </div>
-            <button class="SearchBox-Button" onclick="fetchVideoAndInfo()">
-                <img src="../res/image/Navigations/SearchBox-Button.svg">
-            </button>
+            <form action="search.html" method="GET" style="display: flex;">
+                <div class="Search">
+                    <input class="SearchBox" type="text" placeholder="Search" name="keyword">
+                </div>
+                <button class="SearchBox-Button" type="submit">
+                    <img src="../res/image/Navigations/SearchBox-Button.svg">
+                </button>
+            </form>
             <div class="Icon">
                 <img src="../res/image/Navigations/Icon.svg">
             </div>
@@ -37,6 +40,88 @@
             <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
+
+    <aside class="Sidebar">
+        <!-- Sidebar_Large 메뉴 버튼 클릭시 or 화면 클 때 뜨는 사이드바 -->
+        <div class="Sidebar_Large">
+            <!-- Top -->
+            <div class="Top">
+                <ul>
+                    <li class="Home"><img src="../res/image/Sidebar/home-fill.svg">Home</li>
+                    <li class="Explore"><img src="../res/image/Sidebar/explore-fill.svg">Explore</li>
+                    <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg">Subscriptions</li>
+                </ul>
+            </div>
+            <!-- Top2 -->
+            <div class="Top2">
+                <ul>
+                    <li class="Library"><img src="../res/image/Sidebar/library-fill.svg">Library</li>
+                    <li class="History"><img src="../res/image/Sidebar/history-fill.svg">History</li>
+                    <li class="YourVideo"><img src="../res/image/Sidebar/yourVideos.svg">Your Videos</li>
+                    <li class="Liked_Videos"><img src="../res/image/Sidebar/liked-fill.svg">Liked Videos</li>
+                    <li class="Show_More"><img src="../res/image/Sidebar/arrowBottom.svg">Show More</li>
+                </ul>
+            </div>
+
+            <!-- Sidebar Subscriptions -->
+            <div class="Sub">
+                <div>SUBSCRIPTIONS</div>
+                <ul>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar.svg">James Gouse</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-1.svg">alan Cooper</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-2.svg">Marcus Levin</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-3.svg">Alexis Sears</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-4.svg">Jesica Lambert</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-5.svg">Anna White</li>
+                    <li><img src="../res/image/UesdSvg/SidebarUser/User-Avatar-6.svg">Skylar Dias</li>
+                    <li class="Show_More"><img src="../res/image/Sidebar/arrowBottom.svg">Show 13 More</li>
+                </ul>
+            </div>
+            <!-- Sidebar More Form -->
+            <div class="More_From">
+                <div>MORE FROM YOUTUBE</div>
+                <ul>
+                    <li><img src="../res/image/Sidebar/premium.svg">Youtube Premium</li>
+                    <li><img src="../res/image/Sidebar/gaming.svg">Gaming</li>
+                    <li><img src="../res/image/Sidebar/live.svg">Live</li>
+                    <li><img src="../res/image/Sidebar/sports.svg">Sports</li>
+                </ul>
+            </div>
+            <!-- Sidebar Bottom -->
+            <div class="Bottom">
+                <ul>
+                    <li><img src="../res/image/Sidebar/Setting.svg">Settings</li>
+                    <li><img src="../res/image/Sidebar/Report_history.svg">Report history</li>
+                    <li><img src="../res/image/Sidebar/Help.svg">Help</li>
+                    <li><img src="../res/image/Sidebar/Send_feedback.svg">Send feedback</li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div class="Footer">
+                <ul>
+                    <li>About</li>
+                    <li>Press</li>
+                    <li>Copyright</li>
+                    <li>Contact us</li>
+                    <li>Creators</li>
+                    <li>Advertise</li>
+                    <li>Developers</li>
+                </ul>
+                <ul>
+                    <li>Terms</li>
+                    <li>Privacy</li>
+                    <li>Policy & Safety</li>
+                    <li>How Youtube works</li>
+                    <li>Test New features</li>
+                </ul>
+                <ul>
+                    <li>© 2021 Google LLC</li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <div class="overlay"></div>
 
     <main>
         <!-- 섹션 최상단 컨테이너 추가 -->
@@ -102,8 +187,12 @@
             <div class="Secondary">
                 <div class="Content">
                     <div class="Top-Menu">
-                        <img src="../res/image/Video/Top-Menu/Item.svg" alt="">
-                        <img src="../res/image/Video/Top-Menu/Item-1.svg" alt="">
+                        <ul class="Item">
+                            <li>모두</li>
+                            <li>관련 콘텐츠</li>
+                            <li>최근에 업로드된 영상</li>
+                            <div class="Icon"><img src="../res/image/Top-Menu/leftBottom.svg"></div>
+                        </ul>
                     </div>
                     <div class="Video-Grid">
                         <!-- 썸네일 나오는 영역 -->
@@ -113,6 +202,8 @@
         </section>
     </main>
 </body>
+<script src="../js/videoSidebar.js"></script>
+<script src="../js/displayVideo.js"></script>
 <script src="../js/youtubeVideoPage.js"></script>
 <script src="../js/displayVideo.js"></script>
 </html>
