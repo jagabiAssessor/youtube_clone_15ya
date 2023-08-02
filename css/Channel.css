@@ -20,7 +20,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
 }
 
 li {
@@ -52,8 +51,16 @@ li {
 /* 프로필 세부 사항 */
 .channel-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row; /* 세로 방향으로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬로 배치 */
+    gap: 8px; /* 요소들 사이의 간격 조정 */
+}
+
+.channel-info {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬로 배치 */
+    gap: 8px; /* 요소들 사이의 간격 조정 */
 }
 .channel-image {
     display: flex;
@@ -74,7 +81,6 @@ li {
     font-weight: 400;
     line-height: normal;
     margin-left: 24px;
-    white-space: pre-wrap;
 }
 .subscriber-count {
     color: var(--gray-color, #AAA);
@@ -83,9 +89,7 @@ li {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    white-space: pre-wrap;
-    /* 강제로 구독자 수가 다음 줄로 내려가도록 추가 스타일 지정 */
-    word-break: break-all;
+    margin-left: 24px;
 }
 /* 우측 구독버튼 */
 .Channel .Channel-Title .Chennel-Subscribes {
@@ -132,12 +136,12 @@ li {
     gap: 10px;
     background-color: transparent;
     border: none;
-    color: #FFF;
+    color: #909090;
     cursor: pointer;
 }
 
-.Channel-Button::hover {
-    background-color: #fff; 
+.Channel-Button:hover {
+    color: #FFF; 
 }
 
 /* 채널의 동영상 부분 */
