@@ -147,42 +147,110 @@ li {
 /* 채널의 동영상 부분 */
 
 .Channel-Player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 15px;
+    overflow: hidden;
+    padding-top: 110px;
+    z-index: 3;
 }
 
-/* 동영상 위아래 구분 */
-.VideoContainerTop, .VideoContainerDown {
+/* 영상 컨테이너 설정 */
+.video-container {
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 20px;
+    /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.video-info-container{
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+}
+.video-info {
+    padding-left: 10px;
+    overflow-x: hidden;
+    width: calc(100% - 36px);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
 
-/* 메인동영상 1개 */
-.Video-Container-Main {
+}
+.view-date{
     display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-/* 썸네일 동영상 정보 */
-.Video-Details-Thumb {
     gap: 5px;
-    align-items: center;
 }
-
-/* 메인, 썸네일 동영상 정보 */
-.Video-Details-Main, .Video-Details-Thumb {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+/* 비디오 제목 설정 */
+.video-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 4px;
     color: white;
+    word-break: break-all; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.video {
-    border-radius: 5%;
+/* 채널 및 조회수에 대한 스타일 */
+.video-channel,
+.video-views,
+.upload-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.video-container video,
+.thumbnail {
+    width: 100%;
+    max-width: 500px;
+    max-height: 310px;
+
+}
+.thumbnail{
+    border-radius: 10px;
+}
+.channel-profile{
+    border-radius: 100%;
+}
+
+/* channel-title-container 설정 (Flexbox 적용) */
+
+
+/* 반응형 스타일 적용 */
+@media (min-width: 1920px) {
+  .video-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 1919px) {
+  .video-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  .video-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
