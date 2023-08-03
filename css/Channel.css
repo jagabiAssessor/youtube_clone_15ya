@@ -146,7 +146,7 @@ li {
 
 /* 채널의 동영상 부분 */
 
-.Channel-Player {
+.video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 15px;
