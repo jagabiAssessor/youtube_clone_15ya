@@ -223,7 +223,7 @@ a {
       margin-left: 240px;
     }
     .Channel{
-      margin-left: 250px;
+      margin-left: 240px;   /* 250px -> 240px Channel 좌측 10px공백 생겨서 줄입니다. */
     }
   }
     body.hideSidebar .Sidebar_Large {

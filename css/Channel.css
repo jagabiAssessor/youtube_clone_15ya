@@ -152,8 +152,7 @@ li {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 15px;
     overflow: hidden;
-    padding-top: 110px;
-    padding-left: 0;    /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
+    padding: 110px 10px 10px 10px;  /* padding top값 부여 및 나머지 정리 */
     margin: 0;      /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
     z-index: 3;
 }
