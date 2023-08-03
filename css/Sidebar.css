@@ -156,7 +156,7 @@ a {
       margin-left: 70px;
     }
     .Channel{
-      margin-left: 80px;
+      margin-left: 70px;  /* 80px -> 70px 화면 축소시 10px 우측 밀림 현상 있어 수정*/ 
       z-index: 5;
       width: 100vw;
     }
