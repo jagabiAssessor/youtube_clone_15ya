@@ -31,10 +31,11 @@ li {
     z-index: 100px;
     position: absolute;
     margin-top: 56px;
-    margin-left: 240px;
+    /* margin-left: 240px; margin 값 초기화 하여 사이드바와 반응형으로 동작 */
     /* padding: 10px; */
-    width: calc(100% - 240px);
-    height: calc(100% - 56px);
+    padding-left: 0; /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
+    /* width: calc(100% - 240px);
+    height: calc(100% - 56px);  margin 값 초기화 하여 사이드바와 반응형으로 동작*/
 }
 /* 채널 타이틀 전체 */
 .Channel .Channel-Title {
@@ -152,6 +153,8 @@ li {
     grid-gap: 15px;
     overflow: hidden;
     padding-top: 110px;
+    padding-left: 0;    /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
+    margin: 0;      /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
     z-index: 3;
 }
 
@@ -219,6 +222,32 @@ li {
 .channel-profile{
     border-radius: 100%;
 }
+
+.channel-Container{
+    display: flex;
+    padding-top: 110px;
+    box-sizing: border-box;
+    position: relative;
+    top: 20px;
+    color: white;
+    border-bottom: 1px solid rgb(265,265,265,0.3);
+    align-items: center;
+    display: flex;
+    padding-bottom: 24px;
+}
+.profile{
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 100%;
+}
+.channelName{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.subscribers{
+    font-size: 12px;
+}
+  
 
 /* channel-title-container 설정 (Flexbox 적용) */
 
