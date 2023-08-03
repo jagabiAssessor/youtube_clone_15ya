@@ -76,7 +76,7 @@ body{
   background: rgb(65, 65, 65);
 }
 
- .Sidebar_Large li {
+.Sidebar_Large li {
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -85,10 +85,11 @@ body{
     cursor: pointer;
  }
 
-
+ .Sidebar_Large img {
+  padding-right: 12px;  /*사이드바 내 이미지 전부 적용 */
+ }
 
  .Sub img {
-  padding-right: 12px;
   border-radius: 50%; /* 아바타 라운드로 만들기 */ 
  }
 
