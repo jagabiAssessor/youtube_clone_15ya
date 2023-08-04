@@ -536,17 +536,3 @@ li {
     
 }
 
-/* Add some basic styling to the Edit and Delete buttons */
-.edit-button,
-.delete-button {
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.edit-button:hover,
-.delete-button:hover {
-    background-color: #ddd;
-}
