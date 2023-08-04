@@ -25,6 +25,7 @@ async function fetchChannelInfo(channelName) {
 //영상 출력
 function displayVideoThumbnail(videoInfo) {
     // div 요소 생성해서 videoContainer에 추가
+      
     const videoContainer = document.createElement('div');
     videoContainer.className = 'video-container';
 
