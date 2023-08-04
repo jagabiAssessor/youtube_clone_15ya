@@ -1,37 +1,6 @@
 const sidebar = document.querySelector('.Sidebar_Large'); // 사이드바
 const menu = document.querySelector('.icon'); // menu 버튼
 
-// // 비디오 페이지에 들어갈 유튜브 플레이어
-// var player;
-//     function onYouTubeIframeAPIReady() {
-//       player = new YT.Player('player', {
-//         height: '360',
-//         width: '640',
-//         videoId: '',                                  // Video ID 입력
-//         events: {
-//           'onReady': onPlayerReady
-//         }
-//       });
-//     }
-
-//     function onPlayerReady(event) {
-//       event.target.playVideo();
-//     }
-
-//     function playVideo() {
-//       player.playVideo();
-//     }
-
-//     function pauseVideo() {
-//       player.pauseVideo();
-//     }
-
-//     function stopVideo() {
-//       player.stopVideo();
-//     }
-
-
-  
 
 const updateSidebarState = () => {
   const isLargeScreen = window.matchMedia('(min-width: 769px)').matches; // 화면 크기 확인

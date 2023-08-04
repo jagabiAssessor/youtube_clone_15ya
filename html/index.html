@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="../css/Sidebar.css">
     <link rel="stylesheet" href="../css/mainSidebar.css">
     <link rel="stylesheet" href="../css/Top-menustyle.css">
-    <link rel="stylesheet" href="../css/Channel.css">
+    <link rel="stylesheet" href="../css/Home.css">
+    <title>Youtube Home</title>
 
-    <title>Youtube Channel</title>
-</head>
 
 <body>
     <!-- Navigation -->
@@ -43,7 +42,25 @@
             <img src="../res/image/Navigations/Profile-pic.svg" class="Profile">
         </div>
     </header>
+    <!-- Chips -->
+    <div class="chips">
+        <div class="chips_item">
+            <ul class="Item">
+                <li>전체</li>
+                <li>게임</li>
+                <li>뉴스</li>
+                <li>음악</li>
+                <li>실시간</li>
+                <li>야생생물</li>
+                <li>요리</li>
+                <li>반려동물</li>
+                <li>감상한 동영상</li>
+                <li>새로운 맞춤 동영상</li>
+                <div class="Icon" Id="right-icon"><img src="../res/image/Top-Menu/leftBottom.svg"></div>
+            </ul>
 
+        </div>
+    </div>
 
     <!-- side_bar -->
     <aside class="Sidebar">
@@ -59,7 +76,7 @@
 
         <!-- Sidebar_Large 메뉴 버튼 클릭시 or 화면 클 때 뜨는 사이드바 -->
         <div class="Sidebar_Large">
-            <!--Sidebar Top -->
+            <!-- Top -->
             <div class="Top">
                 <ul>
                     <li class="Home"><img src="../res/image/Sidebar/home-fill.svg">Home</li>
@@ -67,7 +84,7 @@
                     <li class="Subscription"><img src="../res/image/Sidebar/subscriptions-fill.svg">Subscriptions</li>
                 </ul>
             </div>
-            <!-- Sidebar Top2 -->
+            <!-- Top2 -->
             <div class="Top2">
                 <ul>
                     <li class="Library"><img src="../res/image/Sidebar/library-fill.svg">Library</li>
@@ -112,8 +129,9 @@
                 </ul>
             </div>
 
-              <!-- footer  -->
-              <div class="Footer">
+            <!-- Footer -->
+             <!-- footer  -->
+             <div class="Footer">
                 <div>
                     <a>About</a>
                     <a>Press</a>
@@ -136,72 +154,44 @@
             </div>
         </div>
     </aside>
-     <!-- Channel-->
-     <section class="Channel">
-        <!-- cover-img -->
-        <div class="Channel-Cover">
-            <img src="../res/image/Channel-Cover.svg">
-        </div>
 
-        <!-- Channel title & subscribes-btn -->
-        <div class="Channel-Title">
-            <div class="Channel-Profile">
-                <div id="channelInfoContainer" class="channel-wrapper">
 
-                    <div class="channel-info">
-                        <!-- Content will be dynamically generated here -->
-                    </div>
-
-                </div>
+            <!-- <div class="Footer">
+                <ul>
+                    <li>About</li>
+                    <li>Press</li>
+                    <li>Copyright</li>
+                    <li>Contact us</li>
+                    <li>Creators</li>
+                    <li>Advertise</li>
+                    <li>Developers</li>
+                </ul>
+                <ul>
+                    <li>Terms</li>
+                    <li>Privacy</li>
+                    <li>Policy & Safety</li>
+                    <li>How Youtube works</li>
+                    <li>Test New features</li>
+                </ul>
+                <ul>
+                    <li>© 2021 Google LLC</li>
+                </ul>
             </div>
-            <div class="Chennel-Subscribes">
-                <button class="btn" id="btn" type="button">
-                    <img class="img_btn" src="../res/image/UesdSvg/Subscribes-Btn-Korean.svg">
-                </button>
-            </div>
         </div>
-        <!-- toolbar -->
-        <div class="Channel-Toolbar">
-            <ul>
-                <button class="Channel-Button" id="leftArrow">
-                    <img src="../res/image/UesdSvg/leftArrow.svg">
-                </button>
-                <li><button class="Channel-Button">HOME</button></li>
-                <li><button class="Channel-Button">VIDEOS</button></li>
-                <li><button class="Channel-Button">PLAYLISTS</button></li>
-                <li><button class="Channel-Button">COMMUNITY</button></li>
-                <li><button class="Channel-Button">CHANNNELS</button></li>
-                <li><button class="Channel-Button">ABOUT</button></li>
-                <div class="toolbars-search">
-                    <button class="Channel-Button">
-                        <img src="../res/image/UesdSvg/search.svg">
-                    </button>
-                    <button class="Channel-Button" id="rightArrow">
-                        <img src="../res/image/UesdSvg/leftArrow.svg">
-                    </button>
-                </div>
-            </ul>
+    </aside> -->
 
-        </div>
 
-        <!-- Channel Small Video -->
-        <div class="video-grid-top"></div>
+
+    <!-- videos -->
+    <section>
         <div class="video-grid">
-            <button class="Channel-Button" id="channelLeftArrow"><img src="../res/image/UesdSvg/leftArrow.svg"></button><!-- 꼭 section 안에 넣어주세요. -->
-            <button class="Channel-Button" id="channelRightArrow"><img src="../res/image/UesdSvg/leftArrow.svg"></button></div>
+            <!-- 썸네일 나오는 영역 -->
+        </div>
     </section>
 
+    <script src="../js/index.js"></script>
+    <script src="../js/displayVideo.js"></script>
+    <script src="../js/Mainpage.js"></script>
     
-
 </body>
-<script src="../js/index.js"></script>
-<script src="../js/displayVideo.js"></script>
-<script src="../js/channel.js"></script>
-<script src="../js/slidebutton.js"></script>
-<script src="../js/youtubMainpage.js"></script>
-
-
-<!-- youtubeVideoPage.js 같은 파일 활용해서 만들고 
-        이름통일해서 js파일 넣는게 좋을 거 같습니다. -->
-
 </html>
