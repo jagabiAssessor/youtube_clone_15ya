@@ -97,5 +97,7 @@ function sendToVideoPage(videoInfo) {
 
 }
 
-
+function sendToChannelPage(videoInfo) {
+  window.location.href = `channel.html?channel=${videoInfo.video_channel}`;
+}
 
