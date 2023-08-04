@@ -5,7 +5,7 @@
 //채널 정보
 async function fetchChannelInfo(channelName) {
     try {
-        let response = await fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {
+        let response = await fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {
             method: 'POST',
             headers: {
                 'accept': 'application/json'

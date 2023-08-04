@@ -4,7 +4,7 @@
 
 async function fetchVideoInfo(videoId, isMainVideo = false) {
     const xhr = new XMLHttpRequest();
-    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
     xhr.open('GET', url, true);
 
@@ -53,7 +53,7 @@ videoIds.forEach(videoId => {
 
 async function fetchVideoPlayer(videoId) {
     const xhr = new XMLHttpRequest();
-    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
     xhr.open('GET', url, true);
 
