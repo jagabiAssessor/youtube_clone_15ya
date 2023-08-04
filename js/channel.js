@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(queryString);
     const channelName = urlParams.get('channel');
 
-    const channelInfoUrl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${encodeURIComponent(channelName)}`;
+    const channelInfoUrl = `https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${encodeURIComponent(channelName)}`;
     const channelXhr = new XMLHttpRequest();
 
     channelXhr.onreadystatechange = function () {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const channelResponse = JSON.parse(channelXhr.responseText);
                 displayChannelInfo(channelResponse);
 
-                const videoInfoUrl = `http://oreumi.appspot.com/channel/getChannelVideo?video_channel=${encodeURIComponent(channelName)}`;
+                const videoInfoUrl = `https://oreumi.appspot.com/channel/getChannelVideo?video_channel=${encodeURIComponent(channelName)}`;
                 const videoXhr = new XMLHttpRequest();
 
                 videoXhr.onreadystatechange = function () {
@@ -59,7 +59,7 @@ function sortVideosByViews(videoResponse) {
 function fetchVideoInfo(videoId) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
-        const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+        const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
         xhr.open('GET', url, true);
 
