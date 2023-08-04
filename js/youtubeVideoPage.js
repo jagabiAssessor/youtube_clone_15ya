@@ -102,7 +102,7 @@ function addComment() {
 
         // 아바타 이미지 생성
         const avatarImg = document.createElement('img');
-        avatarImg.src = '../res/image/Video/profile-pic.svg';
+        avatarImg.src = './res/image/Video/profile-pic.svg';
         avatarImg.className = 'user-avatar';
 
         // 댓글 텍스트 생성
