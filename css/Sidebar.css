@@ -76,7 +76,7 @@ body{
   background: rgb(65, 65, 65);
 }
 
- .Sidebar_Large li {
+.Sidebar_Large li {
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -85,10 +85,11 @@ body{
     cursor: pointer;
  }
 
-
+ .Sidebar_Large img {
+  padding-right: 12px;  /*사이드바 내 이미지 전부 적용 */
+ }
 
  .Sub img {
-  padding-right: 12px;
   border-radius: 50%; /* 아바타 라운드로 만들기 */ 
  }
 
@@ -156,7 +157,7 @@ a {
       margin-left: 70px;
     }
     .Channel{
-      margin-left: 80px;
+      margin-left: 70px;  /* 80px -> 70px 화면 축소시 10px 우측 밀림 현상 있어 수정*/ 
       z-index: 5;
       width: 100vw;
     }
@@ -223,7 +224,7 @@ a {
       margin-left: 240px;
     }
     .Channel{
-      margin-left: 250px;
+      margin-left: 240px;   /* 250px -> 240px Channel 좌측 10px공백 생겨서 줄입니다. */
     }
   }
     body.hideSidebar .Sidebar_Large {
