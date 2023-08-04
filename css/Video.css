@@ -268,28 +268,51 @@ li {
     cursor: pointer;
 }
 
-/* Comments 댓글 쓰기 부분 아래 댓글들  */
-/* Comments 전체 */
+/* Comments 댓글 쓰기 부분 아래 댓글들  /
+/ Comments 전체 */
 .comment {
     display: flex;
     width: 100%;
-    align-items: center;
-    position: relative;
+    margin-bottom: 50px;
 }
 
 .comment img {
-    margin-bottom: 10px;
+    display: flex;
+    margin-bottom: auto;
 }
 
 .Comments .comment-text {
-    display: flex;
-    flex : 1;
-    width: 90%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
     color: #FFF;
+    gap: 10px;
+    position: relative;
+    right: 235px;
+    max-width: 1050px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.Comments .user-id {
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    position: relative;
+    bottom: 20px;
+}
+
+.Comments .comment-time {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    position: relative;
+    bottom: 20px;
+    left: 15px;
+    width: 100px;
 }
 
 /* 우측 동영상 전체 */
@@ -381,10 +404,12 @@ li {
 }
 
 .video-info {
-    width: 100%;
+    padding-left: 10px;
+    overflow-x: hidden;
+    width: calc(100% - 36px);
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
 
 }
 .video-title {
@@ -508,4 +533,19 @@ li {
         display: none;
     }
     
+}
+
+/* Add some basic styling to the Edit and Delete buttons */
+.edit-button,
+.delete-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #ddd;
 }
