@@ -226,7 +226,7 @@ a {
     .Channel{
       margin-left: 240px;   /* 250px -> 240px Channel 좌측 10px공백 생겨서 줄입니다. */
     }
-  }
+  
     body.hideSidebar .Sidebar_Large {
       display: none;
       z-index: 10;
@@ -247,4 +247,4 @@ a {
       margin-left: 70px;
       width: calc(100% - 70px);
     }
-  
+  }
