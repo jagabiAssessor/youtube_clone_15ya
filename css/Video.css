@@ -268,27 +268,24 @@ li {
     cursor: pointer;
 }
 
-/* Comments 댓글 쓰기 부분 아래 댓글들  /
-/ Comments 전체 */
+/* Comments 댓글 쓰기 부분 아래 댓글들  */
+/* Comments 전체 */
 .comment {
-    display: flex;
     width: 100%;
     margin-bottom: 50px;
 }
 
 .comment img {
-    display: flex;
-    margin-bottom: auto;
+    float: left;
 }
 
 .Comments .comment-text {
     color: #FFF;
     gap: 10px;
-    position: relative;
     right: 235px;
-    max-width: 1050px;
     width: 100%;
-    margin-top: 10px;
+    padding-top: 30px;
+    padding-left: 60px;
 }
 
 .Comments .user-id {
@@ -298,8 +295,8 @@ li {
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
-    position: relative;
-    bottom: 20px;
+    float: left;
+    margin-left: 5px;
 }
 
 .Comments .comment-time {
@@ -309,10 +306,9 @@ li {
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    position: relative;
-    bottom: 20px;
-    left: 15px;
+    float: left;
     width: 100px;
+    margin-left: 5px;
 }
 
 /* 우측 동영상 전체 */
@@ -404,12 +400,10 @@ li {
 }
 
 .video-info {
-    padding-left: 10px;
-    overflow-x: hidden;
-    width: calc(100% - 36px);
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
 
 }
 .video-title {
@@ -533,19 +527,4 @@ li {
         display: none;
     }
     
-}
-
-/* Add some basic styling to the Edit and Delete buttons */
-.edit-button,
-.delete-button {
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.edit-button:hover,
-.delete-button:hover {
-    background-color: #ddd;
 }
