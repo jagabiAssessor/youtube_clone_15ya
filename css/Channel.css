@@ -20,6 +20,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 li {
@@ -31,11 +32,10 @@ li {
     z-index: 100px;
     position: absolute;
     margin-top: 56px;
-    /* margin-left: 240px; margin 값 초기화 하여 사이드바와 반응형으로 동작 */
+    margin-left: 240px;
     /* padding: 10px; */
-    padding-left: 0; /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
-    /* width: calc(100% - 240px);
-    height: calc(100% - 56px);  margin 값 초기화 하여 사이드바와 반응형으로 동작*/
+    width: calc(100% - 240px);
+    height: calc(100% - 56px);
 }
 /* 채널 타이틀 전체 */
 .Channel .Channel-Title {
@@ -52,16 +52,8 @@ li {
 /* 프로필 세부 사항 */
 .channel-wrapper {
     display: flex;
-    flex-direction: row; /* 세로 방향으로 배치 */
-    align-items: flex-start; /* 왼쪽 정렬로 배치 */
-    gap: 8px; /* 요소들 사이의 간격 조정 */
-}
-
-.channel-info {
-    display: flex;
-    flex-direction: column; /* 세로 방향으로 배치 */
-    align-items: flex-start; /* 왼쪽 정렬로 배치 */
-    gap: 8px; /* 요소들 사이의 간격 조정 */
+    justify-content: center;
+    align-items: center;
 }
 .channel-image {
     display: flex;
@@ -82,6 +74,7 @@ li {
     font-weight: 400;
     line-height: normal;
     margin-left: 24px;
+    white-space: pre-wrap;
 }
 .subscriber-count {
     color: var(--gray-color, #AAA);
@@ -90,7 +83,9 @@ li {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 24px;
+    white-space: pre-wrap;
+    /* 강제로 구독자 수가 다음 줄로 내려가도록 추가 스타일 지정 */
+    word-break: break-all;
 }
 /* 우측 구독버튼 */
 .Channel .Channel-Title .Chennel-Subscribes {
@@ -137,148 +132,53 @@ li {
     gap: 10px;
     background-color: transparent;
     border: none;
-    color: #909090;
+    color: #FFF;
     cursor: pointer;
 }
 
-.Channel-Button:hover {
-    color: #FFF; 
+.Channel-Button::hover {
+    background-color: #fff; 
 }
 
 /* 채널의 동영상 부분 */
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 15px;
-    overflow: hidden;
-    padding: 110px 10px 10px 10px;  /* padding top값 부여 및 나머지 정리 */
-    margin: 0;      /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
-    z-index: 3;
-}
-
-/* 영상 컨테이너 설정 */
-.video-container {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
-    margin-top: 20px;
-    /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.video-info-container{
-    margin-top: 10px;
-    display: flex;
-    cursor: pointer;
-}
-.video-info {
-    padding-left: 10px;
-    overflow-x: hidden;
-    width: calc(100% - 36px);
+.Channel-Player {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-}
-.view-date{
-    display: flex;
-    gap: 5px;
-}
-/* 비디오 제목 설정 */
-.video-title {
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 4px;
-    color: white;
-    word-break: break-all; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* 채널 및 조회수에 대한 스타일 */
-.video-channel,
-.video-views,
-.upload-date {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 4px;
-}
-
-.video-container video,
-.thumbnail {
-    width: 100%;
-    max-width: 500px;
-    max-height: 310px;
-
-}
-.thumbnail{
-    border-radius: 10px;
-}
-.channel-profile{
-    border-radius: 100%;
-}
-
-.channel-Container{
-    display: flex;
-    padding-top: 110px;
-    box-sizing: border-box;
-    position: relative;
-    top: 20px;
-    color: white;
-    border-bottom: 1px solid rgb(265,265,265,0.3);
     align-items: center;
+    gap: 20px;
+}
+
+/* 동영상 위아래 구분 */
+.VideoContainerTop, .VideoContainerDown {
     display: flex;
-    padding-bottom: 24px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.profile{
-    margin-left: 100px;
-    margin-right: 100px;
-    border-radius: 100%;
-}
-.channelName{
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-.subscribers{
-    font-size: 12px;
-}
-  
 
-/* channel-title-container 설정 (Flexbox 적용) */
+/* 메인동영상 1개 */
+.Video-Container-Main {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
 
+/* 썸네일 동영상 정보 */
+.Video-Details-Thumb {
+    gap: 5px;
+    align-items: center;
+}
 
-/* 반응형 스타일 적용 */
-@media (min-width: 1920px) {
-  .video-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
+/* 메인, 썸네일 동영상 정보 */
+.Video-Details-Main, .Video-Details-Thumb {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
 }
-@media (max-width: 1919px) {
-  .video-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-@media (max-width: 1600px) {
-  .video-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 1200px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 992px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+
+.video {
+    border-radius: 5%;
 }
