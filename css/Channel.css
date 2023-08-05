@@ -113,31 +113,57 @@ li {
     width: 100%;
     background-color: transparent;
     display: flex;
-    /* padding: 0px 65px; */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     justify-content: center;
-    border-bottom: 1px solid #AAA ;
+    border-bottom: 1px solid #AAA;
 }
 .Channel .Channel-Toolbar::-webkit-scrollbar{
     display: none;
 }
-#rightArrow, #channelRightArrow{
+#rightArrow{
     display: flex;
     position: absolute;
     right: 0px;
-    padding-left: 10px;
-    padding-right: 15px;
+    padding-left: 25px;
     background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
-
   }
-#leftArrow, #channelLeftArrow{
+  #channelRightArrow{
+    display: flex;
+    position: absolute;
+    right: 50px;
+    padding: 100px 0px 100px 50px;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    margin-top: 20px;
+    align-items: center;
+    z-index: 1;
+    visibility: hidden;
+  }
+#leftArrow{
     transform: scaleX(-1);
     position: absolute;
     background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
-    padding-right: 15px;
-    padding-left: 10px;
+    padding-left: 25px;
     display: flex;
+    left: 240px;
+}
+#channelLeftArrow{
+    left: 280px;
+    transform: scaleX(-1);
+    display: flex;
+    position: absolute;
+    padding: 100px 0px 100px 50px;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    margin-top: 20px;
+    align-items: center;
+    z-index: 1;
+    visibility: hidden;
+}
+body.hideSidebar #leftArrow{
+  left : 70px;
+}
+body.hideSidebar #channelLeftArrow {
+  left: 110px;
 }
   
 
@@ -146,6 +172,7 @@ li {
     display: flex;
     gap: 95px;
     flex-direction: row;
+    padding-right: 40px;
 }
 .toolbars-search{
     display: flex;
@@ -173,14 +200,16 @@ li {
     grid-auto-flow: column;
     gap: 10px;
     margin: 0;
-    z-index: 3;
+
     margin: 0px 80px 0px 80px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    align-items: center;
+    align-items: start;
 }
 
-
+.video-grid::-webkit-scrollbar{
+    display: none;
+}
 /* 상단 동영상 */
 .video-grid-top > .video-container {
     display: flex;
@@ -310,36 +339,14 @@ li {
 }
   
 
-/* channel-title-container 설정 (Flexbox 적용) */
-
 
 /* 반응형 스타일 적용 */
-@media (min-width: 1920px) {
-  .video-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-@media (max-width: 1919px) {
-  .video-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-@media (max-width: 1600px) {
-  .video-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 1200px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (max-width: 1290px) {
     .Channel .Channel-Toolbar {
         padding-left: 10px;
         justify-content: unset;
-        
     }
+
     body.hideSidebar .Channel .Channel-Toolbar {
         justify-content: center;
         
@@ -354,12 +361,8 @@ li {
   }
 
 @media (max-width: 992px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .Channel .Channel-Toolbar ul{
     padding-right: 120px;
-    
 }
 }
 @media (max-width: 864px) {
@@ -370,16 +373,25 @@ li {
     padding : 10px 0px 0px 10px;
     }
   .video-grid{
-    padding-left: 10px;
-    padding-right:10px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
-  body.hideSidebar .video-grid-top > .video-container{
+  #channelLeftArrow {
+    left: 240px;
+  }
+
+#channelRightArrow {
+    right: 0px;
+}
+  body.hideSidebar #leftArrow {
+    left: 70px;
+  }
+
+ body.hideSidebar .video-grid-top > .video-container{
     flex-direction: row;
     padding : 0px 0px 30px 80px;
   }
-  body.hideSidebar .video-grid{
-    padding: 0px 80px 0px 80px;
-  }
+
   body.hideSidebar .Channel .Channel-Title{
     padding : 10px 80px 0px 80px;
     }
@@ -388,8 +400,8 @@ li {
 
 
 @media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: repeat(1, 1fr);
+  #leftArrow, #channelLeftArrow {
+    left: 70px;
   }
   
 }
@@ -400,11 +412,14 @@ li {
        padding : 0px 0px 30px 10px;
      }
      body.hideSidebar .video-grid{
-       padding: 0px 0px 0px 10px;
+       margin-left: 10px;
      }
      body.hideSidebar .Channel .Channel-Title{
         padding : 10px 0px 0px 10px;
         }
+    body.hideSidebar #channelLeftArrow {
+          left: 70px;
+    }
    
  }
 @media (max-width: 664px) {
@@ -415,6 +430,16 @@ li {
       }
 
     }
+@media (max-width: 500px){
+  #leftArrow, #channelLeftArrow {
+    left: 0px;
+  }
+
+body.hideSidebar #leftArrow, body.hideSidebar #channelLeftArrow {
+    left: 0px;
+}
+  
+}
     @media (max-width: 596px) {
         .video-grid-top > .video-container{
             flex-direction: column;

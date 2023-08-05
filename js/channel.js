@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             Promise.all(videoIds.map(fetchVideoInfo))
                                 .then(videos => {
                                     videos.forEach(displayVideoThumbnail);
+                                    handleVideoScroll();
                                 })
                                 .catch(error => {
                                     console.error('비디오 정보를 가져오는 중에 에러가 발생했습니다:', error);

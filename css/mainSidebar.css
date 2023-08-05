@@ -70,6 +70,7 @@
     }
     .Channel{
       margin-left: 0px;
+      width: 100%;
     }
     body.showSidebar .chips_item{
       position: fixed;
@@ -118,6 +119,6 @@
       width: calc(100% - 70px);
     }
     body.hideSidebar .Channel .video-grid{
-      margin-left: 0px;
+      margin-left: 80px;
     }
 }
