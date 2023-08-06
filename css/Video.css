@@ -7,15 +7,18 @@ VideoChannel 및 comments 작업 완료 */
 
 * {
     box-sizing: border-box;
-    
+
+}
+
+body {
+    background-color: black;
 }
 
 .Container {
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: black;
-    
+    justify-content: center;
 }
 
 
@@ -23,28 +26,34 @@ VideoChannel 및 comments 작업 완료 */
 
 /* 전체 */
 .Primary {
-    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
-    display: flex;
-    width: 70%;
-    height: 1200px;
+    flex:1;
+    max-width: 1200px;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background: black;
+    position: relative;
+    padding-bottom: 59.25%;
+    margin-top: 80px;
+    margin-left: 40px;
+    margin-right: 20px;
 }
 
 
 
 .Primary .PrimaryContent {
+    display: flex;
     width: 100%;
     height: 80%;
+    flex-direction: column;
 }
 
 
 /* 비디오 플레이어 */
-.VideoPlayer{
-    position: relative;
-    margin-left: 20px;
+.VideoPlayer {
+    display: block;
+    width: 100%;
     max-width: 1200px;
     max-height: 650px;
     min-width: 435px;
@@ -55,17 +64,13 @@ VideoChannel 및 comments 작업 완료 */
 .Youtube-Player {
     width: 100%;
     height: 100%;
-    max-width: 1200px;
-    max-height: 650px;
-    min-width: 435px;
-    min-height: 245px;
+
 }
 
 /* 비디오 플레이어 설명 */
 .Video-Desc {
     display: flex;
     width: 100%;
-    height: 150px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -73,92 +78,112 @@ VideoChannel 및 comments 작업 완료 */
 
 /* 비디오 플레이어 설명 타이틀 */
 .Video-DescTitle h1 {
-    margin-left: 50px;
     margin-bottom: 20px;
-    font-size: 40px;
-    color: #FFF;
-    font-weight: bold;
-    color: var(--white-color, #FFF);
+    color:  #FFF;
     font-variant-numeric: stacked-fractions;
     font-feature-settings: 'hlig' on, 'dlig' on;
     font-family: Roboto;
-    font-size: 30px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.18px;
+
 }
 
 /* 비디오 플레이어 설명 채널 전체 */
 .VideoChannel {
-    width: 90%;
+    width: 100%;
     display: flex;
-    margin-left: 50px;
     margin-bottom: 20px;
-    align-items: center;
-    float: left;
-    
+    justify-content: space-between;
 }
 
 /* 비디오 플레이어 설명 채널명, 아바타, 알림버튼 */
 .VideoChannel .VideoChannelTitle {
-    width: 30%;
     display: flex;
     font-size: 24px;
     color: #FFF;
-    margin-right: 10px;
     align-items: center;
-}
-
-.VideoChannel .VideoChannelTitle button {
-    margin-left: 10px;
+    color:  #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 
 .VideoChannel .DescButtonList {
-    width: 70%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
+
 }
 
 /* 비디오 플레이어 설명 채널 버튼 */
 .VideoChannel .DescButton {
     margin-left: 5px;
     padding: 8px 30px;
-    gap: 10px;
     border-radius: 50px;
-    border: 0.3px solid var(--gray-color, #AAA);
-    background: var(--border-color, #303030);
+    border: 0.3px solid  #AAA;
+    background:  #303030;
+    cursor: pointer;
+}
+.DescButtonList li :hover{
+    background:  #777;
 }
 
 .VideoChannel .ChannelName {
-    color: var(--white-color, #FFF);
+    color:  #FFF;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
+.VideoChannel .subscribers{
+    font-size: 11px;
+    color:#AAA;
+}
 
 .VideoChannel .DescButton_like {
     margin-left: 5px;
-    padding: 2px 23px;
-    gap: 10px;
-    border-radius: 50px;
-    border: 0.3px solid var(--gray-color, #AAA);
-    background: var(--border-color, #303030);
+    padding: 0px 15px;
+    border-radius: 50px 0px 0px 50px;
+    border: 0.3px solid  #AAA;
+    background:  #303030;
+    cursor: pointer;
+}
+.DescButtonList :nth-child(2) .DescButton{
+    margin-left: 0px;
+    border-radius: 0px 50px 50px 0px;
+    border: 0.3px solid  #AAA;
+    background:  #303030;
 }
 
+.DescButtonList :nth-child(2) :hover{
+    background:  #777;
+}
+
+
+
 .VideoChannel .DescButton_sub {
+    display: flex;
     margin-left: 5px;
     padding: 10px 18px;
     gap: 10px;
     border-radius: 50px;
-    border: 0.3px solid var(--gray-color, #AAA);
-    background: var(--border-color, #303030);
+    border: 0.3px solid  #AAA;
+    background:  #303030;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
+.VideoChannel .DescButton_sub:hover{
+    background:  #777;
+}
+
 
 li {
     list-style: none;
@@ -166,15 +191,14 @@ li {
 
 /* 비디오 플레이어 채널 아래 설명*/
 .Video-Desc .Description {
-    margin-left: 50px;
-    width: 90%;
-    height: 45%;
+    width: 100%;
     display: flex;
     padding: 10px;
-    padding-bottom: 0px;
+
     flex-direction: column;
     align-items: flex-start;
-    background-color: rgb(39,39,39);
+    background-color: rgb(39, 39, 39);
+    border-radius: 10px;
     gap: 10px;
 }
 
@@ -188,7 +212,7 @@ li {
     border-bottom: 1px solid #303030;
 }
 
-.VideoPlayer .Video-Desc .Border{
+.VideoPlayer .Video-Desc .Border {
     width: 640px;
     height: 1px;
 }
@@ -197,126 +221,167 @@ li {
 /* Comment 댓글 쓰기 부분 */
 
 .Comment {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
+    /* Add position relative to keep comments within the flow */
+    position: relative;
 }
 
-.Comment {
-    position: relative;
-  }
-  
-  .CommentInput {
-    width: 90%;
+.CommentInput {
+    width: 98%;
     min-height: 40px;
     padding: 0;
-    margin-left: 50px;
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid ; /* 기본적으로 밑줄을 없애기 위해 투명하게 설정 */
+    border-bottom: 1px solid;
+    /* 기본적으로 밑줄을 없애기 위해 투명하게 설정 */
     resize: none;
     color: #fff;
-    outline: none; /* 클릭 시 테두리 제거 */
-  }
-  
-  .CommentInput:focus {
-    border-bottom: 3px solid #fff; /* 클릭 시 밑줄 강조 스타일 적용 */
-  }
+    outline: none;
+    transition: border-bottom-width 0.2s ease-in-out;
+    /* 클릭 시 테두리 제거 */
+}
+
+.CommentInput:focus {
+    border-bottom-width: 3px;
+    /* 클릭 시 밑줄 강조 스타일 적용 */
+
+}
 
 .Comment .ButtonArea {
     display: flex;
-    width: 90%;
-    margin-left: 50px;
+    width: 100%;
     justify-content: flex-end;
 }
 
-
 .Comment .ButtonArea button {
     display: flex;
+    margin-right: 12px;
     padding: 8px 12px;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
     border-radius: 32px;
-    border: 0.3px solid var(--gray-color, #AAA);
-    background: var(--border-color, #303030);
+    border: 0.3px solid #AAA;
+    background:  #303030;
     color: #FFF;
+    cursor: pointer;
 }
 
 /* Comments 댓글 쓰기 부분 아래 댓글들  */
 /* Comments 전체 */
-
 .comment {
-    display: flex;
-    margin-left: 50px;
-    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .comment img {
-    margin-bottom: 10px;
+    float: left;
 }
 
 .Comments .comment-text {
-    display: flex;
-    width: 90%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
     color: #FFF;
+    gap: 10px;
+    right: 235px;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 60px;
 }
 
+.Comments .user-id {
+    color: var(--white-color, #FFF);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    float: left;
+    margin-left: 5px;
+}
+
+.Comments .comment-time {
+    color: var(--gray-color, #AAA);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    float: left;
+    width: 100px;
+    margin-left: 5px;
+}
 
 /* 우측 동영상 전체 */
 .Secondary {
-    z-index: 100; /* 스크롤시 상단바 아래로 내려가기 위한 코드 z-index: 100; */
-    display: flex;
     width: 402px;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background-color: black;
-    margin-left: 20px;
+    margin-top: 50px;
 
 }
 
-.Secondary .Content{
+
+.Secondary .Content {
     display: flex;
     padding: 24px 24px 0px 0px;
     flex-direction: column;
-    
     /* align-items: flex-start; */
 }
 
 /* 오른쪽 영상 리스트 위에 메뉴 */
 
-.Secondary .Content .Top-Menu{
+.Secondary .Content .Top-Menu {
     display: flex;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
 
 /* 오른쪽 영상 리스트 위에 메뉴 버튼 */
-.Secondary .Content .Top-Menu .Item{
+.Secondary .Content .Top-Menu .Item {
     display: flex;
     padding: 8px 8px 8px 0px;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
+    color: white;
+    cursor: pointer;
+}
+.Item :hover{
+    background-color: #777;
+}
+.Item li {
+    background-color: #303030;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Item .Icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Item .Icon img {
+    width: 20px;
+    height: 20px;
 }
 
+
+
 .Video-Grid {
+    width: 402px;
     overflow: hidden;
     z-index: 3;
 }
 
+
 /* 영상 컨테이너 설정 */
 .video-container {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     position: relative;
     margin-top: 20px;
@@ -325,36 +390,38 @@ li {
     font-family: Arial, sans-serif;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    
+
 }
-.video-info-container{
-    margin-top: 10px;
+
+.video-info-container {
+    max-width: 224px;
     display: flex;
     cursor: pointer;
 }
+
 .video-info {
-    padding-left: 10px;
-    overflow-x: hidden;
-    width: calc(100% - 36px);
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
 
 }
-.view-date{
-    display: flex;
-    gap: 5px;
-}
-/* 비디오 제목 설정 */
 .video-title {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 4px;
     color: white;
-    word-break: break-all; 
-    overflow: hidden;
+    word-break: break-all;
     text-overflow: ellipsis;
 }
+
+.view-date {
+    display: flex;
+    gap: 5px;
+}
+
+/* 비디오 제목 설정 */
+
 
 /* 채널 및 조회수에 대한 스타일 */
 .video-channel,
@@ -367,14 +434,97 @@ li {
 
 .video-container video,
 .thumbnail {
-    width: 100%;
+    margin-right: 10px;
     width: 168px;
     height: 94px;
 
 }
-.thumbnail{
+
+.thumbnail {
     border-radius: 10px;
+
 }
-.channel-profile{
+
+.channel-profile {
     display: none;
+    border-radius: 50%;
+}
+
+/* Secondary 해상도에 따른 설정 */
+/* QHD 해상도 */
+@media (min-width: 2560px) {
+    .Secondary {
+        height: 60vh;
+    }
+}
+
+/* FHD 해상도 */
+@media (min-width: 1920px) and (max-width: 2559px) {
+    .Secondary {
+        height: 45vh;
+    }
+}
+
+/* HD+ 화면 */
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .Secondary {
+        height: 50vh;
+    }
+}
+
+/* SXGA 화면 */
+@media (min-width: 1280px) and (max-width: 1599px) {
+    .Secondary {
+        height: 60vh;
+    }
+}
+
+/* HD 화면 */
+@media (min-width: 720px) and (max-width:1279px){
+    .Secondary {
+        height: 70vh;
+    }
+}
+
+@media (max-width:1040px){
+    .Secondary{
+        display: none;
+    }
+}
+
+@media (min-width:635px) and (max-width:845px) {
+    .DescButtonList :nth-child(4){
+        display: none;
+    }
+    
+}
+@media (min-width:635px) and (max-width:745px) {
+    .DescButtonList :nth-child(3){
+        display: none;
+    }
+    
+}
+@media (max-width:635px) {
+    .VideoChannel{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+    .DescButtonList{
+        margin-top: 15px;
+    }
+    
+}
+
+@media (min-width:1040px) and (max-width:1230px) {
+    .DescButtonList :nth-child(4){
+        display: none;
+    }
+}
+@media (min-width:1040px) and (max-width:1135px) {
+    .DescButtonList :nth-child(3){
+        display: none;
+    }
+    
 }

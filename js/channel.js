@@ -1,62 +1,93 @@
 // JavaScript (channel.html)
 
 document.addEventListener("DOMContentLoaded", function () {
-    // URL에서 채널 이름을 가져옵니다.
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const channelName = urlParams.get('channel');
 
-    // API 요청을 위한 URL을 생성합니다.
-    const apiUrl = `http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${encodeURIComponent(channelName)}`;
+    const channelInfoUrl = `https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${encodeURIComponent(channelName)}`;
+    const channelXhr = new XMLHttpRequest();
 
-    // XMLHttpRequest 객체를 생성합니다.
-    const xhr = new XMLHttpRequest();
+    channelXhr.onreadystatechange = function () {
+        if (channelXhr.readyState === 4) {
+            if (channelXhr.status === 200) {
+                const channelResponse = JSON.parse(channelXhr.responseText);
+                displayChannelInfo(channelResponse);
 
-    // API로부터 응답을 받았을 때 처리할 이벤트 핸들러를 등록합니다.
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                displayChannelInfo(response);
+                const videoInfoUrl = `https://oreumi.appspot.com/channel/getChannelVideo?video_channel=${encodeURIComponent(channelName)}`;
+                const videoXhr = new XMLHttpRequest();
+
+                videoXhr.onreadystatechange = function () {
+                    if (videoXhr.readyState === 4) {
+                        if (videoXhr.status === 200) {
+                            const videoResponse = JSON.parse(videoXhr.responseText);
+                            const videoIds = sortVideosByViews(videoResponse);
+
+                            // 비디오 정보를 병렬로 가져오기 위해 Promise.all 사용
+                            Promise.all(videoIds.map(fetchVideoInfo))
+                                .then(videos => {
+                                    videos.forEach(displayVideoThumbnail);
+                                })
+                                .catch(error => {
+                                    console.error('비디오 정보를 가져오는 중에 에러가 발생했습니다:', error);
+                                });
+                        } else {
+                            console.error('비디오 정보를 가져오는 중에 에러가 발생했습니다.');
+                        }
+                    }
+                };
+
+                videoXhr.open('POST', videoInfoUrl);
+                videoXhr.send();
             } else {
-                console.error('Error fetching data. Status:', xhr.status);
+                console.error('채널 정보를 가져오는 중에 에러가 발생했습니다. 상태:', channelXhr.status);
             }
         }
     };
 
-    // API에 GET 요청을 보냅니다.
-    xhr.open('POST', apiUrl);
-    xhr.send();
+    channelXhr.open('POST', channelInfoUrl);
+    channelXhr.send();
 });
 
+// 채널 비디오 정보를 조회수 순으로 video_id를 저장
+function sortVideosByViews(videoResponse) {
+    const sortedVideos = videoResponse.sort((a, b) => b.views - a.views);
+    return sortedVideos.map(video => video.video_id);
+}                       
 
-function displayVideoThumbnail(videoInfo) {
-    // div 요소 생성해서 videoContainer에 추가
-    const videoGrid = document.querySelector('.video-grid');
-    const videoContainer = document.createElement('div');
-    videoContainer.className = 'video-container';
+//비디오 id를 이용해 비디오 정보를 가져오고 display함수로 전달
+function fetchVideoInfo(videoId) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
-    // 비디오 요소 만들기
-    const videoElem = document.createElement('video');
-    videoElem.controls = true;
-    videoElem.width = 276;  // 사이즈 피그마 참고
-    videoElem.height = 155;
-    // source 요소 생성해서 sourceElem에 추가
-    const sourceElem = document.createElement('source');
-    sourceElem.src = videoInfo.video_link;
-    sourceElem.type = 'video/mp4';  // 비디오가 mp4 형식이라고 가정
-    
-    videoElem.appendChild(sourceElem);
-    videoContainer.appendChild(videoElem);
+        xhr.open('GET', url, true);
 
-    // p 요소 생성해서 videoTitle에 추가
-    const videoTitle = document.createElement('p');
-    videoTitle.className = 'video-title';
-    videoTitle.textContent = videoInfo.video_title;
-    videoContainer.appendChild(videoTitle);
-    
-    // videoGrid>videoContainer>videoTitle>sourceElem>videoInfo 이렇게 생각하면 된다
-    videoGrid.appendChild(videoContainer);
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 400) {
+                const videoInfo = JSON.parse(xhr.responseText);
+
+                // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
+                fetchChannelInfo(videoInfo.video_channel)
+                    .then(channelProfileUrl => {
+                        videoInfo.channel_profile = channelProfileUrl.channel_profile;
+                        videoInfo.subscribers = channelProfileUrl.subscribers;
+                        resolve(videoInfo);
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            } else {
+                reject('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
+            }
+        };
+
+        xhr.onerror = function () {
+            reject('네트워크 오류가 발생했습니다');
+        };
+
+        xhr.send();
+    });
 }
 
 
@@ -97,7 +128,17 @@ function displayChannelInfo(channelData) {
     channelWrapper.appendChild(channelInfoElement);
 }
 
+function sendToVideoPage(videoInfo) {
+    // video_id 보내기
+    window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
 
+}
+
+function sendToChannelPage(videoInfo) {
+    window.location.href = `channel.html?channel=${videoInfo.video_channel}`;
+}
+
+const videoGrid = document.querySelector('.video-grid');
 document.getElementById("btn").addEventListener("click", function() {
     const imgBtn = document.querySelector(".img_btn");
   
@@ -111,4 +152,4 @@ document.getElementById("btn").addEventListener("click", function() {
     } else {
         imgBtn.src = defaultImage;
     }
-  });
+});
