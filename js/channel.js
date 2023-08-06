@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             Promise.all(videoIds.map(fetchVideoInfo))
                                 .then(videos => {
                                     videos.forEach(displayVideoThumbnail);
+                                    handleVideoScroll();
                                 })
                                 .catch(error => {
                                     console.error('비디오 정보를 가져오는 중에 에러가 발생했습니다:', error);
@@ -228,9 +229,8 @@ function displayVideoThumbnailTop(videoInfo) {
     const videoInfomation = document.createElement("div");
     videoInfomation.className = "video-info";
     videoInfomation.appendChild(videoTitle);
-    videoInfomation.appendChild(document.createElement('br'));
     videoInfomation.appendChild(videoChannel);
-    videoInfomation.appendChild(document.createElement('br'));
+
 
     const videoViews = document.createElement("p");
     videoViews.className = "video-views";
@@ -239,12 +239,18 @@ function displayVideoThumbnailTop(videoInfo) {
     const uploadDate = document.createElement("p");
     uploadDate.className = "upload-date";
     uploadDate.textContent = getTimeDiff(videoInfo.upload_date);
+    const videoDetail = document.createElement('p');
+    videoDetail.className = "video-detail";
+    videoDetail.textContent = videoInfo.video_detail;
 
     const viewsUploadDateContainer = document.createElement("div");
     viewsUploadDateContainer.className = "view-date";
+
     viewsUploadDateContainer.appendChild(videoViews);
     viewsUploadDateContainer.appendChild(uploadDate);
+ 
     videoInfomation.appendChild(viewsUploadDateContainer);
+    videoInfomation.appendChild(videoDetail);
     videoInfoContainer.appendChild(videoInfomation);
     videoContainer.appendChild(videoInfoContainer);
 
