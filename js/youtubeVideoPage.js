@@ -102,7 +102,7 @@ function addComment() {
 
         // 아바타 이미지 생성
         const avatarImg = document.createElement('img');
-        avatarImg.src = '../res/image/Video/profile-pic.svg';
+        avatarImg.src = './res/image/Video/profile-pic.svg';
         avatarImg.className = 'user-avatar';
 
         // 댓글 텍스트 생성
@@ -113,7 +113,7 @@ function addComment() {
         // 사용자 아이디 생성 (Change 'user123' to the actual user ID)
         const userIDDiv = document.createElement('div');
         userIDDiv.className = 'user-id';
-        userIDDiv.innerText = 'officail_oreumi_15ya';
+        userIDDiv.innerText = 'official_oreumi_15ya';
 
         // 댓글 작성 시간 생성
         const randomDate = getRandomDate();
