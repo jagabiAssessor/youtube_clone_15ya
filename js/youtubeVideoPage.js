@@ -4,7 +4,7 @@
 
 async function fetchVideoInfo(videoId, isMainVideo = false) {
     const xhr = new XMLHttpRequest();
-    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
     xhr.open('GET', url, true);
 
@@ -20,6 +20,7 @@ async function fetchVideoInfo(videoId, isMainVideo = false) {
             displayVideoThumbnail(videoInfo);
             if (isMainVideo) {
                 displayVideoInfo(videoInfo);
+                Subscribed();
             }
         } else {
             console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
@@ -52,7 +53,7 @@ videoIds.forEach(videoId => {
 
 async function fetchVideoPlayer(videoId) {
     const xhr = new XMLHttpRequest();
-    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
     xhr.open('GET', url, true);
 
@@ -101,7 +102,7 @@ function addComment() {
 
         // 아바타 이미지 생성
         const avatarImg = document.createElement('img');
-        avatarImg.src = '../res/image/Video/profile-pic.svg';
+        avatarImg.src = './res/image/Video/profile-pic.svg';
         avatarImg.className = 'user-avatar';
 
         // 댓글 텍스트 생성
@@ -112,7 +113,7 @@ function addComment() {
         // 사용자 아이디 생성 (Change 'user123' to the actual user ID)
         const userIDDiv = document.createElement('div');
         userIDDiv.className = 'user-id';
-        userIDDiv.innerText = 'officail_oreumi_15ya';
+        userIDDiv.innerText = 'official_oreumi_15ya';
 
         // 댓글 작성 시간 생성
         const randomDate = getRandomDate();
@@ -259,4 +260,39 @@ function sendToVideoPage(videoInfo) {
     // 비디오 정보를 로컬 스토리지에 저장하기
     window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
 
+}
+
+//구독 버튼 클릭 시 채널 이름 로컬 스토리지에 저장 한 후 페이지 새로 고침 시나 다른 페이지로 넘어 갈 때 구독 정보를 가져옴
+function Subscribed() {
+    const subButton = document.querySelector('.DescButton_sub');
+    var videoChannel = document.querySelector('.ChannelName').textContent;
+    var sub;
+    var isSub = localStorage.getItem(videoChannel) === 'subscribed';
+
+    //구독 되어 있으면, <div>구독중</div> 추가
+    if (isSub) {
+        addSub();
+        }
+
+    //버튼 클릭시 구독 여부에 따라 <div>구독중</div> 추가 or 제거
+    subButton.addEventListener('click', function() {
+        if (!isSub) {
+            addSub();
+            localStorage.setItem(videoChannel, "subscribed");
+        } else {
+            removeSub();
+            localStorage.removeItem(videoChannel);
+        }
+        isSub = !isSub;
+    });
+    function addSub() {
+        sub = document.createElement('div');
+        sub.textContent = '구독중';
+        subButton.appendChild(sub);
+    }
+
+    function removeSub() {
+        subButton.removeChild(sub);
+            
+    }
 }

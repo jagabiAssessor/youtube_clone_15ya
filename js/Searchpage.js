@@ -21,7 +21,7 @@ let channelInfoDisplayed = false;
 
 async function fetchVideoInfo(videoId) {
     const xhr = new XMLHttpRequest();
-    const url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
   
     xhr.open('GET', url, true);
   
@@ -97,5 +97,7 @@ function sendToVideoPage(videoInfo) {
 
 }
 
-
+function sendToChannelPage(videoInfo) {
+  window.location.href = `channel.html?channel=${videoInfo.video_channel}`;
+}
 
