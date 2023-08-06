@@ -112,7 +112,6 @@ li {
 
 .Channel .Channel-Cover img {
     width: 100%;
-    
 }
 /* 툴바 전체 */
 .Channel .Channel-Toolbar {
@@ -152,10 +151,36 @@ li {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 15px;
     overflow: hidden;
-    padding: 110px 10px 10px 10px;  /* padding top값 부여 및 나머지 정리 */
+    padding: 30px 100px 10px 100px;  /* padding top값 부여 및 나머지 정리 */
     margin: 0;      /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
     z-index: 3;
 }
+
+
+/* 상단 동영상 */
+.video-grid-top > .video-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px  0px 30px 100px;
+    border-bottom: 1px solid #909090;
+}
+
+.video-grid-top > .video-container > .video-info-container {
+    margin-left: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+
 
 /* 영상 컨테이너 설정 */
 .video-container {
@@ -211,7 +236,7 @@ li {
 .video-container video,
 .thumbnail {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;   /* 500px -> 400px 축소*/
     max-height: 310px;
 
 }
