@@ -151,9 +151,16 @@ a {
     }
     .video-grid{
       margin-left: 80px;
-      z-index: 1;
+      z-index: 5;
     }
-
+    .channel-Container{
+      margin-left: 70px;
+    }
+    .Channel{
+      margin-left: 70px;  /* 80px -> 70px 화면 축소시 10px 우측 밀림 현상 있어 수정*/ 
+      z-index: 5;
+      width: 100vw;
+    }
     body.showSidebar:before {
       content: '';
       background-color: rgba(0, 0, 0, 0.5); /* 어두운 블랙색상 */
@@ -162,15 +169,15 @@ a {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
+      z-index: 5;
     }
     body.showSidebar .Navigations {
       width: 100vw;
-      z-index: 3;
+      z-index: 10;
     }
     body.showSidebar .Sidebar_Large {
       transform: translateX(0%);
-      z-index: 3;
+      z-index: 10;
     }
     body.showSidebar .chips_item{
       position: fixed;
@@ -187,6 +194,12 @@ a {
       left: 0px;
     }
     .video-grid{
+      margin-left: 0px;
+    }
+    .channel-Container{
+      margin-left: 0px;
+    }
+    .Channel{
       margin-left: 0px;
     }
     body.showSidebar .chips_item{
@@ -206,8 +219,14 @@ a {
     }
     .video-grid{
       margin-left: 250px;
-      
     }
+    .channel-Container{
+      margin-left: 240px;
+    }
+    .Channel{
+      margin-left: 240px;   /* 250px -> 240px Channel 좌측 10px공백 생겨서 줄입니다. */
+    }
+  
     body.hideSidebar .Sidebar_Large {
       display: none;
       z-index: 10;
@@ -221,5 +240,11 @@ a {
       margin-left: 80px;
       z-index: 5;
     }
-
+    body.hideSidebar .channel-Container{
+      margin-left: 70px;
+    }
+    body.hideSidebar .Channel{
+      margin-left: 70px;
+      width: calc(100% - 70px);
+    }
   }

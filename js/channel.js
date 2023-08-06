@@ -153,9 +153,3 @@ document.getElementById("btn").addEventListener("click", function() {
         imgBtn.src = defaultImage;
     }
 });
-
-
-
-
-
-
