@@ -272,7 +272,8 @@ li {
 /* Comments 전체 */
 .comment {
     width: 100%;
-    margin-bottom: 50px;
+    align-items: center;
+    position: relative;
 }
 
 .comment img {
@@ -280,6 +281,13 @@ li {
 }
 
 .Comments .comment-text {
+    display: flex;
+    flex : 1;
+    width: 90%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
     color: #FFF;
     gap: 10px;
     right: 235px;
