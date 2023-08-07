@@ -229,12 +229,11 @@ async function calculateVideoSimilarities(videoId, videoList, targetTagList) {
       ...video,
       score: 0,
     }));
-    filteredVideoList.slice(0, 5).forEach(videoInfo => {
+    filteredVideoList.slice(1, 6).forEach(videoInfo => {
         displayVideoThumbnail(videoInfo);
     });
     console.log("filter",filteredVideoList);
   }
-
 
 function displayVideoInfo(videoInfo) {
     const VideoPlayer = document.createElement('div');
