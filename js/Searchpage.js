@@ -88,6 +88,11 @@ function displaychannelInfo(videoInfo) {
     channelContainer.appendChild(channelInfo);
   
     channel.appendChild(channelContainer);
+
+    const channelClick = () => {
+      sendToChannelPage(videoInfo);
+    };
+    channelProfile.addEventListener('click', channelClick);
 };
 
 

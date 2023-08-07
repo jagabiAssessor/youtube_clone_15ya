@@ -113,8 +113,14 @@ function displayVideoThumbnail(videoInfo) {
 
     // 마우스 호버 기능
     videoContainer.addEventListener('mouseover', () => {
+        const imgHeight = imageElem.offsetHeight;
         imageElem.style.display = 'none';
         videoElem.style.display = 'block';
+
+        // 비디오 높이 확인 및 수정
+        if (videoElem.offsetHeight != imgHeight) {
+            videoElem.style.height = `${imgHeight}px`;
+        }
         videoElem.play();
     });
 
