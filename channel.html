@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/Navstyle.css">
     <link rel="stylesheet" href="./css/Sidebar.css">
+    <link rel="stylesheet" href="./css/mainSidebar.css">
     <link rel="stylesheet" href="./css/Top-menustyle.css">
     <link rel="stylesheet" href="./css/Channel.css">
 
@@ -19,7 +19,7 @@
         <!-- logo & Menu -->
         <div class="Yt-Button">
             <img src="./res/image/Navigations/hamburger.svg" class="icon">
-            <a href="index.html" class="Button"><img src="./res/image/Navigations/Logo.svg"></a>
+            <a href="./html/index.html" class="Button"><img src="./res/image/Navigations/Logo.svg"></a>
         </div>
         <!-- main_search_box -->
         <div class="center">
@@ -136,34 +136,6 @@
             </div>
         </div>
     </aside>
-
-    <!-- <div class="Footer">
-                <ul>
-                    <li>About</li>
-                    <li>Press</li>
-                    <li>Copyright</li>
-                    <li>Contact us</li>
-                    <li>Creators</li>
-                    <li>Advertise</li>
-                    <li>Developers</li>
-                </ul>
-                <ul>
-                    <li>Terms</li>
-                    <li>Privacy</li>
-                    <li>Policy & Safety</li>
-                    <li>How Youtube works</li>
-                    <li>Test New features</li>
-                </ul>
-                <ul>
-                    <li>© 2021 Google LLC</li>
-                </ul>
-            </div>
-        </div>
-    </aside> -->
-
-       
-
-    <!-- Channel-->
      <!-- Channel-->
      <section class="Channel">
         <!-- cover-img -->
@@ -191,36 +163,43 @@
         <!-- toolbar -->
         <div class="Channel-Toolbar">
             <ul>
+                <button class="Channel-Button" id="leftArrow">
+                    <img src="./res/image/UesdSvg/leftArrow.svg">
+                </button>
                 <li><button class="Channel-Button">HOME</button></li>
                 <li><button class="Channel-Button">VIDEOS</button></li>
                 <li><button class="Channel-Button">PLAYLISTS</button></li>
                 <li><button class="Channel-Button">COMMUNITY</button></li>
                 <li><button class="Channel-Button">CHANNNELS</button></li>
                 <li><button class="Channel-Button">ABOUT</button></li>
+                <div class="toolbars-search">
+                    <button class="Channel-Button">
+                        <img src="./res/image/UesdSvg/search.svg">
+                    </button>
+                    <button class="Channel-Button" id="rightArrow">
+                        <img src="./res/image/UesdSvg/leftArrow.svg">
+                    </button>
+                </div>
             </ul>
-            <div class="toolbars-search">
-                <button class="Channel-Button">
-                    <img src="./res/image/UesdSvg/search.svg">
-                </button>
-                <button class="Channel-Button">
-                    <img src="./res/image/UesdSvg/leftArrow.svg">
-                </button>
-            </div>
+
         </div>
 
         <!-- Channel Small Video -->
-        <div class="video-grid-top"><!-- 상단 div 추가 --></div>
-        <div class="video-grid"><!-- 꼭 section 안에 넣어주세요. --></div>
+        <div class="video-grid-top"></div>
+        <div class="video-grid">
+            <button class="Channel-Button" id="channelLeftArrow"><img src="./res/image/UesdSvg/leftArrow.svg"></button><!-- 꼭 section 안에 넣어주세요. -->
+            <button class="Channel-Button" id="channelRightArrow"><img src="./res/image/UesdSvg/leftArrow.svg"></button></div>
     </section>
 
     
 
 </body>
 <script src="./js/index.js"></script>
-<script src="./js/channel.js"></script>
-<script src="./js/channel.js"></script>
-<script src="./js/youtubMainpage.js"></script>
 <script src="./js/displayVideo.js"></script>
+<script src="./js/slidebutton.js"></script>
+<script src="./js/channel.js"></script>
+
+
 
 <!-- youtubeVideoPage.js 같은 파일 활용해서 만들고 
         이름통일해서 js파일 넣는게 좋을 거 같습니다. -->
