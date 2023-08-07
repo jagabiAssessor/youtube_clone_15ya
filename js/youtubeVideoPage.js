@@ -235,6 +235,7 @@ async function calculateVideoSimilarities(videoId, videoList, targetTagList) {
     console.log("filter",filteredVideoList);
   }
 
+
 function displayVideoInfo(videoInfo) {
     const VideoPlayer = document.createElement('div');
     VideoPlayer.className = 'VideoPlayer';
