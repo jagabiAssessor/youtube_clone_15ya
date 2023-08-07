@@ -3,9 +3,12 @@
     position: fixed;
     top: 56px;
     display: flex;
-    width: 100%;
     background: #313131;
     z-index: 3;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-right: 50px;
 }
 
 .chips_item>.Item {
@@ -29,17 +32,30 @@
     background-color: #6b6b6b;
 }
 
+.chips_item::-webkit-scrollbar{
+    display: none;
+}
+
 /* 탑메뉴 우측 화살표 아이콘 */
-.Item>.Icon {
+#rightArrow, #leftArrow{
+    display: flex;
+    position: fixed;
+    padding-left: 35px;
+    background: linear-gradient(to left,rgb(49, 49, 49,1),rgb(49, 49, 49,1),rgba(0, 0, 0, 0));
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+#rightArrow{
+    right: 0px;
+}
+#leftArrow{
+    transform: scaleX(-1);
+}
+.Item>.Icon img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Itme>.Icon>img {
-    width: 20px;
-    height: 20px;
+    padding: 5px;
 }

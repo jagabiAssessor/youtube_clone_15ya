@@ -17,6 +17,7 @@ const updateSidebarState = () => {
 
 const toggleSidebarOnLargeScreen = () => {  //화면이 클 때에는 슬라이드X
   document.body.classList.toggle('hideSidebar');
+  handleToolBarScroll();
 };
 
 const toggleSidebarOnSmallScreen = () => { //화면이 작을 때에는 슬라이드

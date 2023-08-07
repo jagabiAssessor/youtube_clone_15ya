@@ -12,8 +12,12 @@
     }
     .chips_item{
       position: fixed;
+      width: calc(100vw - 70px);
       left: 70px;
     }
+    #leftArrow {
+    left: 70px;
+  }
     .video-grid{
       margin-left: 80px;
       z-index: 1;
@@ -45,14 +49,15 @@
       z-index: 10;
     }
     body.showSidebar .chips_item{
-      position: fixed;
-      width: 100vw;
+      width: calc(100vw - 70px);
       left: 70px;
     }
     body.showSidebar .Channel{
       position: fixed;
     }
-
+    body.showSidebar #leftArrow{
+      left: 70px;
+    }
 
   }
   @media (max-width: 500px) {
@@ -60,6 +65,7 @@
       display: none;
     }
     .chips_item{
+      width: 100vw;
       left: 0px;
     }
     .video-grid{
@@ -72,8 +78,14 @@
       margin-left: 0px;
       width: 100%;
     }
+    #leftArrow {
+      left: 0px;
+  }
     body.showSidebar .chips_item{
-      position: fixed;
+      width: 100vw;
+      left: 0px;
+    }
+    body.showSidebar #leftArrow{
       left: 0px;
     }
 
@@ -85,7 +97,11 @@
     }
     .chips_item{
       position: fixed;
+      width: calc(100vw - 240px);
       left: 240px;
+    }
+    #leftArrow {
+    left: 240px;
     }
     .video-grid{
       margin-left: 250px;
@@ -106,6 +122,7 @@
     body.hideSidebar .chips_item{
       position: fixed;
       left: 70px;
+      width: calc(100vw - 70px);
     }
     body.hideSidebar .video-grid{
       margin-left: 80px;
@@ -120,5 +137,8 @@
     }
     body.hideSidebar .Channel .video-grid{
       margin-left: 80px;
+    }
+    body.hideSidebar #leftArrow{
+      left: 70px;
     }
 }

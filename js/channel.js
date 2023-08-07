@@ -276,14 +276,10 @@ function displayVideoThumbnailTop(videoInfo) {
 
     // 마우스 호버 기능
     videoContainer.addEventListener('mouseover', () => {
-        imageElem.style.display = 'none';
-        videoElem.style.display = 'block';
         videoElem.play();
     });
 
     videoContainer.addEventListener('mouseout', () => {
-        imageElem.style.display = 'block';
-        videoElem.style.display = 'none';
         videoElem.pause();
         videoElem.currentTime = 0;
     });

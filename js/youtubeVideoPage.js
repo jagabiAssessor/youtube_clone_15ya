@@ -3,84 +3,73 @@
 // 댓글 기능 완료
 
 async function fetchVideoInfo(videoId, isMainVideo = false) {
-    const xhr = new XMLHttpRequest();
-    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    return new Promise(async (resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
 
-    xhr.open('GET', url, true);
+        xhr.open('GET', url, true);
 
-    xhr.onload = async function () {
-        if (xhr.status >= 200 && xhr.status < 400) {
-            const videoInfo = JSON.parse(xhr.responseText);
+        xhr.onload = async function () {
+            if (xhr.status >= 200 && xhr.status < 400) {
+                const videoInfo = JSON.parse(xhr.responseText);
+                const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
+                videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
+                videoInfo.subscribers = channelProfileUrl.subscribers; // 구독자 수 추가
 
-            // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
-            const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
-            videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
-            videoInfo.subscribers = channelProfileUrl.subscribers; // 구독자 수 추가
+                if (isMainVideo) {
+                    displayVideoInfo(videoInfo);
+                    Subscribed();
+                    resolve({
+                        videoInfo: videoInfo,
+                        targetTagList: videoInfo.video_tag
+                    });
+                } else {
+                    resolve(videoInfo);
+                }
 
-            displayVideoThumbnail(videoInfo);
-            if (isMainVideo) {
-                displayVideoInfo(videoInfo);
-                Subscribed();
+            } else {
+                console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
+                reject('ID에 대한 비디오 정보를 가져오지 못했습니다');
             }
-        } else {
-            console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
-        }
-    };
-    xhr.onerror = function () {
-        console.error('네트워크 오류가 발생했습니다');
-    };
-    xhr.send();
+        };
+        xhr.onerror = function () {
+            console.error('네트워크 오류가 발생했습니다');
+            reject('네트워크 오류가 발생했습니다');
+        };
+        xhr.send();
+    });
 }
 
 //쿼리값으로 받은 id값으로 영상 정보 불러오기
 document.addEventListener("DOMContentLoaded", function () {
     const receiveId = new URLSearchParams(window.location.search);
     const videoId = receiveId.get("video_id");
+    const videoIds = Array.from({ length: 21 }, (_, i) => i);
+
     if (videoId) {
-        fetchVideoInfo(videoId, true);
+        let targetTagList;
+
+        // 메인 비디오 정보와 targetTagList 가져오기
+        fetchVideoInfo(videoId, true)
+            .then(({ videoInfo, targetTagList: mainTags }) => {
+                targetTagList = mainTags;
+
+                // 다른 비디오 정보 가져오기
+                return Promise.all(videoIds.map(otherVideoId => fetchVideoInfo(otherVideoId)));
+            })
+            .then(videoList => {
+                // 비디오 유사도 계산
+                calculateVideoSimilarities(videoId, videoList, targetTagList);
+            })
+            .catch(error => {
+                console.error('비디오 정보를 가져오는 데 실패했습니다:', error);
+            });
     } else {
         console.error("비디오 정보를 찾을 수 없습니다.");
     }
 });
 
 const videoGrid = document.querySelector('.Video-Grid');
-
-const videoIds = Array.from({ length: 21 }, (_, i) => i);
-
-videoIds.forEach(videoId => {
-    fetchVideoInfo(videoId);
-});
-
-async function fetchVideoPlayer(videoId) {
-    const xhr = new XMLHttpRequest();
-    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
-
-    xhr.open('GET', url, true);
-
-    xhr.onload = async function () {
-        if (xhr.status >= 200 && xhr.status < 400) {
-            const videoInfo = JSON.parse(xhr.responseText);
-
-            // fetchChannelInfo 함수를 호출하여 채널 프로필 이미지 URL 가져오기
-            const channelProfileUrl = await fetchChannelInfo(videoInfo.video_channel);
-            videoInfo.channel_profile = channelProfileUrl.channel_profile; // 프로필 이미지 URL 객체에 추가
-            videoInfo.subscribers = channelProfileUrl.subscribers; // 구독자 수 추가
-
-            displayVideoInfo(videoInfo);
-
-
-        } else {
-            console.error('ID에 대한 비디오 정보를 가져오지 못했습니다:', videoId);
-        }
-    };
-
-    xhr.onerror = function () {
-        console.error('네트워크 오류가 발생했습니다');
-    };
-
-    xhr.send();
-}
-
 
 // 댓글 부분
 // 댓글 추가 될때 배경화면 늘려주는 코드
@@ -179,7 +168,72 @@ function increaseCommentsContainerHeight(commentsContainer) {
 
 
 
+  // 유사도 측정결과 가져오기
+async function getSimilarity(firstWord, secondWord) {
+    const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
+    const access_key = "b4b31f70-6321-4980-bd3a-deba9fae2ffa";
 
+    let requestJson = {
+      argument: {
+        first_word: firstWord,
+        second_word: secondWord,
+      },
+    };
+
+    let response = await fetch(openApiURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: access_key,
+      },
+      body: JSON.stringify(requestJson),
+    });
+    let data = await response.json();
+    return data.return_object["WWN WordRelInfo"].WordRelInfo.Distance;
+  }
+async function calculateVideoSimilarities(videoId, videoList, targetTagList) {
+    let filteredVideoList = [];
+
+    for (let video of videoList) {
+      let totalDistance = 0;
+      let promises = [];
+
+      for (let videoTag of video.video_tag) {
+        for (let targetTag of targetTagList) {
+          if (videoTag == targetTag) {
+            promises.push(0);
+          } else {
+            promises.push(getSimilarity(videoTag, targetTag));
+          }
+        }
+      }
+
+      let distances = await Promise.all(promises);
+
+      for (let distance of distances) {
+        if (distance !== -1) {
+          totalDistance += distance;
+        }
+      }
+
+      if (totalDistance !== 0) {
+        if (videoId !== video.video_id) {
+          filteredVideoList.push({ ...video, score: totalDistance });
+        }
+      }
+    }
+
+    filteredVideoList.sort((a, b) => a.score - b.score);
+
+    filteredVideoList = filteredVideoList.map((video) => ({
+      ...video,
+      score: 0,
+    }));
+    filteredVideoList.slice(0, 5).forEach(videoInfo => {
+        displayVideoThumbnail(videoInfo);
+    });
+    console.log("filter",filteredVideoList);
+  }
 
 
 function displayVideoInfo(videoInfo) {

@@ -127,6 +127,7 @@ li {
     right: 0px;
     padding-left: 25px;
     background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    visibility: hidden;
   }
   #channelRightArrow{
     display: flex;
@@ -146,6 +147,7 @@ li {
     padding-left: 25px;
     display: flex;
     left: 240px;
+    visibility: hidden;
 }
 #channelLeftArrow{
     left: 280px;
@@ -173,10 +175,12 @@ body.hideSidebar #channelLeftArrow {
     gap: 95px;
     flex-direction: row;
     padding-right: 40px;
+    align-items: center;
 }
 .toolbars-search{
     display: flex;
-    gap: 40px
+    gap: 40px;
+    align-items: center;
 }
 
 /* 툴바 버튼 */
@@ -395,6 +399,9 @@ body.hideSidebar #channelLeftArrow {
   body.hideSidebar .Channel .Channel-Title{
     padding : 10px 80px 0px 80px;
     }
+    body.hideSidebar .video-grid{
+        margin-left: 80px;
+      }
 
 }
 
