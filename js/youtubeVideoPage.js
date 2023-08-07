@@ -286,7 +286,7 @@ function displayVideoInfo(videoInfo) {
     channel.appendChild(channelName);
     channel.appendChild(document.createElement("br")); // 줄바꿈
     channel.appendChild(subscribers);
-
+    
 
     const DescButtonsub = document.querySelector('.DescButton_sub');
     DescButtonsub.parentElement.insertBefore(channelProfile, DescButtonsub);
@@ -306,14 +306,16 @@ function displayVideoInfo(videoInfo) {
     Description.appendChild(videoViews);
     Description.appendChild(uploadDate);
     Description.appendChild(videoDetail);
+    
 
+    const channelClick = () => {
+        sendToChannelPage(videoInfo);
+    };
+    channelProfile.addEventListener('click', channelClick);
+    channelName.addEventListener('click', channelClick);
 }
 
-function sendToVideoPage(videoInfo) {
-    // 비디오 정보를 로컬 스토리지에 저장하기
-    window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
 
-}
 
 //구독 버튼 클릭 시 채널 이름 로컬 스토리지에 저장 한 후 페이지 새로 고침 시나 다른 페이지로 넘어 갈 때 구독 정보를 가져옴
 function Subscribed() {

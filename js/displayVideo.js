@@ -109,7 +109,7 @@ function displayVideoThumbnail(videoInfo) {
         sendToChannelPage(videoInfo);
     };
     channelProfile.addEventListener('click', channelClick);
-    
+    videoChannel.addEventListener('click', channelClick);
 
     // 마우스 호버 기능
     videoContainer.addEventListener('mouseover', () => {
@@ -153,6 +153,14 @@ function getTimeDiff(uploadDate) {
     }
 }
 
+function sendToVideoPage(videoInfo) {
+    // 비디오 정보를 로컬 스토리지에 저장하기
+    window.location.href = `Video.html?video_id=${videoInfo.video_id}`;
+
+}
+function sendToChannelPage(videoInfo) {
+    window.location.href = `channel.html?channel=${videoInfo.video_channel}`;
+  }
 
 
 
@@ -161,5 +169,6 @@ function getTimeDiff(uploadDate) {
 window.displayVideoThumbnail = displayVideoThumbnail;
 window.fetchChannelInfo = fetchChannelInfo;
 window.getTimeDiff = getTimeDiff;
-
+window.sendToChannelPage = sendToChannelPage;
+window.sendToVideoPage = sendToVideoPage;
 
