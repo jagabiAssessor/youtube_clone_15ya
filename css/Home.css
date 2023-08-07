@@ -96,7 +96,7 @@ section{
     width: 100%;
     max-width: 500px;
     max-height: 310px;
-
+    height: 148px;  /* 썸네일 높이 고정*/
 }
 .thumbnail{
     border-radius: 10px;

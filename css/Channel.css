@@ -304,7 +304,7 @@ body.hideSidebar #channelLeftArrow {
     width: 100%;
     max-width: 400px;   /* 500px -> 400px 축소*/
     max-height: 310px;
-
+    
 }
 .thumbnail{
     border-radius: 10px;

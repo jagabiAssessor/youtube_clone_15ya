@@ -193,9 +193,13 @@ function displayVideoThumbnailTop(videoInfo) {
     videoElem.controls = true;
     // videoElem.width = 276;  // 사이즈 피그마 참고
     // videoElem.height = 155;
+    // videoElem.style.display = 'none';  // 초기에는 비디오 숨김
+
+    // 동영상 자동 재생
     videoElem.autoplay = true;
     videoElem.muted = true;
-    videoElem.style.display = 'none';  // 초기에는 비디오 숨김
+    videoElem.style.display = 'block';
+    imageElem.style.display = 'none';
 
     // source 요소 생성해서 sourceElem에 추가
     const sourceElem = document.createElement('source');
