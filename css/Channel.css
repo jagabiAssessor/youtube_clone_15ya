@@ -28,33 +28,25 @@ li {
 
 /* .채널 전체(상단바, 사이드바 제외) */
 .Channel {
-    z-index: 100px;
-    position: absolute;
-    margin-top: 56px;
-    /* margin-left: 240px; margin 값 초기화 하여 사이드바와 반응형으로 동작 */
-    /* padding: 10px; */
-    padding-left: 0; /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
-    /* width: calc(100% - 240px);
-    height: calc(100% - 56px);  margin 값 초기화 하여 사이드바와 반응형으로 동작*/
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+
 }
 /* 채널 타이틀 전체 */
 .Channel .Channel-Title {
-    padding: 10px;
+    padding-right:80px;
+    padding-left:80px;
+    padding-top: 10px;
     display: flex;
     background-color: transparent;
     justify-content: space-between;
     align-items: center;
 }
-/* 좌측 프로필 버튼 */
-.Channel .Channel-Title .Channel-Profile {
-    margin-left: 80px;
-}
+
 /* 프로필 세부 사항 */
 .channel-wrapper {
     display: flex;
-    flex-direction: row; /* 세로 방향으로 배치 */
-    align-items: flex-start; /* 왼쪽 정렬로 배치 */
-    gap: 8px; /* 요소들 사이의 간격 조정 */
 }
 
 .channel-info {
@@ -70,32 +62,31 @@ li {
     justify-content: center;
     align-items: center;
     border-radius: 80px;
-    opacity: 0.6499999761581421;
     gap: 10px;
     padding-right: 0px;
 }
 .channel-name {
-    color: var(--white-color, #FFF);
+    color: #FFF;
     font-family: Roboto;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 24px;
+    margin-left: 15px;
 }
 .subscriber-count {
-    color: var(--gray-color, #AAA);
+    color: #AAA;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 24px;
+    margin-left: 15px;
 }
 /* 우측 구독버튼 */
 .Channel .Channel-Title .Chennel-Subscribes {
     background-color: transparent;
-    margin-right: 50px;
+    margin-right: 10px;
     border: none; /* 기본 버튼 테두리 제거 */
     padding: 0;
 }
@@ -112,29 +103,88 @@ li {
 
 .Channel .Channel-Cover img {
     width: 100%;
-    
 }
+
 /* 툴바 전체 */
 .Channel .Channel-Toolbar {
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 10px;
     width: 100%;
     background-color: transparent;
     display: flex;
-    padding: 0px 65px;
-    justify-content: start;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    justify-content: center;
+    border-bottom: 1px solid #AAA;
 }
+.Channel .Channel-Toolbar::-webkit-scrollbar{
+    display: none;
+}
+#rightArrow{
+    display: flex;
+    position: absolute;
+    right: 0px;
+    padding-left: 25px;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    visibility: hidden;
+  }
+  #channelRightArrow{
+    display: flex;
+    position: absolute;
+    right: 50px;
+    padding: 100px 0px 100px 50px;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    margin-top: 20px;
+    align-items: center;
+    z-index: 1;
+    visibility: hidden;
+  }
+#leftArrow{
+    transform: scaleX(-1);
+    position: absolute;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    padding-left: 25px;
+    display: flex;
+    left: 240px;
+    visibility: hidden;
+}
+#channelLeftArrow{
+    left: 280px;
+    transform: scaleX(-1);
+    display: flex;
+    position: absolute;
+    padding: 100px 0px 100px 50px;
+    background: linear-gradient(to left,rgb(0, 0, 0,1),rgb(0, 0, 0,1),rgba(0, 0, 0, 0));
+    margin-top: 20px;
+    align-items: center;
+    z-index: 1;
+    visibility: hidden;
+}
+body.hideSidebar #leftArrow{
+  left : 70px;
+}
+body.hideSidebar #channelLeftArrow {
+  left: 110px;
+}
+  
 
 .Channel .Channel-Toolbar ul {
+    padding-left: 10px;
     display: flex;
+    gap: 95px;
     flex-direction: row;
+    padding-right: 40px;
+    align-items: center;
+}
+.toolbars-search{
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
 /* 툴바 버튼 */
 .Channel-Button {
-    display: inline-block;
-    padding: 16px 32px 15px 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
     background-color: transparent;
     border: none;
     color: #909090;
@@ -149,18 +199,57 @@ li {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 15px;
-    overflow: hidden;
-    padding: 110px 10px 10px 10px;  /* padding top값 부여 및 나머지 정리 */
-    margin: 0;      /* 비디오 화면 왼쪽으로 붙이기 위해 추가 */
-    z-index: 3;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-flow: column;
+    gap: 10px;
+    margin: 0;
+
+    margin: 0px 80px 0px 80px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    align-items: start;
 }
+
+.video-grid::-webkit-scrollbar{
+    display: none;
+}
+/* 상단 동영상 */
+.video-grid-top > .video-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* 비디오 제목, 채널, 조회수 및 업로드 날짜에 대한 스타일 */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px  0px 30px 80px;
+    border-bottom: 1px solid #909090;
+}
+.video-info > .video-detail {
+    color: white;
+    padding-top: 10px;
+}
+
+.video-grid-top > .video-container > .video-info-container {
+    margin-left: 10px;
+    display: flex;
+    flex:1;
+    cursor: pointer;
+}
+.video-grid-top > .video-container > .video-info-container > .video-info{
+    display: flex;
+}
+
+
 
 /* 영상 컨테이너 설정 */
 .video-container {
     display: flex;
-    width: 100%;
     box-sizing: border-box;
     position: relative;
     margin-top: 20px;
@@ -169,6 +258,11 @@ li {
     font-family: Arial, sans-serif;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.video-grid .video-container .thumbnail,
+.video-grid .video-container video {
+    width: 210px;
+    height: 118px;
 }
 .video-info-container{
     margin-top: 10px;
@@ -208,18 +302,19 @@ li {
     margin-bottom: 4px;
 }
 
+
 .video-container video,
 .thumbnail {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;   /* 500px -> 400px 축소*/
     max-height: 310px;
-
+    
 }
 .thumbnail{
     border-radius: 10px;
 }
 .channel-profile{
-    border-radius: 100%;
+    display: none;
 }
 
 .channel-Container{
@@ -248,37 +343,121 @@ li {
 }
   
 
-/* channel-title-container 설정 (Flexbox 적용) */
-
 
 /* 반응형 스타일 적용 */
-@media (min-width: 1920px) {
-  .video-grid {
-    grid-template-columns: repeat(6, 1fr);
+@media (max-width: 1290px) {
+    .Channel .Channel-Toolbar {
+        padding-left: 10px;
+        justify-content: unset;
+    }
+
+    body.hideSidebar .Channel .Channel-Toolbar {
+        justify-content: center;
+        
+    }
   }
-}
-@media (max-width: 1919px) {
-  .video-grid {
-    grid-template-columns: repeat(5, 1fr);
+
+  @media (max-width: 1095px) {
+    body.hideSidebar .Channel .Channel-Toolbar {
+        justify-content: unset;
+        
+    }
   }
-}
-@media (max-width: 1600px) {
-  .video-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (max-width: 1200px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
 @media (max-width: 992px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .Channel .Channel-Toolbar ul{
+    padding-right: 120px;
 }
+}
+@media (max-width: 864px) {
+  .video-grid-top > .video-container{
+    padding-left: 10px;
+  }
+  .Channel .Channel-Title{
+    padding : 10px 0px 0px 10px;
+    }
+  .video-grid{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  #channelLeftArrow {
+    left: 240px;
+  }
+
+#channelRightArrow {
+    right: 0px;
+}
+  body.hideSidebar #leftArrow {
+    left: 70px;
+  }
+
+ body.hideSidebar .video-grid-top > .video-container{
+    flex-direction: row;
+    padding : 0px 0px 30px 80px;
+  }
+
+  body.hideSidebar .Channel .Channel-Title{
+    padding : 10px 80px 0px 80px;
+    }
+    body.hideSidebar .video-grid{
+        margin-left: 80px;
+      }
+
+}
+
+
 @media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: repeat(1, 1fr);
+  #leftArrow, #channelLeftArrow {
+    left: 70px;
   }
+  
 }
+@media (max-width: 700px) {
+
+    body.hideSidebar .video-grid-top > .video-container{
+       flex-direction: row;
+       padding : 0px 0px 30px 10px;
+     }
+     body.hideSidebar .video-grid{
+       margin-left: 10px;
+     }
+     body.hideSidebar .Channel .Channel-Title{
+        padding : 10px 0px 0px 10px;
+        }
+    body.hideSidebar #channelLeftArrow {
+          left: 70px;
+    }
+   
+ }
+@media (max-width: 664px) {
+    
+      .video-grid-top > .video-container .video-info{
+        width: 100%;
+        padding-left: 0px;
+      }
+
+    }
+@media (max-width: 500px){
+  #leftArrow, #channelLeftArrow {
+    left: 0px;
+  }
+
+body.hideSidebar #leftArrow, body.hideSidebar #channelLeftArrow {
+    left: 0px;
+}
+  
+}
+    @media (max-width: 596px) {
+        .video-grid-top > .video-container{
+            flex-direction: column;
+          }
+        body.hideSidebar .video-grid-top > .video-container {
+            flex-direction: column;
+
+          }
+        body.hideSibar .video-grid{
+            padding-right : 0px;
+        }
+
+    
+      }
